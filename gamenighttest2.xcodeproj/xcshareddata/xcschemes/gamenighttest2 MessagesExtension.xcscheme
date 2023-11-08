@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D33D0D002AD9888500A5099A"
-               BuildableName = "gamenighttest2 MessagesExtension.appex"
+               BuildableName = "It&apos;s Game Night.appex"
                BlueprintName = "gamenighttest2 MessagesExtension"
                ReferencedContainer = "container:gamenighttest2.xcodeproj">
             </BuildableReference>
@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D33D0CF72AD9888300A5099A"
-               BuildableName = "gamenighttest2.app"
+               BuildableName = "It&apos;s Game Night.app"
                BlueprintName = "gamenighttest2"
                ReferencedContainer = "container:gamenighttest2.xcodeproj">
             </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D33D0CF72AD9888300A5099A"
-            BuildableName = "gamenighttest2.app"
+            BuildableName = "It&apos;s Game Night.app"
             BlueprintName = "gamenighttest2"
             ReferencedContainer = "container:gamenighttest2.xcodeproj">
          </BuildableReference>
