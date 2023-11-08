@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D32C9C142AF30FF9000D25CD /* RandomPersonSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */; };
+		D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
+		D33D0D022AD9888500A5099A /* gamenighttest2 MessagesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D33D0D012AD9888500A5099A /* gamenighttest2 MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33D0D062AD9888500A5099A /* Messages.framework */; };
+		D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D0D092AD9888500A5099A /* MessagesViewController.swift */; };
+		D33D0D0D2AD9888500A5099A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0B2AD9888500A5099A /* MainInterface.storyboard */; };
+		D33D0D0F2AD9888700A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0E2AD9888700A5099A /* Assets.xcassets */; };
+		D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D0D1A2AD988D300A5099A /* StickerViewController.swift */; };
+		D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0E2AD9888700A5099A /* Assets.xcassets */; };
+		D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
+		D33D0D202AD98E5500A5099A /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D1F2AD98E5500A5099A /* 1stPlace.png */; };
+		D33D0D212AD98E5500A5099A /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D1F2AD98E5500A5099A /* 1stPlace.png */; };
+		D33D0D242AD99A6F00A5099A /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D232AD99A2400A5099A /* 2ndPlace.png */; };
+		D33D0D252AD99A6F00A5099A /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D232AD99A2400A5099A /* 2ndPlace.png */; };
+		D33D0D262AD99A7300A5099A /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D222AD99A2300A5099A /* 3rdPlace.png */; };
+		D33D0D272AD99A7300A5099A /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D222AD99A2300A5099A /* 3rdPlace.png */; };
+		D33D0D392AD99CF500A5099A /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D282AD99CF400A5099A /* Nice Try.png */; };
+		D33D0D3A2AD99CF500A5099A /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D282AD99CF400A5099A /* Nice Try.png */; };
+		D33D0D3D2AD99CF500A5099A /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */; };
+		D33D0D3E2AD99CF500A5099A /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */; };
+		D33D0D3F2AD99CF500A5099A /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */; };
+		D33D0D402AD99CF500A5099A /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */; };
+		D33D0D412AD99CF500A5099A /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2C2AD99CF400A5099A /* Blue Team.png */; };
+		D33D0D422AD99CF500A5099A /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2C2AD99CF400A5099A /* Blue Team.png */; };
+		D33D0D432AD99CF500A5099A /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */; };
+		D33D0D442AD99CF500A5099A /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */; };
+		D33D0D452AD99CF500A5099A /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2E2AD99CF400A5099A /* Red Team.png */; };
+		D33D0D462AD99CF500A5099A /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2E2AD99CF400A5099A /* Red Team.png */; };
+		D33D0D472AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */; };
+		D33D0D482AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */; };
+		D33D0D492AD99CF500A5099A /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D302AD99CF400A5099A /* Good Dinner.png */; };
+		D33D0D4A2AD99CF500A5099A /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D302AD99CF400A5099A /* Good Dinner.png */; };
+		D33D0D4B2AD99CF500A5099A /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D312AD99CF400A5099A /* idk timezones.png */; };
+		D33D0D4C2AD99CF500A5099A /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D312AD99CF400A5099A /* idk timezones.png */; };
+		D33D0D4D2AD99CF500A5099A /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D322AD99CF400A5099A /* Too Bad.png */; };
+		D33D0D4E2AD99CF500A5099A /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D322AD99CF400A5099A /* Too Bad.png */; };
+		D33D0D4F2AD99CF500A5099A /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D332AD99CF500A5099A /* Youre Welcome.png */; };
+		D33D0D502AD99CF500A5099A /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D332AD99CF500A5099A /* Youre Welcome.png */; };
+		D33D0D512AD99CF500A5099A /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D342AD99CF500A5099A /* YouTried.png */; };
+		D33D0D522AD99CF500A5099A /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D342AD99CF500A5099A /* YouTried.png */; };
+		D33D0D532AD99CF500A5099A /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D352AD99CF500A5099A /* It's Intermission.png */; };
+		D33D0D542AD99CF500A5099A /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D352AD99CF500A5099A /* It's Intermission.png */; };
+		D33D0D552AD99CF500A5099A /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D362AD99CF500A5099A /* Did you tell them?.png */; };
+		D33D0D562AD99CF500A5099A /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D362AD99CF500A5099A /* Did you tell them?.png */; };
+		D33D0D572AD99CF500A5099A /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D372AD99CF500A5099A /* Plus Six.png */; };
+		D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D372AD99CF500A5099A /* Plus Six.png */; };
+		D33D0D592AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
+		D33D0D5A2AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
+		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
+		D37313662ADF59DD00DC09B6 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D37313652ADF59DD00DC09B6 /* GameNight Logo.png */; };
+		D37313672ADF5A9C00DC09B6 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D37313652ADF59DD00DC09B6 /* GameNight Logo.png */; };
+		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
+		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
+		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
+		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
+		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
+		D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */; };
+		D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E955A82AE6E4040012927B /* MessageDelegate.swift */; };
+		D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */; };
+		D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C42AEF11A200FD158F /* CalendarInvite.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D33D0D032AD9888500A5099A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D33D0CF22AD9888300A5099A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D33D0D002AD9888500A5099A;
+			remoteInfo = "gamenighttest2 MessagesExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D33D0D162AD9888700A5099A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D33D0D022AD9888500A5099A /* gamenighttest2 MessagesExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPersonSelect.swift; sourceTree = "<group>"; };
+		D33D0CF82AD9888300A5099A /* gamenighttest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gamenighttest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33D0CFB2AD9888500A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D33D0D012AD9888500A5099A /* gamenighttest2 MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "gamenighttest2 MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33D0D062AD9888500A5099A /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		D33D0D092AD9888500A5099A /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		D33D0D0C2AD9888500A5099A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D33D0D0E2AD9888700A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D33D0D102AD9888700A5099A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D33D0D1A2AD988D300A5099A /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
+		D33D0D1F2AD98E5500A5099A /* 1stPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1stPlace.png; path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers/1stPlace.png"; sourceTree = "<absolute>"; };
+		D33D0D222AD99A2300A5099A /* 3rdPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3rdPlace.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/3rdPlace.png"; sourceTree = "<group>"; };
+		D33D0D232AD99A2400A5099A /* 2ndPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2ndPlace.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/2ndPlace.png"; sourceTree = "<group>"; };
+		D33D0D282AD99CF400A5099A /* Nice Try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nice Try.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Nice Try.png"; sourceTree = "<group>"; };
+		D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "I'm so high rn.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/I'm so high rn.png"; sourceTree = "<group>"; };
+		D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bad Dinner.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Bad Dinner.png"; sourceTree = "<group>"; };
+		D33D0D2C2AD99CF400A5099A /* Blue Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Team.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Blue Team.png"; sourceTree = "<group>"; };
+		D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Gamenight.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/It's Gamenight.png"; sourceTree = "<group>"; };
+		D33D0D2E2AD99CF400A5099A /* Red Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red Team.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Red Team.png"; sourceTree = "<group>"; };
+		D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "‎Let's Coast Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/‎Let's Coast Logo.png"; sourceTree = "<group>"; };
+		D33D0D302AD99CF400A5099A /* Good Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Good Dinner.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Good Dinner.png"; sourceTree = "<group>"; };
+		D33D0D312AD99CF400A5099A /* idk timezones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "idk timezones.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/idk timezones.png"; sourceTree = "<group>"; };
+		D33D0D322AD99CF400A5099A /* Too Bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Too Bad.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Too Bad.png"; sourceTree = "<group>"; };
+		D33D0D332AD99CF500A5099A /* Youre Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Youre Welcome.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Youre Welcome.png"; sourceTree = "<group>"; };
+		D33D0D342AD99CF500A5099A /* YouTried.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YouTried.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/YouTried.png"; sourceTree = "<group>"; };
+		D33D0D352AD99CF500A5099A /* It's Intermission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Intermission.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/It's Intermission.png"; sourceTree = "<group>"; };
+		D33D0D362AD99CF500A5099A /* Did you tell them?.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Did you tell them?.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Did you tell them?.png"; sourceTree = "<group>"; };
+		D33D0D372AD99CF500A5099A /* Plus Six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Plus Six.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Plus Six.png"; sourceTree = "<group>"; };
+		D33D0D382AD99CF500A5099A /* Get Outta Here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Get Outta Here.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Get Outta Here.png"; sourceTree = "<group>"; };
+		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
+		D37313652ADF59DD00DC09B6 /* GameNight Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GameNight Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/GameNight Logo.png"; sourceTree = "<group>"; };
+		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
+		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
+		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
+		D3E955A82AE6E4040012927B /* MessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
+		D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemRepresentable.swift; sourceTree = "<group>"; };
+		D3E971C42AEF11A200FD158F /* CalendarInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInvite.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D33D0CFE2AD9888500A5099A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D312A62F2AE8269100A3C54D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D378F25C2AE823A7000A5654 /* AppState.swift */,
+				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
+				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
+				D3E971C42AEF11A200FD158F /* CalendarInvite.swift */,
+				D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */,
+				D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */,
+				D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */,
+				D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D312A6302AE826AA00A3C54D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */,
+				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
+				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
+				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
+				D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D33D0CF12AD9888300A5099A = {
+			isa = PBXGroup;
+			children = (
+				D33D0CFA2AD9888300A5099A /* gamenighttest2 */,
+				D33D0D082AD9888500A5099A /* gamenighttest2 MessagesExtension */,
+				D33D0D052AD9888500A5099A /* Frameworks */,
+				D33D0CF92AD9888300A5099A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D33D0CF92AD9888300A5099A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D33D0CF82AD9888300A5099A /* gamenighttest2.app */,
+				D33D0D012AD9888500A5099A /* gamenighttest2 MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D33D0CFA2AD9888300A5099A /* gamenighttest2 */ = {
+			isa = PBXGroup;
+			children = (
+				D33D0CFB2AD9888500A5099A /* Assets.xcassets */,
+			);
+			path = gamenighttest2;
+			sourceTree = "<group>";
+		};
+		D33D0D052AD9888500A5099A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D33D0D062AD9888500A5099A /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D33D0D082AD9888500A5099A /* gamenighttest2 MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D33D0D102AD9888700A5099A /* Info.plist */,
+				D312A62F2AE8269100A3C54D /* Model */,
+				D312A6302AE826AA00A3C54D /* Controller */,
+				D33D0D0E2AD9888700A5099A /* Assets.xcassets */,
+				D33D0D0B2AD9888500A5099A /* MainInterface.storyboard */,
+				D33D0D1E2AD98E4000A5099A /* Stickers */,
+			);
+			path = "gamenighttest2 MessagesExtension";
+			sourceTree = "<group>";
+		};
+		D33D0D1E2AD98E4000A5099A /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				D33D0D1F2AD98E5500A5099A /* 1stPlace.png */,
+				D33D0D232AD99A2400A5099A /* 2ndPlace.png */,
+				D33D0D222AD99A2300A5099A /* 3rdPlace.png */,
+				D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */,
+				D33D0D2C2AD99CF400A5099A /* Blue Team.png */,
+				D33D0D362AD99CF500A5099A /* Did you tell them?.png */,
+				D37313652ADF59DD00DC09B6 /* GameNight Logo.png */,
+				D33D0D382AD99CF500A5099A /* Get Outta Here.png */,
+				D33D0D302AD99CF400A5099A /* Good Dinner.png */,
+				D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */,
+				D33D0D312AD99CF400A5099A /* idk timezones.png */,
+				D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */,
+				D33D0D352AD99CF500A5099A /* It's Intermission.png */,
+				D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */,
+				D33D0D282AD99CF400A5099A /* Nice Try.png */,
+				D33D0D372AD99CF500A5099A /* Plus Six.png */,
+				D33D0D2E2AD99CF400A5099A /* Red Team.png */,
+				D33D0D322AD99CF400A5099A /* Too Bad.png */,
+				D33D0D332AD99CF500A5099A /* Youre Welcome.png */,
+				D33D0D342AD99CF500A5099A /* YouTried.png */,
+			);
+			name = Stickers;
+			path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers";
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D33D0CF72AD9888300A5099A /* gamenighttest2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2" */;
+			buildPhases = (
+				D33D0CF62AD9888300A5099A /* Resources */,
+				D33D0D162AD9888700A5099A /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D33D0D042AD9888500A5099A /* PBXTargetDependency */,
+			);
+			name = gamenighttest2;
+			productName = gamenighttest2;
+			productReference = D33D0CF82AD9888300A5099A /* gamenighttest2.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2 MessagesExtension" */;
+			buildPhases = (
+				D33D0CFD2AD9888500A5099A /* Sources */,
+				D33D0CFE2AD9888500A5099A /* Frameworks */,
+				D33D0CFF2AD9888500A5099A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gamenighttest2 MessagesExtension";
+			productName = "gamenighttest2 MessagesExtension";
+			productReference = D33D0D012AD9888500A5099A /* gamenighttest2 MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D33D0CF22AD9888300A5099A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D33D0CF72AD9888300A5099A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					D33D0D002AD9888500A5099A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "gamenighttest2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D33D0CF12AD9888300A5099A;
+			productRefGroup = D33D0CF92AD9888300A5099A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D33D0CF72AD9888300A5099A /* gamenighttest2 */,
+				D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D33D0CF62AD9888300A5099A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33D0D242AD99A6F00A5099A /* 2ndPlace.png in Resources */,
+				D33D0D452AD99CF500A5099A /* Red Team.png in Resources */,
+				D33D0D4F2AD99CF500A5099A /* Youre Welcome.png in Resources */,
+				D33D0D532AD99CF500A5099A /* It's Intermission.png in Resources */,
+				D33D0D392AD99CF500A5099A /* Nice Try.png in Resources */,
+				D33D0D512AD99CF500A5099A /* YouTried.png in Resources */,
+				D33D0D592AD99CF500A5099A /* Get Outta Here.png in Resources */,
+				D33D0D492AD99CF500A5099A /* Good Dinner.png in Resources */,
+				D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */,
+				D33D0D572AD99CF500A5099A /* Plus Six.png in Resources */,
+				D33D0D432AD99CF500A5099A /* It's Gamenight.png in Resources */,
+				D33D0D202AD98E5500A5099A /* 1stPlace.png in Resources */,
+				D33D0D4D2AD99CF500A5099A /* Too Bad.png in Resources */,
+				D33D0D3F2AD99CF500A5099A /* Bad Dinner.png in Resources */,
+				D37313672ADF5A9C00DC09B6 /* GameNight Logo.png in Resources */,
+				D33D0D472AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
+				D33D0D552AD99CF500A5099A /* Did you tell them?.png in Resources */,
+				D33D0D3D2AD99CF500A5099A /* I'm so high rn.png in Resources */,
+				D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */,
+				D33D0D412AD99CF500A5099A /* Blue Team.png in Resources */,
+				D33D0D4B2AD99CF500A5099A /* idk timezones.png in Resources */,
+				D33D0D262AD99A7300A5099A /* 3rdPlace.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33D0CFF2AD9888500A5099A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D37313662ADF59DD00DC09B6 /* GameNight Logo.png in Resources */,
+				D33D0D482AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
+				D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */,
+				D33D0D442AD99CF500A5099A /* It's Gamenight.png in Resources */,
+				D33D0D3A2AD99CF500A5099A /* Nice Try.png in Resources */,
+				D33D0D252AD99A6F00A5099A /* 2ndPlace.png in Resources */,
+				D33D0D402AD99CF500A5099A /* Bad Dinner.png in Resources */,
+				D33D0D4A2AD99CF500A5099A /* Good Dinner.png in Resources */,
+				D33D0D212AD98E5500A5099A /* 1stPlace.png in Resources */,
+				D33D0D3E2AD99CF500A5099A /* I'm so high rn.png in Resources */,
+				D33D0D462AD99CF500A5099A /* Red Team.png in Resources */,
+				D33D0D4C2AD99CF500A5099A /* idk timezones.png in Resources */,
+				D33D0D0F2AD9888700A5099A /* Assets.xcassets in Resources */,
+				D33D0D502AD99CF500A5099A /* Youre Welcome.png in Resources */,
+				D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */,
+				D33D0D0D2AD9888500A5099A /* MainInterface.storyboard in Resources */,
+				D33D0D562AD99CF500A5099A /* Did you tell them?.png in Resources */,
+				D33D0D5A2AD99CF500A5099A /* Get Outta Here.png in Resources */,
+				D33D0D542AD99CF500A5099A /* It's Intermission.png in Resources */,
+				D33D0D4E2AD99CF500A5099A /* Too Bad.png in Resources */,
+				D33D0D272AD99A7300A5099A /* 3rdPlace.png in Resources */,
+				D33D0D522AD99CF500A5099A /* YouTried.png in Resources */,
+				D33D0D422AD99CF500A5099A /* Blue Team.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D33D0CFD2AD9888500A5099A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
+				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
+				D32C9C142AF30FF9000D25CD /* RandomPersonSelect.swift in Sources */,
+				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
+				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
+				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
+				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,
+				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
+				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
+				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
+				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
+				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
+				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D33D0D042AD9888500A5099A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */;
+			targetProxy = D33D0D032AD9888500A5099A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D33D0D0B2AD9888500A5099A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D33D0D0C2AD9888500A5099A /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D33D0D112AD9888700A5099A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D33D0D122AD9888700A5099A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D33D0D142AD9888700A5099A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = gamenighttest2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D33D0D152AD9888700A5099A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = gamenighttest2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D33D0D182AD9888700A5099A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Please allow access to your Contacts to find locations linked to your contacts.";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D33D0D192AD9888700A5099A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Please allow access to your Contacts to find locations linked to your contacts.";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "gamenighttest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33D0D112AD9888700A5099A /* Debug */,
+				D33D0D122AD9888700A5099A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2 MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33D0D142AD9888700A5099A /* Debug */,
+				D33D0D152AD9888700A5099A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33D0D182AD9888700A5099A /* Debug */,
+				D33D0D192AD9888700A5099A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D33D0CF22AD9888300A5099A /* Project object */;
+}

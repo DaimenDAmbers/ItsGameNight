@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="6kQ-lz-Kso">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oNa-lt-wHS" customClass="HomeViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Bu-WD-alm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-Sf-sz7">
+                                <rect key="frame" x="82" y="406" width="250" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-un-zaC">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="FaK-MB-hbb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Schedule a Game Night">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Arial-BoldMT"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.87058823529411766" green="0.88627450980392153" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="oNa-lt-wHS" eventType="touchUpInside" id="J2w-jo-0c3"/>
+                                            <segue destination="Cd7-Uh-CSP" kind="presentation" identifier="showCalendar" id="V1Z-uG-jwK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
+                                        <rect key="frame" x="0.0" y="52" width="250" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="me1-xQ-5yp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Stickers">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Arial-BoldMT"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="zuf-Ke-c6R" kind="presentation" identifier="goToStickers" id="i12-y5-w5m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rgc-5l-hAa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ggp-Sf-sz7" firstAttribute="centerX" secondItem="2Bu-WD-alm" secondAttribute="centerX" id="Fny-6G-ZB0"/>
+                            <constraint firstItem="ggp-Sf-sz7" firstAttribute="centerY" secondItem="2Bu-WD-alm" secondAttribute="centerY" id="Lpg-rH-aBL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="It's Game Night" largeTitleDisplayMode="never" id="42M-A1-uVF"/>
+                    <connections>
+                        <outlet property="calendarButton" destination="ycE-un-zaC" id="08Z-iW-Va7"/>
+                        <outlet property="stickersButton" destination="4TT-Ix-pUv" id="QMp-3p-sDV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCw-HW-tXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2203" y="-29"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nlW-p7-HSp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60Q-06-YXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Cd7-Uh-CSP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="chI-rT-3au">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ip3-d7-Qfo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3022" y="-337"/>
+        </scene>
+        <!--Game Night Invite-->
+        <scene sceneID="oZY-MQ-WhI">
+            <objects>
+                <viewController storyboardIdentifier="GameNightInviteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifs-kN-KTm" userLabel="Game Night Invite" customClass="GameNightInviteViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uEZ-Vz-KKf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Night Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-mH-8qV">
+                                <rect key="frame" x="20" y="68" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6wY-QN-AKa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTV-bV-kZH">
+                                <rect key="frame" x="20" y="787" width="374" height="35"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save to Calendar">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="lightTextColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="ifs-kN-KTm" eventType="touchUpInside" id="GMJ-4z-WKw"/>
+                                    <segue destination="Cd7-Uh-CSP" kind="presentation" id="4LT-eR-j20"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itt-Eo-F2W">
+                                <rect key="frame" x="20" y="378" width="374" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9B-M3-zaa">
+                                        <rect key="frame" x="8" y="8" width="358" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="358" id="2oH-00-IRS"/>
+                                            <constraint firstAttribute="height" constant="124" id="sWY-Cg-Ciw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="b9B-M3-zaa" secondAttribute="bottom" constant="8" id="2jR-fl-aIV"/>
+                                    <constraint firstAttribute="trailing" secondItem="b9B-M3-zaa" secondAttribute="trailing" constant="8" id="5sR-TT-SwY"/>
+                                    <constraint firstItem="b9B-M3-zaa" firstAttribute="centerY" secondItem="Itt-Eo-F2W" secondAttribute="centerY" id="GGa-Jv-6LG"/>
+                                    <constraint firstItem="b9B-M3-zaa" firstAttribute="top" secondItem="Itt-Eo-F2W" secondAttribute="top" constant="8" id="Rz4-zi-Tbt"/>
+                                    <constraint firstItem="b9B-M3-zaa" firstAttribute="centerX" secondItem="Itt-Eo-F2W" secondAttribute="centerX" id="gSV-xB-BFJ"/>
+                                    <constraint firstItem="b9B-M3-zaa" firstAttribute="leading" secondItem="Itt-Eo-F2W" secondAttribute="leading" constant="8" id="i7C-lK-4ob"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JXV-S8-1Lc"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Itt-Eo-F2W" firstAttribute="centerY" secondItem="uEZ-Vz-KKf" secondAttribute="centerY" id="2um-fe-iZl"/>
+                            <constraint firstItem="Itt-Eo-F2W" firstAttribute="centerX" secondItem="uEZ-Vz-KKf" secondAttribute="centerX" id="AW3-oN-1Dr"/>
+                            <constraint firstItem="wWI-mH-8qV" firstAttribute="top" secondItem="JXV-S8-1Lc" secondAttribute="top" constant="20" id="LJ0-Yp-yfl"/>
+                            <constraint firstItem="wWI-mH-8qV" firstAttribute="trailing" secondItem="uEZ-Vz-KKf" secondAttribute="trailingMargin" id="Pah-uo-pd8"/>
+                            <constraint firstItem="JXV-S8-1Lc" firstAttribute="trailing" secondItem="ZTV-bV-kZH" secondAttribute="trailing" constant="20" id="YqY-gA-XOa"/>
+                            <constraint firstItem="ZTV-bV-kZH" firstAttribute="leading" secondItem="JXV-S8-1Lc" secondAttribute="leading" constant="20" id="ZUm-nz-WlE"/>
+                            <constraint firstItem="wWI-mH-8qV" firstAttribute="leading" secondItem="uEZ-Vz-KKf" secondAttribute="leadingMargin" id="dLt-bE-OLM"/>
+                            <constraint firstItem="JXV-S8-1Lc" firstAttribute="bottom" secondItem="ZTV-bV-kZH" secondAttribute="bottom" constant="40" id="p5P-7C-wU0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="You've Been Invited to Game Night!" id="pQ2-W5-kSA"/>
+                    <connections>
+                        <outlet property="gameNightDetailsLabel" destination="b9B-M3-zaa" id="EiW-Bk-NSz"/>
+                        <outlet property="saveButton" destination="ZTV-bV-kZH" id="Dro-Fp-guB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfx-eD-6iN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3754" y="-29"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController storyboardIdentifier="MessagesViewController" title="Messages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ObA-dk-sSI" customClass="MessagesViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Upc-2g-qG5"/>
+                    <navigationItem key="navigationItem" id="vdh-Xw-HZ9"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508.6956521739132" y="-29.464285714285712"/>
+        </scene>
+        <!--Sticker-->
+        <scene sceneID="Xe9-Kp-f2q">
+            <objects>
+                <viewController storyboardIdentifier="StickerViewController" title="Sticker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuf-Ke-c6R" customClass="StickerViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RBJ-N2-fhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6dl-VS-xV9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stickers" image="folder" catalog="system" id="Tc8-dd-Hae"/>
+                    <navigationItem key="navigationItem" id="JTF-KZ-i4i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qi8-WO-wPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3022" y="334"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4LT-eR-j20"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="folder" catalog="system" width="128" height="96"/>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
