@@ -566,7 +566,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-sGameNight.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -592,7 +592,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Daimen.gamenighttest2.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-sGameNight.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
