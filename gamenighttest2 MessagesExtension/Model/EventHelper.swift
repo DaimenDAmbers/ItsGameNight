@@ -69,43 +69,23 @@ class EventHelper {
         }
     }
     
+    /// Checks the authorization status of the user's device
+    /// - Parameter eventStore: Pass the event store from the entity that calls this method.
+    /// - Returns: Returns an enum for `EKAuthorizationStatus`
     func checkAuthorization(with eventStore: EKEventStore) -> EKAuthorizationStatus {
         let status: EKAuthorizationStatus
         self.store = eventStore
         
-        switch EKEventStore.authorizationStatus(for: .event) {
-            
-        case .notDetermined:
-            status = .notDetermined
-            if #available(iOSApplicationExtension 17.0, *) {
-                requestFullAccessToCalendar()
-            } else {
-                requestAuthorisationToCalendar()
-            }
-            return status
-        case .restricted:
-            status = .restricted
-            return status
-        case .denied:
-            status = .denied
-            return status
-        case .fullAccess:
-            if #available(iOSApplicationExtension 17.0, *) {
-                status = .fullAccess
-            } else {
-                status = .authorized
-            }
-            return status
-        case .writeOnly:
-            if #available(iOSApplicationExtension 17.0, *) {
-                status = .writeOnly
-            } else {
-                status = .authorized
-            }
-            return status
-        @unknown default:
-            status = .notDetermined
-            return status
+        status = EKEventStore.authorizationStatus(for: .event)
+        return status
+    }
+    
+    func requestAuthorization(with eventStore: EKEventStore) {
+        self.store = eventStore
+        if #available(iOSApplicationExtension 17.0, *) {
+            requestFullAccessToCalendar()
+        } else {
+            requestAuthorisationToCalendar()
         }
     }
     

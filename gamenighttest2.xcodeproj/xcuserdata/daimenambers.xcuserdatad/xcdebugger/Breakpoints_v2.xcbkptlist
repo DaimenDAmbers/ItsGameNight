@@ -30,8 +30,8 @@
             filePath = "gamenighttest2 MessagesExtension/Controller/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "eventEditViewController(_:didCompleteWith:)"
             landmarkType = "7">
             <Locations>
@@ -96,22 +96,6 @@
                   offsetFromSymbolStart = "528">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55A0CF11-61BA-41B8-BC97-80C68DFB5D52"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "gamenighttest2 MessagesExtension/Model/EventHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "checkAuthorization(with:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

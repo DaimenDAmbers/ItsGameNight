@@ -55,12 +55,13 @@ class GameNightInviteViewController: UIViewController {
                     
                 presentVC(with: newEvent)
             }
+            
+        case .notDetermined:
+            eventHelper.requestAuthorization(with: self.eventStore)
+            
         default:
             self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
         }
-        
-//        if #available(iO
-        
     }
 }
 

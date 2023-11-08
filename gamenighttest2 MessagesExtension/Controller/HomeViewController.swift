@@ -39,30 +39,12 @@ class HomeViewController: UIViewController {
                     presentVC(with: event)
                 }
                 
+            case .notDetermined:
+                eventHelper.requestAuthorization(with: self.eventStore)
+                
             default:
                     self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
             }
-            
-//            if #available(iOSApplicationExtension 17.0, *) {
-//                if authorizationStatus == .fullAccess || authorizationStatus == .writeOnly {
-//                    if let event = eventHelper.createCalendarEvent(with: self.eventStore) {
-//                        presentVC(with: event)
-//                    }
-//                }
-//            } else {
-//                if authorizationStatus == .authorized {
-//                    if let event = eventHelper.createCalendarEvent(with: self.eventStore) {
-//                        presentVC(with: event)
-//                    }
-//                }
-//            }
-            
-//            if authorizationStatus == .denied {
-//                // If user denied the Calendar request, this alert let's them know how to enable it.
-//                if eventHelper.createCalendarEvent(with: self.eventStore) == nil {
-//                    self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
-//                }
-//            }
             
         default:
             break
