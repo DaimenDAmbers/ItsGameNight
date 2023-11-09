@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     let eventStore: EKEventStore = EKEventStore()
     let eventHelper = EventHelper()
     let systemAlerts = SystemAlerts()
+    var authorizationStatus: EKAuthorizationStatus = .notDetermined
     
     @IBOutlet weak var stickersButton: UIButton!
     @IBOutlet weak var calendarButton: UIButton!
@@ -31,7 +32,7 @@ class HomeViewController: UIViewController {
         switch sender {
         case calendarButton:
 
-            let authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
+            self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
             
             switch authorizationStatus {
             case .fullAccess, .writeOnly, .authorized:
@@ -43,7 +44,7 @@ class HomeViewController: UIViewController {
                 eventHelper.requestAuthorization(with: self.eventStore)
                 
             default:
-                    self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
+                self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
             }
             
         default:
@@ -82,5 +83,21 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
         editVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.didTapAdd))
         
         self.present(editVC, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController {    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "goToCalendar" {
+            switch self.authorizationStatus {
+            case .fullAccess, .writeOnly, .authorized:
+                return true
+                
+            default:
+                return false
+            }
+        } else {
+            return true
+        }
     }
 }

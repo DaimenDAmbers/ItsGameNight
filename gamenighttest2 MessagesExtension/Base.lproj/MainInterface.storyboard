@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="6kQ-lz-Kso">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oNa-lt-wHS" customClass="HomeViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oNa-lt-wHS" customClass="HomeViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Bu-WD-alm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonTapped:" destination="oNa-lt-wHS" eventType="touchUpInside" id="J2w-jo-0c3"/>
-                                            <segue destination="Cd7-Uh-CSP" kind="presentation" identifier="showCalendar" id="V1Z-uG-jwK"/>
+                                            <segue destination="Cd7-Uh-CSP" kind="presentation" identifier="goToCalendar" id="297-ys-KXa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
@@ -86,11 +86,10 @@
             </objects>
             <point key="canvasLocation" x="2203" y="-29"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar View Controller-->
         <scene sceneID="nlW-p7-HSp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="60Q-06-YXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="Cd7-Uh-CSP" sceneMemberID="viewController">
+                <viewController id="Cd7-Uh-CSP" customClass="CalendarViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chI-rT-3au">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,13 +97,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60Q-06-YXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3022" y="-337"/>
         </scene>
         <!--Game Night Invite-->
         <scene sceneID="oZY-MQ-WhI">
             <objects>
-                <viewController storyboardIdentifier="GameNightInviteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifs-kN-KTm" userLabel="Game Night Invite" customClass="GameNightInviteViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameNightInviteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifs-kN-KTm" userLabel="Game Night Invite" customClass="GameNightInviteViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uEZ-Vz-KKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonTapped:" destination="ifs-kN-KTm" eventType="touchUpInside" id="GMJ-4z-WKw"/>
-                                    <segue destination="Cd7-Uh-CSP" kind="presentation" id="4LT-eR-j20"/>
+                                    <segue destination="Cd7-Uh-CSP" kind="presentation" identifier="goToCalendar" id="4LT-eR-j20"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itt-Eo-F2W">
@@ -181,7 +181,7 @@
         <!--Messages-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController storyboardIdentifier="MessagesViewController" title="Messages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ObA-dk-sSI" customClass="MessagesViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesViewController" title="Messages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ObA-dk-sSI" customClass="MessagesViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
         <!--Sticker-->
         <scene sceneID="Xe9-Kp-f2q">
             <objects>
-                <viewController storyboardIdentifier="StickerViewController" title="Sticker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuf-Ke-c6R" customClass="StickerViewController" customModule="gamenighttest2_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StickerViewController" title="Sticker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuf-Ke-c6R" customClass="StickerViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RBJ-N2-fhO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

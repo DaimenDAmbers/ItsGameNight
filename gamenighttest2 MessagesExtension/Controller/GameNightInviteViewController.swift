@@ -19,6 +19,7 @@ class GameNightInviteViewController: UIViewController {
     let eventStore = EKEventStore()
     let systemAlerts = SystemAlerts()
     var invite: CalendarInvite?
+    var authorizationStatus: EKAuthorizationStatus = .notDetermined
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var gameNightDetailsLabel: UILabel!
@@ -44,7 +45,7 @@ class GameNightInviteViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         print("Save Button Tapped")
-        let authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
+        self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
         
         switch authorizationStatus {
         case .fullAccess, .writeOnly, .authorized:
@@ -80,5 +81,21 @@ extension GameNightInviteViewController: UINavigationControllerDelegate, EKEvent
     
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GameNightInviteViewController {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "goToCalendar" {
+            switch self.authorizationStatus {
+            case .fullAccess, .writeOnly, .authorized:
+                return true
+                
+            default:
+                return false
+            }
+        } else {
+            return true
+        }
     }
 }
