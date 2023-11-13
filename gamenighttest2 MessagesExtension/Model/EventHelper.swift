@@ -80,10 +80,11 @@ class EventHelper {
         return status
     }
     
+    /// Request authorization to use the calendar application.
     func requestAuthorization(with eventStore: EKEventStore) {
         self.store = eventStore
         if #available(iOSApplicationExtension 17.0, *) {
-            requestFullAccessToCalendar()
+            requestWriteAccessToCalendar()
         } else {
             requestAuthorisationToCalendar()
         }
@@ -106,11 +107,28 @@ class EventHelper {
     }
     
     @available(iOSApplicationExtension 17.0, *)
+    /// Request Full Access to the Calendar App.
     private func requestFullAccessToCalendar() {
         store.requestFullAccessToEvents() { (granted, error) in
             if (granted) && (error == nil) {
                 DispatchQueue.main.async {
                     print("User has granted full access to calendar")
+                }
+            } else {
+                DispatchQueue.main.async {
+                    print("User has denied access to calendar")
+                }
+            }
+        }
+    }
+    
+    @available(iOSApplicationExtension 17.0, *)
+    /// Request Write-Only Access to the Calendar App.
+    private func requestWriteAccessToCalendar() {
+        store.requestWriteOnlyAccessToEvents() { (granted, error) in
+            if (granted) && (error == nil) {
+                DispatchQueue.main.async {
+                    print("User has granted write-only access to calendar")
                 }
             } else {
                 DispatchQueue.main.async {
