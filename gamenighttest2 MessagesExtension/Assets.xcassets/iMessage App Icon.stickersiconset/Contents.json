@@ -1,43 +1,43 @@
 {
   "images" : [
     {
-      "filename" : "Logo@58.png",
+      "filename" : "icon-messages-settings-29x29@2x 1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo@87.png",
+      "filename" : "icon-messages-settings-29x29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo@120x90.png",
+      "filename" : "icon-messages-app-iPhone-60x45@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x45"
     },
     {
-      "filename" : "Logo@180x135.png",
+      "filename" : "icon-messages-app-iPhone-60x45@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x45"
     },
     {
-      "filename" : "Logo@58 1.png",
+      "filename" : "icon-messages-settings-29x29@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo@134x100.png",
+      "filename" : "icon-messages-app-iPadAir-67x50@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "67x50"
     },
     {
-      "filename" : "Logo@148x110.png",
+      "filename" : "icon-messages-app-iPadAir-74x55@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "74x55"
@@ -49,35 +49,35 @@
       "size" : "1024x1024"
     },
     {
-      "filename" : "Logo@54x40.png",
+      "filename" : "icon-messages-app-27x20@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "27x20"
     },
     {
-      "filename" : "Logo@81x60.png",
+      "filename" : "icon-messages-app-27x20@3x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "27x20"
     },
     {
-      "filename" : "Logo@64x48.png",
+      "filename" : "icon-messages-transcript-32x24@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "32x24"
     },
     {
-      "filename" : "Logo@96x72.png",
+      "filename" : "icon-messages-transcript-32x24@3x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "32x24"
     },
     {
-      "filename" : "Logo@1024x768.png",
+      "filename" : "icon-messages-app-store-1024x768.png",
       "idiom" : "ios-marketing",
       "platform" : "ios",
       "scale" : "1x",
