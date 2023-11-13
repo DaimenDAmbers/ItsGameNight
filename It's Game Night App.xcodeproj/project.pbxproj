@@ -254,9 +254,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D33D0CF72AD9888300A5099A /* gamenighttest2 */ = {
+		D33D0CF72AD9888300A5099A /* It's Game Night App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2" */;
+			buildConfigurationList = D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App" */;
 			buildPhases = (
 				D33D0CF62AD9888300A5099A /* Resources */,
 				D33D0D162AD9888700A5099A /* Embed Foundation Extensions */,
@@ -266,14 +266,14 @@
 			dependencies = (
 				D33D0D042AD9888500A5099A /* PBXTargetDependency */,
 			);
-			name = gamenighttest2;
+			name = "It's Game Night App";
 			productName = gamenighttest2;
 			productReference = D33D0CF82AD9888300A5099A /* It's Game Night.app */;
 			productType = "com.apple.product-type.application.messages";
 		};
-		D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */ = {
+		D33D0D002AD9888500A5099A /* It's Game Night App MessagesExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2 MessagesExtension" */;
+			buildConfigurationList = D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App MessagesExtension" */;
 			buildPhases = (
 				D33D0CFD2AD9888500A5099A /* Sources */,
 				D33D0CFE2AD9888500A5099A /* Frameworks */,
@@ -283,7 +283,7 @@
 			);
 			dependencies = (
 			);
-			name = "gamenighttest2 MessagesExtension";
+			name = "It's Game Night App MessagesExtension";
 			productName = "gamenighttest2 MessagesExtension";
 			productReference = D33D0D012AD9888500A5099A /* It's Game Night.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
@@ -306,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "gamenighttest2" */;
+			buildConfigurationList = D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "It's Game Night App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -319,8 +319,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D33D0CF72AD9888300A5099A /* gamenighttest2 */,
-				D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */,
+				D33D0CF72AD9888300A5099A /* It's Game Night App */,
+				D33D0D002AD9888500A5099A /* It's Game Night App MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -413,7 +413,7 @@
 /* Begin PBXTargetDependency section */
 		D33D0D042AD9888500A5099A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D33D0D002AD9888500A5099A /* gamenighttest2 MessagesExtension */;
+			target = D33D0D002AD9888500A5099A /* It's Game Night App MessagesExtension */;
 			targetProxy = D33D0D032AD9888500A5099A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -650,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "gamenighttest2" */ = {
+		D33D0CF52AD9888300A5099A /* Build configuration list for PBXProject "It's Game Night App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D33D0D112AD9888700A5099A /* Debug */,
@@ -659,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2 MessagesExtension" */ = {
+		D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D33D0D142AD9888700A5099A /* Debug */,
@@ -668,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "gamenighttest2" */ = {
+		D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D33D0D182AD9888700A5099A /* Debug */,
