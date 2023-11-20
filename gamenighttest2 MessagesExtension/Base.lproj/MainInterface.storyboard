@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-Sf-sz7">
-                                <rect key="frame" x="82" y="406" width="250" height="84"/>
+                                <rect key="frame" x="82" y="380" width="250" height="136"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-un-zaC">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
@@ -43,8 +43,31 @@
                                             <segue destination="Cd7-Uh-CSP" kind="presentation" identifier="goToCalendar" id="297-ys-KXa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ob5-rS-ctH">
                                         <rect key="frame" x="0.0" y="52" width="250" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="qtu-fg-jAw"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Select a Random Person">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Arial-BoldMT"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="oNa-lt-wHS" eventType="touchUpInside" id="rwW-hl-Onp"/>
+                                            <segue destination="vw2-r0-fbb" kind="presentation" id="W8C-ax-dq1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
+                                        <rect key="frame" x="0.0" y="104" width="250" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="me1-xQ-5yp"/>
                                         </constraints>
@@ -86,6 +109,50 @@
             </objects>
             <point key="canvasLocation" x="2203" y="-29"/>
         </scene>
+        <!--Input People-->
+        <scene sceneID="Agh-c6-Han">
+            <objects>
+                <tableViewController storyboardIdentifier="SelectPeopleViewController" id="aVB-Bz-hh9" customClass="SelectPeopleViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Iio-fx-Wva">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="U3e-oN-3VX">
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U3e-oN-3VX" id="0Gf-54-fWe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aVB-Bz-hh9" id="Omd-Lh-xyY"/>
+                            <outlet property="delegate" destination="aVB-Bz-hh9" id="efv-bs-Beh"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Input People" id="ot3-CN-gtA">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="done" id="E4J-e3-Bgk">
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="aVB-Bz-hh9" id="UXV-IH-vk9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="xc6-dR-TYH">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="aVB-Bz-hh9" id="X3Z-a0-vdi"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dd8-dp-2t1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3751" y="-29"/>
+        </scene>
         <!--Calendar View Controller-->
         <scene sceneID="nlW-p7-HSp">
             <objects>
@@ -99,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60Q-06-YXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3022" y="-337"/>
+            <point key="canvasLocation" x="3022" y="-675"/>
         </scene>
         <!--Game Night Invite-->
         <scene sceneID="oZY-MQ-WhI">
@@ -176,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfx-eD-6iN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3754" y="-29"/>
+            <point key="canvasLocation" x="3751" y="-675"/>
         </scene>
         <!--Messages-->
         <scene sceneID="7MM-of-jgj">
@@ -212,7 +279,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi8-WO-wPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3022" y="334"/>
+            <point key="canvasLocation" x="3022" y="749"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hye-Z1-LMS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vw2-r0-fbb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8O-ZM-ECh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aVB-Bz-hh9" kind="relationship" relationship="rootViewController" id="GHS-2Q-2Xu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVI-SP-Xqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3021.739130434783" y="-29.464285714285712"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D32C9C142AF30FF9000D25CD /* RandomPersonSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */; };
+		D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */; };
+		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
+		D32C9C142AF30FF9000D25CD /* RandomPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* RandomPerson.swift */; };
 		D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
 		D33D0D022AD9888500A5099A /* It's Game Night.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D33D0D012AD9888500A5099A /* It's Game Night.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33D0D062AD9888500A5099A /* Messages.framework */; };
@@ -94,7 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPersonSelect.swift; sourceTree = "<group>"; };
+		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
+		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D32C9C132AF30FF9000D25CD /* RandomPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPerson.swift; sourceTree = "<group>"; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33D0CFB2AD9888500A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33D0D012AD9888500A5099A /* It's Game Night.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "It's Game Night.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,17 +152,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D312A62F2AE8269100A3C54D /* Model */ = {
+		D30B792D2B0ADF5E007606C8 /* Random Person Model */ = {
+			isa = PBXGroup;
+			children = (
+				D30B792B2B0ADEE6007606C8 /* Person.swift */,
+				D32C9C132AF30FF9000D25CD /* RandomPerson.swift */,
+			);
+			path = "Random Person Model";
+			sourceTree = "<group>";
+		};
+		D30B792E2B0AF256007606C8 /* Calendar Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3E971C42AEF11A200FD158F /* CalendarInvite.swift */,
+				D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */,
+			);
+			path = "Calendar Model";
+			sourceTree = "<group>";
+		};
+		D30B792F2B0AF272007606C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				D378F25C2AE823A7000A5654 /* AppState.swift */,
-				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
-				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
-				D3E971C42AEF11A200FD158F /* CalendarInvite.swift */,
-				D32C9C132AF30FF9000D25CD /* RandomPersonSelect.swift */,
-				D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */,
 				D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */,
 				D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D30B79302B0AF2B0007606C8 /* Calendar Views */ = {
+			isa = PBXGroup;
+			children = (
+				D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */,
+				D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */,
+			);
+			path = "Calendar Views";
+			sourceTree = "<group>";
+		};
+		D30B79312B0AF2BC007606C8 /* Random Person Views */ = {
+			isa = PBXGroup;
+			children = (
+				D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */,
+			);
+			path = "Random Person Views";
+			sourceTree = "<group>";
+		};
+		D312A62F2AE8269100A3C54D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
+				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
+				D30B792F2B0AF272007606C8 /* Supporting Files */,
+				D30B792E2B0AF256007606C8 /* Calendar Model */,
+				D30B792D2B0ADF5E007606C8 /* Random Person Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,11 +212,11 @@
 		D312A6302AE826AA00A3C54D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */,
+				D30B79302B0AF2B0007606C8 /* Calendar Views */,
+				D30B79312B0AF2BC007606C8 /* Random Person Views */,
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
-				D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,9 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */,
 				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
 				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
-				D32C9C142AF30FF9000D25CD /* RandomPersonSelect.swift in Sources */,
+				D32C9C142AF30FF9000D25CD /* RandomPerson.swift in Sources */,
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
@@ -402,6 +449,7 @@
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
+				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
