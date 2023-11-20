@@ -19,46 +19,6 @@
 		D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D0D1A2AD988D300A5099A /* StickerViewController.swift */; };
 		D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0E2AD9888700A5099A /* Assets.xcassets */; };
 		D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
-		D33D0D202AD98E5500A5099A /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D1F2AD98E5500A5099A /* 1stPlace.png */; };
-		D33D0D212AD98E5500A5099A /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D1F2AD98E5500A5099A /* 1stPlace.png */; };
-		D33D0D242AD99A6F00A5099A /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D232AD99A2400A5099A /* 2ndPlace.png */; };
-		D33D0D252AD99A6F00A5099A /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D232AD99A2400A5099A /* 2ndPlace.png */; };
-		D33D0D262AD99A7300A5099A /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D222AD99A2300A5099A /* 3rdPlace.png */; };
-		D33D0D272AD99A7300A5099A /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D222AD99A2300A5099A /* 3rdPlace.png */; };
-		D33D0D392AD99CF500A5099A /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D282AD99CF400A5099A /* Nice Try.png */; };
-		D33D0D3A2AD99CF500A5099A /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D282AD99CF400A5099A /* Nice Try.png */; };
-		D33D0D3D2AD99CF500A5099A /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */; };
-		D33D0D3E2AD99CF500A5099A /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */; };
-		D33D0D3F2AD99CF500A5099A /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */; };
-		D33D0D402AD99CF500A5099A /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */; };
-		D33D0D412AD99CF500A5099A /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2C2AD99CF400A5099A /* Blue Team.png */; };
-		D33D0D422AD99CF500A5099A /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2C2AD99CF400A5099A /* Blue Team.png */; };
-		D33D0D432AD99CF500A5099A /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */; };
-		D33D0D442AD99CF500A5099A /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */; };
-		D33D0D452AD99CF500A5099A /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2E2AD99CF400A5099A /* Red Team.png */; };
-		D33D0D462AD99CF500A5099A /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2E2AD99CF400A5099A /* Red Team.png */; };
-		D33D0D472AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */; };
-		D33D0D482AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */; };
-		D33D0D492AD99CF500A5099A /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D302AD99CF400A5099A /* Good Dinner.png */; };
-		D33D0D4A2AD99CF500A5099A /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D302AD99CF400A5099A /* Good Dinner.png */; };
-		D33D0D4B2AD99CF500A5099A /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D312AD99CF400A5099A /* idk timezones.png */; };
-		D33D0D4C2AD99CF500A5099A /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D312AD99CF400A5099A /* idk timezones.png */; };
-		D33D0D4D2AD99CF500A5099A /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D322AD99CF400A5099A /* Too Bad.png */; };
-		D33D0D4E2AD99CF500A5099A /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D322AD99CF400A5099A /* Too Bad.png */; };
-		D33D0D4F2AD99CF500A5099A /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D332AD99CF500A5099A /* Youre Welcome.png */; };
-		D33D0D502AD99CF500A5099A /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D332AD99CF500A5099A /* Youre Welcome.png */; };
-		D33D0D512AD99CF500A5099A /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D342AD99CF500A5099A /* YouTried.png */; };
-		D33D0D522AD99CF500A5099A /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D342AD99CF500A5099A /* YouTried.png */; };
-		D33D0D532AD99CF500A5099A /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D352AD99CF500A5099A /* It's Intermission.png */; };
-		D33D0D542AD99CF500A5099A /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D352AD99CF500A5099A /* It's Intermission.png */; };
-		D33D0D552AD99CF500A5099A /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D362AD99CF500A5099A /* Did you tell them?.png */; };
-		D33D0D562AD99CF500A5099A /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D362AD99CF500A5099A /* Did you tell them?.png */; };
-		D33D0D572AD99CF500A5099A /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D372AD99CF500A5099A /* Plus Six.png */; };
-		D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D372AD99CF500A5099A /* Plus Six.png */; };
-		D33D0D592AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
-		D33D0D5A2AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
-		D367DC2B2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */; };
-		D367DC2C2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */; };
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
@@ -108,26 +68,26 @@
 		D33D0D0E2AD9888700A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33D0D102AD9888700A5099A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33D0D1A2AD988D300A5099A /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
-		D33D0D1F2AD98E5500A5099A /* 1stPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1stPlace.png; path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers/1stPlace.png"; sourceTree = "<absolute>"; };
-		D33D0D222AD99A2300A5099A /* 3rdPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3rdPlace.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/3rdPlace.png"; sourceTree = "<group>"; };
-		D33D0D232AD99A2400A5099A /* 2ndPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2ndPlace.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/2ndPlace.png"; sourceTree = "<group>"; };
-		D33D0D282AD99CF400A5099A /* Nice Try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nice Try.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Nice Try.png"; sourceTree = "<group>"; };
-		D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "I'm so high rn.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/I'm so high rn.png"; sourceTree = "<group>"; };
-		D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bad Dinner.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Bad Dinner.png"; sourceTree = "<group>"; };
-		D33D0D2C2AD99CF400A5099A /* Blue Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Team.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Blue Team.png"; sourceTree = "<group>"; };
-		D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Gamenight.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/It's Gamenight.png"; sourceTree = "<group>"; };
-		D33D0D2E2AD99CF400A5099A /* Red Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red Team.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Red Team.png"; sourceTree = "<group>"; };
-		D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "‎Let's Coast Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/‎Let's Coast Logo.png"; sourceTree = "<group>"; };
-		D33D0D302AD99CF400A5099A /* Good Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Good Dinner.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Good Dinner.png"; sourceTree = "<group>"; };
-		D33D0D312AD99CF400A5099A /* idk timezones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "idk timezones.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/idk timezones.png"; sourceTree = "<group>"; };
-		D33D0D322AD99CF400A5099A /* Too Bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Too Bad.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Too Bad.png"; sourceTree = "<group>"; };
-		D33D0D332AD99CF500A5099A /* Youre Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Youre Welcome.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Youre Welcome.png"; sourceTree = "<group>"; };
-		D33D0D342AD99CF500A5099A /* YouTried.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YouTried.png; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/YouTried.png"; sourceTree = "<group>"; };
-		D33D0D352AD99CF500A5099A /* It's Intermission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Intermission.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/It's Intermission.png"; sourceTree = "<group>"; };
-		D33D0D362AD99CF500A5099A /* Did you tell them?.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Did you tell them?.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Did you tell them?.png"; sourceTree = "<group>"; };
-		D33D0D372AD99CF500A5099A /* Plus Six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Plus Six.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Plus Six.png"; sourceTree = "<group>"; };
-		D33D0D382AD99CF500A5099A /* Get Outta Here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Get Outta Here.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Get Outta Here.png"; sourceTree = "<group>"; };
-		D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GameNight Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/GameNight Logo.png"; sourceTree = "<group>"; };
+		D367DC692B0BF39C00A8B6A1 /* Too Bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Too Bad.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Too Bad.png"; sourceTree = "<group>"; };
+		D367DC6A2B0BF39C00A8B6A1 /* ‎Let's Coast Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "‎Let's Coast Logo.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/‎Let's Coast Logo.png"; sourceTree = "<group>"; };
+		D367DC6B2B0BF39C00A8B6A1 /* Nice Try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nice Try.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Nice Try.png"; sourceTree = "<group>"; };
+		D367DC6C2B0BF39C00A8B6A1 /* Good Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Good Dinner.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Good Dinner.png"; sourceTree = "<group>"; };
+		D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3rdPlace.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/3rdPlace.png"; sourceTree = "<group>"; };
+		D367DC6E2B0BF39C00A8B6A1 /* It's Gamenight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Gamenight.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/It's Gamenight.png"; sourceTree = "<group>"; };
+		D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bad Dinner.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Bad Dinner.png"; sourceTree = "<group>"; };
+		D367DC702B0BF39C00A8B6A1 /* Gamenight Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gamenight Logo.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Gamenight Logo.png"; sourceTree = "<group>"; };
+		D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Did you tell them?.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Did you tell them?.png"; sourceTree = "<group>"; };
+		D367DC722B0BF39C00A8B6A1 /* Get Outta Here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Get Outta Here.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Get Outta Here.png"; sourceTree = "<group>"; };
+		D367DC732B0BF39C00A8B6A1 /* Blue Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue Team.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Blue Team.png"; sourceTree = "<group>"; };
+		D367DC742B0BF39C00A8B6A1 /* idk timezones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "idk timezones.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/idk timezones.png"; sourceTree = "<group>"; };
+		D367DC752B0BF39C00A8B6A1 /* Red Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red Team.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Red Team.png"; sourceTree = "<group>"; };
+		D367DC762B0BF39C00A8B6A1 /* It's Intermission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "It's Intermission.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/It's Intermission.png"; sourceTree = "<group>"; };
+		D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2ndPlace.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/2ndPlace.png"; sourceTree = "<group>"; };
+		D367DC782B0BF39C00A8B6A1 /* YouTried.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YouTried.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/YouTried.png"; sourceTree = "<group>"; };
+		D367DC792B0BF39C00A8B6A1 /* Plus Six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Plus Six.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Plus Six.png"; sourceTree = "<group>"; };
+		D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1stPlace.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/1stPlace.png"; sourceTree = "<group>"; };
+		D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Youre Welcome.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Youre Welcome.png"; sourceTree = "<group>"; };
+		D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "I'm so high rn.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/I'm so high rn.png"; sourceTree = "<group>"; };
 		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
 		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -272,26 +232,26 @@
 		D33D0D1E2AD98E4000A5099A /* Stickers */ = {
 			isa = PBXGroup;
 			children = (
-				D33D0D1F2AD98E5500A5099A /* 1stPlace.png */,
-				D33D0D232AD99A2400A5099A /* 2ndPlace.png */,
-				D33D0D222AD99A2300A5099A /* 3rdPlace.png */,
-				D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */,
-				D33D0D2C2AD99CF400A5099A /* Blue Team.png */,
-				D33D0D362AD99CF500A5099A /* Did you tell them?.png */,
-				D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */,
-				D33D0D382AD99CF500A5099A /* Get Outta Here.png */,
-				D33D0D302AD99CF400A5099A /* Good Dinner.png */,
-				D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */,
-				D33D0D312AD99CF400A5099A /* idk timezones.png */,
-				D33D0D2D2AD99CF400A5099A /* It's Gamenight.png */,
-				D33D0D352AD99CF500A5099A /* It's Intermission.png */,
-				D33D0D2F2AD99CF400A5099A /* ‎Let's Coast Logo.png */,
-				D33D0D282AD99CF400A5099A /* Nice Try.png */,
-				D33D0D372AD99CF500A5099A /* Plus Six.png */,
-				D33D0D2E2AD99CF400A5099A /* Red Team.png */,
-				D33D0D322AD99CF400A5099A /* Too Bad.png */,
-				D33D0D332AD99CF500A5099A /* Youre Welcome.png */,
-				D33D0D342AD99CF500A5099A /* YouTried.png */,
+				D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */,
+				D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */,
+				D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */,
+				D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */,
+				D367DC732B0BF39C00A8B6A1 /* Blue Team.png */,
+				D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */,
+				D367DC702B0BF39C00A8B6A1 /* Gamenight Logo.png */,
+				D367DC722B0BF39C00A8B6A1 /* Get Outta Here.png */,
+				D367DC6C2B0BF39C00A8B6A1 /* Good Dinner.png */,
+				D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */,
+				D367DC742B0BF39C00A8B6A1 /* idk timezones.png */,
+				D367DC6E2B0BF39C00A8B6A1 /* It's Gamenight.png */,
+				D367DC762B0BF39C00A8B6A1 /* It's Intermission.png */,
+				D367DC6A2B0BF39C00A8B6A1 /* ‎Let's Coast Logo.png */,
+				D367DC6B2B0BF39C00A8B6A1 /* Nice Try.png */,
+				D367DC792B0BF39C00A8B6A1 /* Plus Six.png */,
+				D367DC752B0BF39C00A8B6A1 /* Red Team.png */,
+				D367DC692B0BF39C00A8B6A1 /* Too Bad.png */,
+				D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */,
+				D367DC782B0BF39C00A8B6A1 /* YouTried.png */,
 			);
 			name = Stickers;
 			path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers";
@@ -376,28 +336,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D367DC2B2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */,
-				D33D0D242AD99A6F00A5099A /* 2ndPlace.png in Resources */,
-				D33D0D452AD99CF500A5099A /* Red Team.png in Resources */,
-				D33D0D4F2AD99CF500A5099A /* Youre Welcome.png in Resources */,
-				D33D0D532AD99CF500A5099A /* It's Intermission.png in Resources */,
-				D33D0D392AD99CF500A5099A /* Nice Try.png in Resources */,
-				D33D0D512AD99CF500A5099A /* YouTried.png in Resources */,
-				D33D0D592AD99CF500A5099A /* Get Outta Here.png in Resources */,
-				D33D0D492AD99CF500A5099A /* Good Dinner.png in Resources */,
 				D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */,
-				D33D0D572AD99CF500A5099A /* Plus Six.png in Resources */,
-				D33D0D432AD99CF500A5099A /* It's Gamenight.png in Resources */,
-				D33D0D202AD98E5500A5099A /* 1stPlace.png in Resources */,
-				D33D0D4D2AD99CF500A5099A /* Too Bad.png in Resources */,
-				D33D0D3F2AD99CF500A5099A /* Bad Dinner.png in Resources */,
-				D33D0D472AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
-				D33D0D552AD99CF500A5099A /* Did you tell them?.png in Resources */,
-				D33D0D3D2AD99CF500A5099A /* I'm so high rn.png in Resources */,
 				D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */,
-				D33D0D412AD99CF500A5099A /* Blue Team.png in Resources */,
-				D33D0D4B2AD99CF500A5099A /* idk timezones.png in Resources */,
-				D33D0D262AD99A7300A5099A /* 3rdPlace.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,29 +345,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D33D0D482AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
-				D367DC2C2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */,
-				D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */,
-				D33D0D442AD99CF500A5099A /* It's Gamenight.png in Resources */,
-				D33D0D3A2AD99CF500A5099A /* Nice Try.png in Resources */,
-				D33D0D252AD99A6F00A5099A /* 2ndPlace.png in Resources */,
-				D33D0D402AD99CF500A5099A /* Bad Dinner.png in Resources */,
-				D33D0D4A2AD99CF500A5099A /* Good Dinner.png in Resources */,
-				D33D0D212AD98E5500A5099A /* 1stPlace.png in Resources */,
-				D33D0D3E2AD99CF500A5099A /* I'm so high rn.png in Resources */,
-				D33D0D462AD99CF500A5099A /* Red Team.png in Resources */,
-				D33D0D4C2AD99CF500A5099A /* idk timezones.png in Resources */,
 				D33D0D0F2AD9888700A5099A /* Assets.xcassets in Resources */,
-				D33D0D502AD99CF500A5099A /* Youre Welcome.png in Resources */,
 				D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */,
 				D33D0D0D2AD9888500A5099A /* MainInterface.storyboard in Resources */,
-				D33D0D562AD99CF500A5099A /* Did you tell them?.png in Resources */,
-				D33D0D5A2AD99CF500A5099A /* Get Outta Here.png in Resources */,
-				D33D0D542AD99CF500A5099A /* It's Intermission.png in Resources */,
-				D33D0D4E2AD99CF500A5099A /* Too Bad.png in Resources */,
-				D33D0D272AD99A7300A5099A /* 3rdPlace.png in Resources */,
-				D33D0D522AD99CF500A5099A /* YouTried.png in Resources */,
-				D33D0D422AD99CF500A5099A /* Blue Team.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +533,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -639,7 +559,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -663,7 +583,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -686,7 +606,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;

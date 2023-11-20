@@ -16,11 +16,6 @@ class SelectPeopleViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadList()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
@@ -46,7 +41,7 @@ class SelectPeopleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = people[indexPath.row]
         
-        person.include.toggle()
+        person.include.toggle() // When tapped, this changes the inlcude property from true to false or vice versa.
         
         tableView.deselectRow(at: indexPath, animated: true)
         
