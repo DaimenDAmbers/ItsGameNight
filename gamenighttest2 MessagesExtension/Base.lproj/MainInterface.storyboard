@@ -135,7 +135,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Input People" id="ot3-CN-gtA">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="done" id="E4J-e3-Bgk">
+                            <barButtonItem title="Send" id="E4J-e3-Bgk">
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="aVB-Bz-hh9" id="UXV-IH-vk9"/>
                                 </connections>

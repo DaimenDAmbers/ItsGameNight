@@ -57,9 +57,9 @@
 		D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D372AD99CF500A5099A /* Plus Six.png */; };
 		D33D0D592AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
 		D33D0D5A2AD99CF500A5099A /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D382AD99CF500A5099A /* Get Outta Here.png */; };
+		D367DC2B2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */; };
+		D367DC2C2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */; };
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
-		D37313662ADF59DD00DC09B6 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D37313652ADF59DD00DC09B6 /* GameNight Logo.png */; };
-		D37313672ADF5A9C00DC09B6 /* GameNight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D37313652ADF59DD00DC09B6 /* GameNight Logo.png */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
@@ -127,8 +127,8 @@
 		D33D0D362AD99CF500A5099A /* Did you tell them?.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Did you tell them?.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Did you tell them?.png"; sourceTree = "<group>"; };
 		D33D0D372AD99CF500A5099A /* Plus Six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Plus Six.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Plus Six.png"; sourceTree = "<group>"; };
 		D33D0D382AD99CF500A5099A /* Get Outta Here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Get Outta Here.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/Get Outta Here.png"; sourceTree = "<group>"; };
+		D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GameNight Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/GameNight Logo.png"; sourceTree = "<group>"; };
 		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
-		D37313652ADF59DD00DC09B6 /* GameNight Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GameNight Logo.png"; path = "../../../../../Documents/People/Game Night/iMessage App/Stickers/GameNight Logo.png"; sourceTree = "<group>"; };
 		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 				D33D0D2B2AD99CF400A5099A /* Bad Dinner.png */,
 				D33D0D2C2AD99CF400A5099A /* Blue Team.png */,
 				D33D0D362AD99CF500A5099A /* Did you tell them?.png */,
-				D37313652ADF59DD00DC09B6 /* GameNight Logo.png */,
+				D367DC2A2B0BBBB900A8B6A1 /* GameNight Logo.png */,
 				D33D0D382AD99CF500A5099A /* Get Outta Here.png */,
 				D33D0D302AD99CF400A5099A /* Good Dinner.png */,
 				D33D0D2A2AD99CF400A5099A /* I'm so high rn.png */,
@@ -376,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D367DC2B2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */,
 				D33D0D242AD99A6F00A5099A /* 2ndPlace.png in Resources */,
 				D33D0D452AD99CF500A5099A /* Red Team.png in Resources */,
 				D33D0D4F2AD99CF500A5099A /* Youre Welcome.png in Resources */,
@@ -390,7 +391,6 @@
 				D33D0D202AD98E5500A5099A /* 1stPlace.png in Resources */,
 				D33D0D4D2AD99CF500A5099A /* Too Bad.png in Resources */,
 				D33D0D3F2AD99CF500A5099A /* Bad Dinner.png in Resources */,
-				D37313672ADF5A9C00DC09B6 /* GameNight Logo.png in Resources */,
 				D33D0D472AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
 				D33D0D552AD99CF500A5099A /* Did you tell them?.png in Resources */,
 				D33D0D3D2AD99CF500A5099A /* I'm so high rn.png in Resources */,
@@ -405,8 +405,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37313662ADF59DD00DC09B6 /* GameNight Logo.png in Resources */,
 				D33D0D482AD99CF500A5099A /* ‎Let's Coast Logo.png in Resources */,
+				D367DC2C2B0BBBB900A8B6A1 /* GameNight Logo.png in Resources */,
 				D33D0D582AD99CF500A5099A /* Plus Six.png in Resources */,
 				D33D0D442AD99CF500A5099A /* It's Gamenight.png in Resources */,
 				D33D0D3A2AD99CF500A5099A /* Nice Try.png in Resources */,
