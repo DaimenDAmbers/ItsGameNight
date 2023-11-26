@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var stickersButton: UIButton!
     @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var randomizerButton: UIButton!
     
     // MARK: Methods
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -47,10 +48,26 @@ class HomeViewController: UIViewController {
                 self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
             }
             
+        case randomizerButton:
+            print("Random button tapped")
+            let vc = SelectPeopleViewController()
+            
+            vc.navigationItem.title = "Randomizer"
+//            let sendButton = UIBarButtonItem(title: "Send", style: .done, target: self, action: #selector(self.didTapDone))
+//            vc.navigationItem.rightBarButtonItems = [sendButton]
+            vc.navigationItem.rightBarButtonItems = []
+            vc.delegate = delegate
+            vc.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")
+
+            let navVC = UINavigationController(rootViewController: vc)
+            
+            self.present(navVC, animated: true, completion: nil)
+            
         default:
             break
         } // End of sender switch statement
     }
+
 }
 
 // MARK: - EKEventEditViewDelegate
@@ -70,7 +87,7 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
     
     /// Sends a message after tapping the `Add` button within the event creation ViewController.
     @objc func didTapAdd() {
-        delegate?.sendMessage(with: invite)
+        delegate?.sendMessage(using: invite)
     }
     
     /// Presents the ViewController after the `Schedule a Game Night` button is tapped
@@ -99,5 +116,15 @@ extension HomeViewController {
         } else {
             return true
         }
+    }
+}
+
+// MARK: Randomizer View Controller
+extension HomeViewController {
+    /// Sends a message after tapping the `Done` button within the randomizer ViewController.
+    @objc func didTapDone() {
+        let people = [Person]()
+        let randomizer = Randomizer(people: people)
+        delegate?.sendMessage(using: randomizer)
     }
 }

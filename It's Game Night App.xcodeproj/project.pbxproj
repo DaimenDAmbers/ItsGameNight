@@ -9,7 +9,47 @@
 /* Begin PBXBuildFile section */
 		D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */; };
 		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
-		D32C9C142AF30FF9000D25CD /* RandomPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* RandomPerson.swift */; };
+		D32C5EA72B13C32700E102D2 /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */; };
+		D32C5EA82B13C32700E102D2 /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */; };
+		D32C5EA92B13C32700E102D2 /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */; };
+		D32C5EAA2B13C32700E102D2 /* Gamenight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC702B0BF39C00A8B6A1 /* Gamenight Logo.png */; };
+		D32C5EAB2B13C32700E102D2 /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC752B0BF39C00A8B6A1 /* Red Team.png */; };
+		D32C5EAC2B13C32700E102D2 /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC692B0BF39C00A8B6A1 /* Too Bad.png */; };
+		D32C5EAD2B13C32700E102D2 /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6B2B0BF39C00A8B6A1 /* Nice Try.png */; };
+		D32C5EAE2B13C32700E102D2 /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6A2B0BF39C00A8B6A1 /* ‎Let's Coast Logo.png */; };
+		D32C5EAF2B13C32700E102D2 /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC722B0BF39C00A8B6A1 /* Get Outta Here.png */; };
+		D32C5EB02B13C32700E102D2 /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */; };
+		D32C5EB12B13C32700E102D2 /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6E2B0BF39C00A8B6A1 /* It's Gamenight.png */; };
+		D32C5EB22B13C32700E102D2 /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC782B0BF39C00A8B6A1 /* YouTried.png */; };
+		D32C5EB32B13C32700E102D2 /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6C2B0BF39C00A8B6A1 /* Good Dinner.png */; };
+		D32C5EB42B13C32700E102D2 /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC762B0BF39C00A8B6A1 /* It's Intermission.png */; };
+		D32C5EB52B13C32700E102D2 /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC742B0BF39C00A8B6A1 /* idk timezones.png */; };
+		D32C5EB62B13C32700E102D2 /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC792B0BF39C00A8B6A1 /* Plus Six.png */; };
+		D32C5EB72B13C32700E102D2 /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */; };
+		D32C5EB82B13C32700E102D2 /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC732B0BF39C00A8B6A1 /* Blue Team.png */; };
+		D32C5EB92B13C32700E102D2 /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */; };
+		D32C5EBA2B13C32700E102D2 /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */; };
+		D32C5EBB2B13C32700E102D2 /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */; };
+		D32C5EBC2B13C32700E102D2 /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */; };
+		D32C5EBD2B13C32700E102D2 /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */; };
+		D32C5EBE2B13C32700E102D2 /* Gamenight Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC702B0BF39C00A8B6A1 /* Gamenight Logo.png */; };
+		D32C5EBF2B13C32700E102D2 /* Red Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC752B0BF39C00A8B6A1 /* Red Team.png */; };
+		D32C5EC02B13C32700E102D2 /* Too Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC692B0BF39C00A8B6A1 /* Too Bad.png */; };
+		D32C5EC12B13C32700E102D2 /* Nice Try.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6B2B0BF39C00A8B6A1 /* Nice Try.png */; };
+		D32C5EC22B13C32700E102D2 /* ‎Let's Coast Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6A2B0BF39C00A8B6A1 /* ‎Let's Coast Logo.png */; };
+		D32C5EC32B13C32700E102D2 /* Get Outta Here.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC722B0BF39C00A8B6A1 /* Get Outta Here.png */; };
+		D32C5EC42B13C32700E102D2 /* I'm so high rn.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */; };
+		D32C5EC52B13C32700E102D2 /* It's Gamenight.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6E2B0BF39C00A8B6A1 /* It's Gamenight.png */; };
+		D32C5EC62B13C32700E102D2 /* YouTried.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC782B0BF39C00A8B6A1 /* YouTried.png */; };
+		D32C5EC72B13C32700E102D2 /* Good Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6C2B0BF39C00A8B6A1 /* Good Dinner.png */; };
+		D32C5EC82B13C32700E102D2 /* It's Intermission.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC762B0BF39C00A8B6A1 /* It's Intermission.png */; };
+		D32C5EC92B13C32700E102D2 /* idk timezones.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC742B0BF39C00A8B6A1 /* idk timezones.png */; };
+		D32C5ECA2B13C32700E102D2 /* Plus Six.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC792B0BF39C00A8B6A1 /* Plus Six.png */; };
+		D32C5ECB2B13C32700E102D2 /* Youre Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */; };
+		D32C5ECC2B13C32700E102D2 /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC732B0BF39C00A8B6A1 /* Blue Team.png */; };
+		D32C5ECD2B13C32700E102D2 /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */; };
+		D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */; };
+		D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* Randomizer.swift */; };
 		D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
 		D33D0D022AD9888500A5099A /* It's Game Night.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D33D0D012AD9888500A5099A /* It's Game Night.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33D0D062AD9888500A5099A /* Messages.framework */; };
@@ -22,6 +62,7 @@
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
+		D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
@@ -58,7 +99,7 @@
 /* Begin PBXFileReference section */
 		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		D32C9C132AF30FF9000D25CD /* RandomPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPerson.swift; sourceTree = "<group>"; };
+		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33D0CFB2AD9888500A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33D0D012AD9888500A5099A /* It's Game Night.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "It's Game Night.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +132,7 @@
 		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
 		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B792B2B0ADEE6007606C8 /* Person.swift */,
-				D32C9C132AF30FF9000D25CD /* RandomPerson.swift */,
+				D32C9C132AF30FF9000D25CD /* Randomizer.swift */,
 			);
 			path = "Random Person Model";
 			sourceTree = "<group>";
@@ -153,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */,
+				D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */,
 			);
 			path = "Random Person Views";
 			sourceTree = "<group>";
@@ -336,8 +379,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32C5EB52B13C32700E102D2 /* idk timezones.png in Resources */,
+				D32C5EB02B13C32700E102D2 /* I'm so high rn.png in Resources */,
+				D32C5EA82B13C32700E102D2 /* 2ndPlace.png in Resources */,
+				D32C5EB12B13C32700E102D2 /* It's Gamenight.png in Resources */,
+				D32C5EBA2B13C32700E102D2 /* Bad Dinner.png in Resources */,
+				D32C5EB42B13C32700E102D2 /* It's Intermission.png in Resources */,
+				D32C5EB62B13C32700E102D2 /* Plus Six.png in Resources */,
 				D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */,
+				D32C5EB82B13C32700E102D2 /* Blue Team.png in Resources */,
+				D32C5EB22B13C32700E102D2 /* YouTried.png in Resources */,
+				D32C5EB32B13C32700E102D2 /* Good Dinner.png in Resources */,
+				D32C5EAE2B13C32700E102D2 /* ‎Let's Coast Logo.png in Resources */,
+				D32C5EB72B13C32700E102D2 /* Youre Welcome.png in Resources */,
 				D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */,
+				D32C5EAB2B13C32700E102D2 /* Red Team.png in Resources */,
+				D32C5EAD2B13C32700E102D2 /* Nice Try.png in Resources */,
+				D32C5EAF2B13C32700E102D2 /* Get Outta Here.png in Resources */,
+				D32C5EB92B13C32700E102D2 /* 1stPlace.png in Resources */,
+				D32C5EA92B13C32700E102D2 /* Did you tell them?.png in Resources */,
+				D32C5EAA2B13C32700E102D2 /* Gamenight Logo.png in Resources */,
+				D32C5EA72B13C32700E102D2 /* 3rdPlace.png in Resources */,
+				D32C5EAC2B13C32700E102D2 /* Too Bad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +408,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32C5EBC2B13C32700E102D2 /* 2ndPlace.png in Resources */,
+				D32C5ECA2B13C32700E102D2 /* Plus Six.png in Resources */,
+				D32C5EC62B13C32700E102D2 /* YouTried.png in Resources */,
+				D32C5EBF2B13C32700E102D2 /* Red Team.png in Resources */,
+				D32C5EC32B13C32700E102D2 /* Get Outta Here.png in Resources */,
 				D33D0D0F2AD9888700A5099A /* Assets.xcassets in Resources */,
+				D32C5EC52B13C32700E102D2 /* It's Gamenight.png in Resources */,
+				D32C5ECC2B13C32700E102D2 /* Blue Team.png in Resources */,
+				D32C5ECD2B13C32700E102D2 /* 1stPlace.png in Resources */,
+				D32C5EC92B13C32700E102D2 /* idk timezones.png in Resources */,
+				D32C5EC12B13C32700E102D2 /* Nice Try.png in Resources */,
+				D32C5EBB2B13C32700E102D2 /* 3rdPlace.png in Resources */,
+				D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */,
+				D32C5EBD2B13C32700E102D2 /* Did you tell them?.png in Resources */,
 				D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */,
+				D32C5ECB2B13C32700E102D2 /* Youre Welcome.png in Resources */,
 				D33D0D0D2AD9888500A5099A /* MainInterface.storyboard in Resources */,
+				D32C5EC72B13C32700E102D2 /* Good Dinner.png in Resources */,
+				D32C5EBE2B13C32700E102D2 /* Gamenight Logo.png in Resources */,
+				D32C5EC22B13C32700E102D2 /* ‎Let's Coast Logo.png in Resources */,
+				D32C5EC42B13C32700E102D2 /* I'm so high rn.png in Resources */,
+				D32C5EC02B13C32700E102D2 /* Too Bad.png in Resources */,
+				D32C5EC82B13C32700E102D2 /* It's Intermission.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +444,8 @@
 				D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */,
 				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
 				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
-				D32C9C142AF30FF9000D25CD /* RandomPerson.swift in Sources */,
+				D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */,
+				D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */,
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,

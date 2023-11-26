@@ -51,8 +51,9 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Select a Random Person">
+                                                <fragment content="Game Night Randomizer">
                                                     <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="16" name="Arial-BoldMT"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
@@ -63,7 +64,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonTapped:" destination="oNa-lt-wHS" eventType="touchUpInside" id="rwW-hl-Onp"/>
-                                            <segue destination="vw2-r0-fbb" kind="presentation" id="W8C-ax-dq1"/>
+                                            <segue destination="aVB-Bz-hh9" kind="presentation" id="j9O-Xq-eDD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
@@ -102,6 +103,7 @@
                     <navigationItem key="navigationItem" title="It's Game Night" largeTitleDisplayMode="never" id="42M-A1-uVF"/>
                     <connections>
                         <outlet property="calendarButton" destination="ycE-un-zaC" id="08Z-iW-Va7"/>
+                        <outlet property="randomizerButton" destination="ob5-rS-ctH" id="42L-Ki-CcW"/>
                         <outlet property="stickersButton" destination="4TT-Ix-pUv" id="QMp-3p-sDV"/>
                     </connections>
                 </viewController>
@@ -109,12 +111,12 @@
             </objects>
             <point key="canvasLocation" x="2203" y="-29"/>
         </scene>
-        <!--Input People-->
+        <!--Select to Randomize-->
         <scene sceneID="Agh-c6-Han">
             <objects>
-                <tableViewController storyboardIdentifier="SelectPeopleViewController" id="aVB-Bz-hh9" customClass="SelectPeopleViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SelectPeopleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aVB-Bz-hh9" customClass="SelectPeopleViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Iio-fx-Wva">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -133,20 +135,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Input People" id="ot3-CN-gtA">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Send" id="E4J-e3-Bgk">
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="aVB-Bz-hh9" id="UXV-IH-vk9"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="xc6-dR-TYH">
-                                <connections>
-                                    <action selector="addButtonPressed:" destination="aVB-Bz-hh9" id="X3Z-a0-vdi"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Select to Randomize" id="ot3-CN-gtA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd8-dp-2t1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -281,13 +270,13 @@
             </objects>
             <point key="canvasLocation" x="3022" y="749"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="hye-Z1-LMS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vw2-r0-fbb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vw2-r0-fbb" customClass="NavViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8O-ZM-ECh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -297,11 +286,39 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVI-SP-Xqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3021.739130434783" y="-29.464285714285712"/>
+            <point key="canvasLocation" x="2988" y="-29"/>
+        </scene>
+        <!--Randomizer View Controller-->
+        <scene sceneID="pa3-To-Hrd">
+            <objects>
+                <viewController storyboardIdentifier="RandomizerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuN-jP-NAh" customClass="RandomizerViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TkI-zL-xMX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-nl-MW9">
+                                <rect key="frame" x="20" y="394" width="374" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mhR-xT-fUB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="randomPersonLabel" destination="Ruk-nl-MW9" id="owA-n6-mjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sI3-mu-GUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4479.7101449275369" y="-29.464285714285712"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4LT-eR-j20"/>
+        <segue reference="GHS-2Q-2Xu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="folder" catalog="system" width="128" height="96"/>

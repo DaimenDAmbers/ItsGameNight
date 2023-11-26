@@ -9,5 +9,6 @@ import Foundation
 
 class Person: Codable {
     var name: String = ""
-    var include: Bool = true
+    var isIncluded: Bool = true
+    var isSelected: Bool = false
 }

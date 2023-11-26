@@ -8,15 +8,24 @@
 import UIKit
 
 class SelectPeopleViewController: UITableViewController {
+    
+    // MARK: Variables
     static let storyboardIdentifier = "SelectPeopleViewController"
+    /// Used to pass down delegation to next viewController.
+    weak var delegate: MessageDelegate?
     var people = [Person]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("People.plist")
-//    print(dataFilePath)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadList()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addButtonPressed))
+        let sendButton = UIBarButtonItem(title: "Send", style: .done, target: self, action: #selector(self.sendButtonPressed))
+        
+        self.navigationItem.rightBarButtonItems?.append(sendButton)
+        self.navigationItem.rightBarButtonItems?.append(addButton)
+        
     }
 
     // MARK: - Table view data source
@@ -33,7 +42,7 @@ class SelectPeopleViewController: UITableViewController {
         let person = people[indexPath.row]
         cell.textLabel?.text = person.name
         
-        cell.accessoryType = person.include == true ? .checkmark : .none // Ternary operator for setting the accessory type
+        cell.accessoryType = person.isIncluded == true ? .checkmark : .none // Ternary operator for setting the accessory type
 
         return cell
     }
@@ -41,7 +50,7 @@ class SelectPeopleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = people[indexPath.row]
         
-        person.include.toggle() // When tapped, this changes the inlcude property from true to false or vice versa.
+        person.isIncluded.toggle() // When tapped, this changes the inlcude property from true to false or vice versa.
         
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -51,7 +60,27 @@ class SelectPeopleViewController: UITableViewController {
         
     }
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            people.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+        
+        saveList()
+        tableView.reloadData()
+    }
+    
+    @objc func addButtonPressed() {
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add a new name", message: "", preferredStyle: .alert)
@@ -68,20 +97,27 @@ class SelectPeopleViewController: UITableViewController {
             self.tableView.reloadData()
         }
         
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
         alert.addTextField { alertTextField in
             alertTextField.placeholder = "John Doe"
             textField = alertTextField
         }
         
         alert.addAction(action)
+        alert.addAction(cancel)
         
         present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+                                         
+    @objc func sendButtonPressed() {
+        let randomizer = Randomizer(people: self.people)
+        randomizer?.chooseRandomPerson()
+        delegate?.sendMessage(using: randomizer) // FIXME: Cannot get the delegation to work with the Nav View Controller. [DONE]
         print("Done Button Pressed")
-    }
-    
+        }
+                                             
+    // MARK: - Private Methods
     private func saveList() {
         let encoder = PropertyListEncoder()
         
@@ -106,51 +142,5 @@ class SelectPeopleViewController: UITableViewController {
         }
         print("Loaded list successfully")
     }
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            people.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-        
-        saveList()
-        tableView.reloadData()
-    }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

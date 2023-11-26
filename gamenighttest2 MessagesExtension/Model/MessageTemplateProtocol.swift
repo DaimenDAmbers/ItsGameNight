@@ -13,4 +13,7 @@ protocol MessageTemplateProtocol {
     var image: UIImage {get}
     var caption: String {get}
     var subCaption: String {get}
+    
+    var queryItems: [URLQueryItem] {get}
+    init?(queryItems: [URLQueryItem])
 }

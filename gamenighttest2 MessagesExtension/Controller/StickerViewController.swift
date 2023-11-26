@@ -16,7 +16,7 @@ class StickerViewController: MSStickerBrowserViewController {
         super.viewDidLoad()
         
         self.title = "Stickers"
-        createSticker(asset: "GameNight Logo", localizedDescription: "Game Night Logo")
+        createSticker(asset: "Gamenight Logo", localizedDescription: "Game Night Logo")
         createSticker(asset: "It's Gamenight", localizedDescription: "It's Gamenight")
         createSticker(asset: "It's Intermission", localizedDescription: "It's Intermission")
         createSticker(asset: "1stPlace", localizedDescription: "1st Place")
