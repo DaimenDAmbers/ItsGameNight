@@ -13,7 +13,12 @@ class RandomizerViewController: UIViewController {
     static let storyboardIdentifier = "RandomizerViewController"
     weak var delegate: MessageDelegate?
     var randomizer: Randomizer?
+    let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemPink, .systemTeal, .systemMint,  .magenta, .systemIndigo]
+    
+//    let pieChartView = PieChartView()
 
+    @IBOutlet weak var pieChartView: PieChartView!
+    
     @IBOutlet weak var randomPersonLabel: UILabel!
     
     override func viewDidLoad() {
@@ -30,18 +35,12 @@ class RandomizerViewController: UIViewController {
                 randomPersonLabel.text = label
             }
         }
-        // Do any additional setup after loading the view.
+
+        for i in 0..<people.count {
+            let segment = Segment(name: people[i].name, color: colors[i % colors.count])
+            pieChartView.segments.append(segment)
+        }
+
+        view.addSubview(pieChartView)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -49,6 +49,7 @@
 		D32C5ECC2B13C32700E102D2 /* Blue Team.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC732B0BF39C00A8B6A1 /* Blue Team.png */; };
 		D32C5ECD2B13C32700E102D2 /* 1stPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */; };
 		D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */; };
+		D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */; };
 		D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* Randomizer.swift */; };
 		D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
 		D33D0D022AD9888500A5099A /* It's Game Night.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D33D0D012AD9888500A5099A /* It's Game Night.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -99,6 +100,7 @@
 /* Begin PBXFileReference section */
 		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33D0CFB2AD9888500A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,13 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D30B792D2B0ADF5E007606C8 /* Random Person Model */ = {
+		D30B792D2B0ADF5E007606C8 /* Game Night Randomizer Model */ = {
 			isa = PBXGroup;
 			children = (
 				D30B792B2B0ADEE6007606C8 /* Person.swift */,
 				D32C9C132AF30FF9000D25CD /* Randomizer.swift */,
+				D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */,
 			);
-			path = "Random Person Model";
+			path = "Game Night Randomizer Model";
 			sourceTree = "<group>";
 		};
 		D30B792E2B0AF256007606C8 /* Calendar Model */ = {
@@ -191,13 +194,13 @@
 			path = "Calendar Views";
 			sourceTree = "<group>";
 		};
-		D30B79312B0AF2BC007606C8 /* Random Person Views */ = {
+		D30B79312B0AF2BC007606C8 /* Game Night Randomizer Views */ = {
 			isa = PBXGroup;
 			children = (
 				D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */,
 				D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */,
 			);
-			path = "Random Person Views";
+			path = "Game Night Randomizer Views";
 			sourceTree = "<group>";
 		};
 		D312A62F2AE8269100A3C54D /* Model */ = {
@@ -207,7 +210,7 @@
 				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
 				D30B792F2B0AF272007606C8 /* Supporting Files */,
 				D30B792E2B0AF256007606C8 /* Calendar Model */,
-				D30B792D2B0ADF5E007606C8 /* Random Person Model */,
+				D30B792D2B0ADF5E007606C8 /* Game Night Randomizer Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B79302B0AF2B0007606C8 /* Calendar Views */,
-				D30B79312B0AF2BC007606C8 /* Random Person Views */,
+				D30B79312B0AF2BC007606C8 /* Game Night Randomizer Views */,
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
@@ -454,6 +457,7 @@
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
 				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,
+				D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
