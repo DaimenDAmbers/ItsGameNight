@@ -80,6 +80,7 @@ class SelectPeopleViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    /// This is the plus (+) button on the Randomizer Model Popup
     @objc func addButtonPressed() {
         var textField = UITextField()
         
@@ -109,15 +110,18 @@ class SelectPeopleViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
-                                         
+    
+    /// This is the `Send` button on the Randomizer Modal Popup
     @objc func sendButtonPressed() {
         let randomizer = Randomizer(people: self.people)
         randomizer?.chooseRandomPerson()
-        delegate?.sendMessage(using: randomizer) // FIXME: Cannot get the delegation to work with the Nav View Controller. [DONE]
+        delegate?.sendMessage(using: randomizer)
         print("Done Button Pressed")
         }
                                              
     // MARK: - Private Methods
+    
+    /// Saves the list using a `PropertyListEncoder`
     private func saveList() {
         let encoder = PropertyListEncoder()
         
@@ -131,6 +135,8 @@ class SelectPeopleViewController: UITableViewController {
         print("Saved list successfully")
     }
     
+    
+    /// Loads the list using a `PropertyListDecoder`
     private func loadList() {
         if let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()

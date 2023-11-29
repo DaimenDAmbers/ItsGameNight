@@ -14,6 +14,9 @@ class Segment {
     
     // name of the segment
     var name: String
+    
+    // selected segment
+    var isSelected: Bool
 
     // the value of a given segment – will be used to automatically calculate a ratio
     var value: CGFloat {
@@ -23,9 +26,10 @@ class Segment {
     
     static var numOfSegments: Int = 0
     
-    init(name: String, color: UIColor) {
+    init(name: String, color: UIColor, isSelected: Bool) {
         self.name = name
         self.color = color
+        self.isSelected = isSelected
         Segment.numOfSegments += 1
     }
     
@@ -42,6 +46,8 @@ class PieChartView: UIView {
             setNeedsDisplay() // re-draw view when the values get set
         }
     }
+    
+    var selectedSegmentPoint: CGPoint = CGPoint(x: 0, y: 0)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,6 +106,11 @@ class PieChartView: UIView {
             let midAngle = (startAngle + endAngle) / 2
             let textCenter = CGPoint(x: cos(midAngle) * radius * 0.60 + viewCenter.x, y: sin(midAngle) * radius * 0.60 + viewCenter.y)
             
+            if segment.isSelected {
+                selectedSegmentPoint = textCenter
+                print("Here is the value for the selected segment: \(selectedSegmentPoint)")
+            }
+            
             // The text label (adjust as needed)
             let label = segment.name
             
@@ -130,7 +141,8 @@ class PieChartView: UIView {
         let duration: Double = 3.0
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotationAnimation.toValue = CGFloat(.pi/2 * rotations * duration)
+//        rotationAnimation.toValue = CGFloat(.pi/2 * rotations * duration)
+        rotationAnimation.toValue = selectedSegmentPoint
         rotationAnimation.duration = duration
         rotationAnimation.isCumulative = false
         rotationAnimation.repeatCount = 1
