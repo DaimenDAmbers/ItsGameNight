@@ -35,7 +35,11 @@ struct Randomizer: MessageTemplateProtocol {
 extension Randomizer {
     
     func chooseRandomPerson() {
-        guard let randomPerson = people.randomElement() else { return }
+        guard var randomPerson = people.randomElement() else { return }
+        
+        while randomPerson.isIncluded == false {
+            randomPerson = people.randomElement()!
+        }
         
         print("The person that was selected is: \(randomPerson.name)")
         randomPerson.isSelected = true

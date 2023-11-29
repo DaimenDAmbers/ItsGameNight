@@ -291,36 +291,51 @@
         <!--Randomizer View Controller-->
         <scene sceneID="pa3-To-Hrd">
             <objects>
-                <viewController storyboardIdentifier="RandomizerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuN-jP-NAh" customClass="RandomizerViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RandomizerViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zuN-jP-NAh" customClass="RandomizerViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TkI-zL-xMX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WE-Nq-NSA" customClass="PieChartView" customModule="It_s_Game_Night" customModuleProvider="target">
-                                <rect key="frame" x="20" y="48" width="374" height="635"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-Mh-eTI" userLabel="Button Stack View">
+                                <rect key="frame" x="57" y="748" width="300" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-nl-MW9">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIE-HO-xra">
+                                        <rect key="frame" x="0.0" y="35.5" width="300" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Spin!"/>
+                                        <connections>
+                                            <action selector="spinWheel:" destination="zuN-jP-NAh" eventType="touchUpInside" id="5gt-Ko-ew1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="sMr-4V-B7d"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-bB-XfT" userLabel="WheelView" customClass="PieChartView" customModule="It_s_Game_Night" customModuleProvider="target">
+                                <rect key="frame" x="20" y="48" width="374" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-nl-MW9">
-                                <rect key="frame" x="20" y="738.5" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mhR-xT-fUB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6WE-Nq-NSA" firstAttribute="centerY" secondItem="TkI-zL-xMX" secondAttribute="centerY" constant="-82.5" id="Ceq-db-l31"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="Ruk-nl-MW9" secondAttribute="bottom" constant="103" id="Hgl-p2-RxD"/>
-                            <constraint firstItem="6WE-Nq-NSA" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="T6v-9A-YGX"/>
-                            <constraint firstItem="Ruk-nl-MW9" firstAttribute="top" secondItem="6WE-Nq-NSA" secondAttribute="bottom" constant="56" id="hUM-As-rZz"/>
-                            <constraint firstItem="6WE-Nq-NSA" firstAttribute="leading" secondItem="Ruk-nl-MW9" secondAttribute="leading" id="q9z-gh-of3"/>
-                            <constraint firstItem="6WE-Nq-NSA" firstAttribute="leading" secondItem="TkI-zL-xMX" secondAttribute="leadingMargin" id="vn6-P7-PIl"/>
-                            <constraint firstItem="6WE-Nq-NSA" firstAttribute="trailing" secondItem="Ruk-nl-MW9" secondAttribute="trailing" id="wCX-j2-OG6"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="1jC-U5-EQD"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="top" secondItem="mhR-xT-fUB" secondAttribute="top" id="Huh-Jz-VUp"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="leading" secondItem="TkI-zL-xMX" secondAttribute="leadingMargin" id="Jqe-II-zqS"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="zBP-Mh-eTI" secondAttribute="bottom" constant="44" id="OaW-f2-3PX"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="OfW-cv-2jr"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="25" id="g9S-kt-87i"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pieChartView" destination="6WE-Nq-NSA" id="Rzr-Dw-kIb"/>
+                        <outlet property="pieChartView" destination="fRM-bB-XfT" id="KOL-YN-8Vb"/>
                         <outlet property="randomPersonLabel" destination="Ruk-nl-MW9" id="owA-n6-mjB"/>
                     </connections>
                 </viewController>

@@ -103,20 +103,42 @@ class PieChartView: UIView {
             // The text label (adjust as needed)
             let label = segment.name
             
+            
             // Calculate the bounding box and adjust for the center location
             var rect = label.boundingRect(with: CGSize(width: 1000, height: 1000), attributes: textAttrs, context: nil)
             rect.origin.x = textCenter.x - rect.size.width / 2
             rect.origin.y = textCenter.y - rect.size.height / 2
             
+//            ctx?.saveGState()
+//            ctx?.rotate(by: endAngle)
+            
             label.draw(in: rect, withAttributes: textAttrs)
+            
             UIGraphicsPopContext()
+            
+//            ctx?.restoreGState()
+            
 
             // update starting angle of the next segment to the ending angle of this segment
             startAngle = endAngle
         }
             
+    }
+    
+    func rotatePieChart() {
+        let rotations: Double = 5
+        let duration: Double = 3.0
         
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.toValue = CGFloat(.pi/2 * rotations * duration)
+        rotationAnimation.duration = duration
+        rotationAnimation.isCumulative = false
+        rotationAnimation.repeatCount = 1
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        rotationAnimation.fillMode = CAMediaTimingFillMode.forwards
+        rotationAnimation.isRemovedOnCompletion = false
         
+        self.layer.add(rotationAnimation, forKey: "transform.rotation")
     }
 }
 

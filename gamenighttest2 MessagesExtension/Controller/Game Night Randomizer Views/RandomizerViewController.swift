@@ -14,8 +14,6 @@ class RandomizerViewController: UIViewController {
     weak var delegate: MessageDelegate?
     var randomizer: Randomizer?
     let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemPink, .systemTeal, .systemMint,  .magenta, .systemIndigo]
-    
-//    let pieChartView = PieChartView()
 
     @IBOutlet weak var pieChartView: PieChartView!
     
@@ -27,6 +25,22 @@ class RandomizerViewController: UIViewController {
         guard let unwrappedRandomizer = randomizer else { fatalError("No Randomized Message.") }
 
         let people = unwrappedRandomizer.people
+        showSelectedPerson(from: people)
+
+        for i in 0..<people.count {
+            let segment = Segment(name: people[i].name, color: colors[i % colors.count])
+            pieChartView.segments.append(segment)
+        }
+        
+        pieChartView.backgroundColor = UIColor.clear
+        view.addSubview(pieChartView)
+    }
+    
+    @IBAction func spinWheel(_ sender: UIButton) {
+        pieChartView.rotatePieChart()
+    }
+    
+    private func showSelectedPerson(from people: [Person]) {
         for person in people {
             
             print("The isSelected value for \(person.name) was set to \(person.isSelected)")
@@ -35,12 +49,6 @@ class RandomizerViewController: UIViewController {
                 randomPersonLabel.text = label
             }
         }
-
-        for i in 0..<people.count {
-            let segment = Segment(name: people[i].name, color: colors[i % colors.count])
-            pieChartView.segments.append(segment)
-        }
-
-        view.addSubview(pieChartView)
     }
+    
 }
