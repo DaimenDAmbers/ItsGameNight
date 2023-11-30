@@ -52,6 +52,7 @@ class PieChartView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isOpaque = false // when overriding drawRect, you must specify this to maintain transparency.
+        self.backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {

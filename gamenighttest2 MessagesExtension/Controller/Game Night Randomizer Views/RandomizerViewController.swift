@@ -16,6 +16,7 @@ class RandomizerViewController: UIViewController {
     let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemPink, .systemTeal, .systemMint,  .magenta, .systemIndigo]
 
     @IBOutlet weak var pieChartView: PieChartView!
+//    var triangleView = TriangleView()
     
     @IBOutlet weak var randomPersonLabel: UILabel!
     
@@ -32,8 +33,10 @@ class RandomizerViewController: UIViewController {
             pieChartView.segments.append(segment)
         }
         
-        pieChartView.backgroundColor = UIColor.clear
-        view.addSubview(pieChartView)
+        let middleOfPieCircle = CGRect(x: pieChartView.frame.width, y: pieChartView.frame.height/2, width: 30, height: 30)
+        let triangleView = TriangleView(frame: middleOfPieCircle)
+        
+        view.addSubview(triangleView)
     }
     
     @IBAction func spinWheel(_ sender: UIButton) {
@@ -50,5 +53,4 @@ class RandomizerViewController: UIViewController {
             }
         }
     }
-    
 }
