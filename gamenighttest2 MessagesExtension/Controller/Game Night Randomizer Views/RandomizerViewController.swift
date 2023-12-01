@@ -33,7 +33,7 @@ class RandomizerViewController: UIViewController {
             pieChartView.segments.append(segment)
         }
         
-        let middleOfPieCircle = CGRect(x: pieChartView.frame.width, y: pieChartView.frame.height/2, width: 30, height: 30)
+        let middleOfPieCircle = CGRect(x: pieChartView.frame.width, y: pieChartView.frame.height/4, width: 30, height: 30)
         let triangleView = TriangleView(frame: middleOfPieCircle)
         
         view.addSubview(triangleView)

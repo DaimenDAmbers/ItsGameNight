@@ -47,7 +47,7 @@ class PieChartView: UIView {
         }
     }
     
-    var selectedSegmentPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var selectedSegmentPoint: CGFloat = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -108,7 +108,8 @@ class PieChartView: UIView {
             let textCenter = CGPoint(x: cos(midAngle) * radius * 0.60 + viewCenter.x, y: sin(midAngle) * radius * 0.60 + viewCenter.y)
             
             if segment.isSelected {
-                selectedSegmentPoint = textCenter
+                selectedSegmentPoint = midAngle
+                print("Start Angle: \(startAngle) and end angle: \(endAngle)")
                 print("Here is the value for the selected segment: \(selectedSegmentPoint)")
             }
             
@@ -138,12 +139,22 @@ class PieChartView: UIView {
     }
     
     func rotatePieChart() {
-        let rotations: Double = 5
-        let duration: Double = 3.0
+        
+        // Equation: selectedSegment = pi/2
+        let oneRotation: Double = 2 * .pi
+        let numOfRotations: Double = 6
+        let duration: Double = 8.0
+        var quadrant = Quardrants.one
+        
+        let selectedPoint = CGFloat(selectedSegmentPoint)
+        quadrant = quadrant.checkQuadrant(value: selectedPoint)
+        let rotateToValue = 2 * quadrant.rawValue - selectedPoint
+        
+        print("This is the quadrant: \(quadrant), \(quadrant.rawValue)")
+        print("Selected Point: \(selectedPoint)")
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotationAnimation.toValue = CGFloat(.pi/2 * rotations * duration)
-        rotationAnimation.toValue = selectedSegmentPoint
+        rotationAnimation.toValue = rotateToValue + (numOfRotations * oneRotation)
         rotationAnimation.duration = duration
         rotationAnimation.isCumulative = false
         rotationAnimation.repeatCount = 1
@@ -156,3 +167,31 @@ class PieChartView: UIView {
 }
 
 
+enum Quardrants: Double {
+    case one, two, three, four
+    
+    var rawValue: Double {
+        switch self {
+        case .one:
+            return 0
+        case .two:
+            return .pi
+        case .three:
+            return 3 * .pi/2
+        case .four:
+            return 2 * .pi
+        }
+    }
+    
+    func checkQuadrant(value: Double) -> Quardrants {
+        if value > Quardrants.one.rawValue && value < Quardrants.two.rawValue {
+            return Quardrants.one
+        } else if value > Quardrants.two.rawValue && value < Quardrants.three.rawValue {
+            return Quardrants.two
+        } else if value > Quardrants.three.rawValue && value < Quardrants.four.rawValue {
+            return Quardrants.three
+        } else {
+            return Quardrants.four
+        }
+    }
+}
