@@ -101,7 +101,7 @@ class SelectPeopleViewController: UITableViewController {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addTextField { alertTextField in
-            alertTextField.placeholder = "John Doe"
+            alertTextField.autocapitalizationType = .words
             textField = alertTextField
         }
         

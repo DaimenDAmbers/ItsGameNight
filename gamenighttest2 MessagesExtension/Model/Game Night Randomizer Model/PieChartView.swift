@@ -142,7 +142,7 @@ class PieChartView: UIView {
         
         // Equation: selectedSegment = pi/2
         let oneRotation: Double = 2 * .pi
-        let numOfRotations: Double = 6
+        let numOfRotations: Double = 7
         let duration: Double = 8.0
         var quadrant = Quardrants.one
         
