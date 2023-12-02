@@ -20,11 +20,11 @@ struct Randomizer: MessageTemplateProtocol {
     }
     
     var caption: String {
-        return "Game Night Randomizer"
+        return "Randomizer"
     }
     
     var subCaption: String {
-        return "A person from the group was selected at random."
+        return "Open to see what was selected at random"
     }
     
     init?(people: [Person]) {

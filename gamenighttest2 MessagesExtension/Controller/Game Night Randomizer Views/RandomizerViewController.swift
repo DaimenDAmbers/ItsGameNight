@@ -13,10 +13,9 @@ class RandomizerViewController: UIViewController {
     static let storyboardIdentifier = "RandomizerViewController"
     weak var delegate: MessageDelegate?
     var randomizer: Randomizer?
-    let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemPink, .systemTeal, .systemMint,  .magenta, .systemIndigo]
+    let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemMint, .magenta, .systemIndigo, .systemTeal]
 
     @IBOutlet weak var pieChartView: PieChartView!
-//    var triangleView = TriangleView()
     
     @IBOutlet weak var randomPersonLabel: UILabel!
     
@@ -33,8 +32,11 @@ class RandomizerViewController: UIViewController {
             pieChartView.segments.append(segment)
         }
         
-        let middleOfPieCircle = CGRect(x: pieChartView.frame.width, y: pieChartView.frame.height/4, width: 30, height: 30)
+        // TODO: The position of the triangle view is hard coded in. Needs to be fixed
+        let middleOfPieCircle = CGRect(x: pieChartView.bounds.size.width, y: pieChartView.bounds.size.height/2+38, width: 30, height: 30)
         let triangleView = TriangleView(frame: middleOfPieCircle)
+        print("Triangle's Center: \(triangleView.center)")
+        print("Pie's Center: \(pieChartView.center)")
         
         view.addSubview(triangleView)
     }
@@ -45,8 +47,6 @@ class RandomizerViewController: UIViewController {
     
     private func showSelectedPerson(from people: [Person]) {
         for person in people {
-            
-            print("The isSelected value for \(person.name) was set to \(person.isSelected)")
             if person.isSelected {
                 let label = "\(person.name) is the winner!"
                 randomPersonLabel.text = label

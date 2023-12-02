@@ -3,4 +3,131 @@
    uuid = "B492AA89-6620-48BB-BD43-A89D0B33B1DC"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "347D5FD3-5914-4EA8-84FF-0142C0B09D64"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gamenighttest2 MessagesExtension/Controller/Game Night Randomizer Views/RandomizerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "453EDA04-0ED5-41AF-8B0E-D3AC9B9DF6F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gamenighttest2 MessagesExtension/Controller/Game Night Randomizer Views/RandomizerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gamenighttest2 MessagesExtension/Controller/Game Night Randomizer Views/RandomizerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89 - cc8fa58dc971e894"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.RandomizerViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/Game%20Night%20Randomizer%20Views/RandomizerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3364">
+               </Location>
+               <Location
+                  uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89 - cc8fa58dc971e894"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.RandomizerViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/Game%20Night%20Randomizer%20Views/RandomizerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3668">
+               </Location>
+               <Location
+                  uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89 - cc8fa58dc971e894"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.RandomizerViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/Game%20Night%20Randomizer%20Views/RandomizerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3756">
+               </Location>
+               <Location
+                  uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89 - cc8fa58dc971e894"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.RandomizerViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/Game%20Night%20Randomizer%20Views/RandomizerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3216">
+               </Location>
+               <Location
+                  uuid = "3E290305-64B6-4C8E-9034-AC53896D3D89 - cc8fa58dc971e894"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.RandomizerViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/Game%20Night%20Randomizer%20Views/RandomizerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

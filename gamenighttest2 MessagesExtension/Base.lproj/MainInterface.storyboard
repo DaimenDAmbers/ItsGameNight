@@ -297,43 +297,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-bB-XfT" userLabel="WheelView" customClass="PieChartView" customModule="It_s_Game_Night" customModuleProvider="target">
-                                <rect key="frame" x="20" y="48" width="374" height="580"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="20" y="96" width="374" height="532"/>
+                                <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-a6-reA">
+                                <rect key="frame" x="20" y="48" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="m1j-iH-PQo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-Mh-eTI" userLabel="Button Stack View">
-                                <rect key="frame" x="57" y="706" width="300" height="70"/>
+                                <rect key="frame" x="57" y="705" width="300" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-nl-MW9">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIE-HO-xra">
                                         <rect key="frame" x="0.0" y="35.5" width="300" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Spin!"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Spin!"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Spin!">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="lightTextColor"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="spinWheel:" destination="zuN-jP-NAh" eventType="touchUpInside" id="5gt-Ko-ew1"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="lfi-Df-Wtx"/>
+                                    <constraint firstAttribute="width" constant="300" id="Ojb-jl-ayy"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mhR-xT-fUB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="78" id="6N1-Ff-fMd"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="fRM-bB-XfT" secondAttribute="trailing" constant="20" id="7fw-aR-8WJ"/>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="78" id="8xG-6a-7DB"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="EZX-IX-Vev"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="Kg8-Cl-vC9"/>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="Os4-20-Hul"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="top" secondItem="mhR-xT-fUB" secondAttribute="top" id="Oyh-8l-pUJ"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="zBP-Mh-eTI" secondAttribute="bottom" constant="86" id="aIP-UR-RoM"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="77" id="3x8-9C-42W"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="top" secondItem="YcZ-a6-reA" secondAttribute="bottom" constant="8" id="6nY-SR-pL4"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="9Vs-Tc-vF6"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="fRM-bB-XfT" secondAttribute="trailing" constant="20" id="9wW-v9-CS0"/>
+                            <constraint firstItem="fRM-bB-XfT" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="Bld-fu-fwh"/>
+                            <constraint firstItem="YcZ-a6-reA" firstAttribute="top" secondItem="mhR-xT-fUB" secondAttribute="top" id="Lvu-ap-mfS"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="zBP-Mh-eTI" secondAttribute="bottom" constant="87" id="Sb9-MW-mdi"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="77" id="hWj-nN-4MI"/>
+                            <constraint firstItem="YcZ-a6-reA" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="n1r-Zi-Lvi"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="YcZ-a6-reA" secondAttribute="trailing" constant="20" id="uER-iK-UxY"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="zvr-Xg-Hgt"/>
                         </constraints>
                     </view>
                     <connections>
