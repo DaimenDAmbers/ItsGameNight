@@ -109,8 +109,6 @@ class PieChartView: UIView {
             
             if segment.isSelected {
                 selectedSegmentPoint = midAngle
-                print("Start Angle: \(startAngle) and end angle: \(endAngle)")
-                print("Here is the value for the selected segment: \(selectedSegmentPoint)")
             }
             
             // The text label (adjust as needed)
@@ -138,23 +136,28 @@ class PieChartView: UIView {
             
     }
     
+    /// Use this to rotate the pie chart to the selected slice
     func rotatePieChart() {
-        
-        // Equation: selectedSegment = pi/2
-        let oneRotation: Double = 2 * .pi
-        let numOfRotations: Double = 7
-        let duration: Double = 8.0
         var quadrant = Quardrants.one
+        quadrant = quadrant.checkQuadrant(value: selectedSegmentPoint)
         
-        let selectedPoint = CGFloat(selectedSegmentPoint)
-        quadrant = quadrant.checkQuadrant(value: selectedPoint)
-        let rotateToValue = 2 * quadrant.rawValue - selectedPoint
+        let value = 2 * quadrant.rawValue - selectedSegmentPoint
+        let rotationAnimation = rotationAnimation(numOfRotations: 7, duration: 7, rotateTo: value)
         
-        print("This is the quadrant: \(quadrant), \(quadrant.rawValue)")
-        print("Selected Point: \(selectedPoint)")
+        self.layer.add(rotationAnimation, forKey: "transform.rotation")
+    }
+    
+    /// This is used to calculate the `rotateToValue`
+    /// - Parameters:
+    ///   - numOfRotations: The number of rotations that the pie chart will make
+    ///   - duration: Time the pie chart will rotate for in seconds
+    ///   - rotateTo: The calculated value to rotate to the correct slice using 2 * quardrant value - the selected segment
+    /// - Returns: This function returns a `CABasicAnimation`
+    private func rotationAnimation(numOfRotations: Double, duration: Double, rotateTo: CGFloat) -> CABasicAnimation {
+        let oneRotation: Double = 2 * .pi
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotationAnimation.toValue = rotateToValue + (numOfRotations * oneRotation)
+        rotationAnimation.toValue = rotateTo + (numOfRotations * oneRotation)
         rotationAnimation.duration = duration
         rotationAnimation.isCumulative = false
         rotationAnimation.repeatCount = 1
@@ -162,7 +165,7 @@ class PieChartView: UIView {
         rotationAnimation.fillMode = CAMediaTimingFillMode.forwards
         rotationAnimation.isRemovedOnCompletion = false
         
-        self.layer.add(rotationAnimation, forKey: "transform.rotation")
+        return rotationAnimation
     }
 }
 
