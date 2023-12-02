@@ -48,6 +48,7 @@ class PieChartView: UIView {
     }
     
     var selectedSegmentPoint: CGFloat = 0
+    var shiftPoint: CGFloat = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -109,6 +110,8 @@ class PieChartView: UIView {
             
             if segment.isSelected {
                 selectedSegmentPoint = midAngle
+                shiftPoint = midAngle
+                print("Shifted point: \(shiftPoint)")
             }
             
             // The text label (adjust as needed)
@@ -141,8 +144,9 @@ class PieChartView: UIView {
         var quadrant = Quardrants.one
         quadrant = quadrant.checkQuadrant(value: selectedSegmentPoint)
         
-        let value = 2 * quadrant.rawValue - selectedSegmentPoint
-        let rotationAnimation = rotationAnimation(numOfRotations: 7, duration: 7, rotateTo: value)
+        let actualValue = 2 * quadrant.rawValue - selectedSegmentPoint
+//        let value = shiftRotation(valueToShift: actualValue)
+        let rotationAnimation = rotationAnimation(numOfRotations: 7, duration: 7, rotateTo: actualValue)
         
         self.layer.add(rotationAnimation, forKey: "transform.rotation")
     }
@@ -166,6 +170,14 @@ class PieChartView: UIView {
         rotationAnimation.isRemovedOnCompletion = false
         
         return rotationAnimation
+    }
+    
+    
+    /// Shifts the rotation a little bit to simulate a randomized spin
+    private func shiftRotation(valueToShift: Double) -> Double {
+       let value = valueToShift + shiftPoint
+        
+        return value
     }
 }
 
