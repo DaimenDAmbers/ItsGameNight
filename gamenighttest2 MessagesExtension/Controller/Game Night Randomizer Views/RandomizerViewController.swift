@@ -16,7 +16,7 @@ class RandomizerViewController: UIViewController {
     let colors: [UIColor] = [.red, .blue, .green, .yellow, .purple, .orange, .cyan, .brown, .systemMint, .magenta, .systemIndigo, .systemTeal]
 
     @IBOutlet weak var pieChartView: PieChartView!
-    
+    @IBOutlet weak var triangleView: TriangleView!
     @IBOutlet weak var randomPersonLabel: UILabel!
     
     override func viewDidLoad() {
@@ -32,13 +32,17 @@ class RandomizerViewController: UIViewController {
             pieChartView.segments.append(segment)
         }
         
-        // TODO: The position of the triangle view is hard coded in. Needs to be fixed
-        let middleOfPieCircle = CGRect(x: pieChartView.bounds.size.width, y: pieChartView.bounds.size.height/2+38, width: 30, height: 30)
-        let triangleView = TriangleView(frame: middleOfPieCircle)
-        print("Triangle's Center: \(triangleView.center)")
-        print("Pie's Center: \(pieChartView.center)")
+//        pieChartView.backgroundColor = .clear
+//        triangleView.backgroundColor = .clear
         
-        view.addSubview(triangleView)
+        
+        // TODO: The position of the triangle view is hard coded in. Needs to be fixed
+//        let middleOfPieCircle = CGRect(x: pieChartView.bounds.size.width, y: pieChartView.bounds.size.height/2+38, width: 30, height: 30)
+//        let triangleView = TriangleView(frame: middleOfPieCircle)
+//        print("Triangle's Center: \(triangleView.center)")
+//        print("Pie's Center: \(pieChartView.center)")
+//        
+//        view.addSubview(triangleView)
     }
     
     @IBAction func spinWheel(_ sender: UIButton) {

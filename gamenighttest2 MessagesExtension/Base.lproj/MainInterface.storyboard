@@ -296,21 +296,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-bB-XfT" userLabel="WheelView" customClass="PieChartView" customModule="It_s_Game_Night" customModuleProvider="target">
-                                <rect key="frame" x="20" y="96" width="374" height="532"/>
-                                <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-a6-reA">
-                                <rect key="frame" x="20" y="48" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="m1j-iH-PQo"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="61.5" width="374" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-Mh-eTI" userLabel="Button Stack View">
-                                <rect key="frame" x="57" y="705" width="300" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-Mh-eTI" userLabel="Button VStack">
+                                <rect key="frame" x="57" y="772" width="300" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-nl-MW9">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -333,29 +326,54 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Ojb-jl-ayy"/>
+                                    <constraint firstAttribute="width" constant="300" id="ond-XQ-k93"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="571-Fa-us0" userLabel="Graphics HStack">
+                                <rect key="frame" x="20" y="108" width="374" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-bB-XfT" userLabel="WheelView" customClass="PieChartView" customModule="It_s_Game_Night" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="400"/>
+                                        <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEF-Kg-vLV" userLabel="TriangleView" customClass="TriangleView" customModule="It_s_Game_Night" customModuleProvider="target">
+                                        <rect key="frame" x="344" y="185" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="35b-eX-xFj"/>
+                                            <constraint firstAttribute="height" constant="30" id="uTf-Ec-giy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mEF-Kg-vLV" firstAttribute="top" secondItem="571-Fa-us0" secondAttribute="top" constant="185" id="B08-MV-ILI"/>
+                                    <constraint firstItem="fRM-bB-XfT" firstAttribute="leading" secondItem="571-Fa-us0" secondAttribute="leading" id="Nsk-gD-qDK"/>
+                                    <constraint firstItem="fRM-bB-XfT" firstAttribute="centerY" secondItem="571-Fa-us0" secondAttribute="centerY" id="OjW-4I-JXC"/>
+                                    <constraint firstAttribute="bottom" secondItem="mEF-Kg-vLV" secondAttribute="bottom" constant="185" id="XAz-OP-neC"/>
+                                    <constraint firstItem="fRM-bB-XfT" firstAttribute="top" secondItem="571-Fa-us0" secondAttribute="top" id="i8A-tN-xB0"/>
+                                    <constraint firstAttribute="bottom" secondItem="fRM-bB-XfT" secondAttribute="bottom" id="rwE-bj-72w"/>
+                                    <constraint firstItem="mEF-Kg-vLV" firstAttribute="centerY" secondItem="571-Fa-us0" secondAttribute="centerY" id="tAX-vf-INd"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mhR-xT-fUB"/>
                         <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="77" id="3x8-9C-42W"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="top" secondItem="YcZ-a6-reA" secondAttribute="bottom" constant="8" id="6nY-SR-pL4"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="9Vs-Tc-vF6"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="fRM-bB-XfT" secondAttribute="trailing" constant="20" id="9wW-v9-CS0"/>
-                            <constraint firstItem="fRM-bB-XfT" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="Bld-fu-fwh"/>
-                            <constraint firstItem="YcZ-a6-reA" firstAttribute="top" secondItem="mhR-xT-fUB" secondAttribute="top" id="Lvu-ap-mfS"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="zBP-Mh-eTI" secondAttribute="bottom" constant="87" id="Sb9-MW-mdi"/>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" secondItem="fRM-bB-XfT" secondAttribute="bottom" constant="77" id="hWj-nN-4MI"/>
-                            <constraint firstItem="YcZ-a6-reA" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="n1r-Zi-Lvi"/>
-                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="YcZ-a6-reA" secondAttribute="trailing" constant="20" id="uER-iK-UxY"/>
-                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="zvr-Xg-Hgt"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="trailing" secondItem="571-Fa-us0" secondAttribute="trailing" constant="20" id="1yr-mH-BOR"/>
+                            <constraint firstItem="YcZ-a6-reA" firstAttribute="top" secondItem="mhR-xT-fUB" secondAttribute="top" constant="13.5" id="7Ua-h4-gto"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="571-Fa-us0" secondAttribute="bottom" constant="50" id="CUP-33-nNe"/>
+                            <constraint firstItem="571-Fa-us0" firstAttribute="top" secondItem="YcZ-a6-reA" secondAttribute="bottom" constant="20" id="EiH-hO-BfX"/>
+                            <constraint firstItem="YcZ-a6-reA" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="GRN-Ah-xeo"/>
+                            <constraint firstItem="571-Fa-us0" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="HGT-Bi-yHB"/>
+                            <constraint firstItem="571-Fa-us0" firstAttribute="leading" secondItem="mhR-xT-fUB" secondAttribute="leading" constant="20" id="Pu8-jt-Jw4"/>
+                            <constraint firstItem="mhR-xT-fUB" firstAttribute="bottom" secondItem="zBP-Mh-eTI" secondAttribute="bottom" constant="20" id="Z7h-aC-WOB"/>
+                            <constraint firstItem="zBP-Mh-eTI" firstAttribute="centerX" secondItem="TkI-zL-xMX" secondAttribute="centerX" id="dp0-7d-cTX"/>
+                            <constraint firstItem="YcZ-a6-reA" firstAttribute="leading" secondItem="TkI-zL-xMX" secondAttribute="leadingMargin" id="mHN-kV-QKV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pieChartView" destination="fRM-bB-XfT" id="KOL-YN-8Vb"/>
                         <outlet property="randomPersonLabel" destination="Ruk-nl-MW9" id="owA-n6-mjB"/>
+                        <outlet property="triangleView" destination="mEF-Kg-vLV" id="4eZ-7t-uzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sI3-mu-GUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

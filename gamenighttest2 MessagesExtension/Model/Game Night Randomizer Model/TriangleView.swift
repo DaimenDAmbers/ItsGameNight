@@ -17,7 +17,8 @@ class TriangleView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        fatalError("init(coder:) has not been implemented")
+        self.backgroundColor = UIColor.clear
+//        fatalError("init(coder:) has not been implemented")
     }
     
     // Only override draw() if you perform custom drawing.
