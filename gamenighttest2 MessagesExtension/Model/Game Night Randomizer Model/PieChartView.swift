@@ -118,18 +118,20 @@ class PieChartView: UIView {
             // The text label (adjust as needed)
             let label = segment.name
             
-            
             // Calculate the bounding box and adjust for the center location
             var rect = label.boundingRect(with: CGSize(width: 1000, height: 1000), attributes: textAttrs, context: nil)
             rect.origin.x = textCenter.x - rect.size.width / 2
             rect.origin.y = textCenter.y - rect.size.height / 2
-            
+//            rect.origin
 //            ctx?.saveGState()
 //            ctx?.rotate(by: endAngle)
+//            rect = rotateRect(rect)
+//            rect = rect.applying(CGAffineTransform(rotationAngle: 0.2))
             
             label.draw(in: rect, withAttributes: textAttrs)
             
-            UIGraphicsPopContext()
+            
+//            UIGraphicsPopContext()
             
 //            ctx?.restoreGState()
             
@@ -179,6 +181,15 @@ class PieChartView: UIView {
        let value = valueToShift + shiftPoint
         
         return value
+    }
+    
+    private func rotateRect(_ rect: CGRect) -> CGRect {
+        let x = rect.midX
+        let y = rect.midY
+        let transform = CGAffineTransform(translationX: x, y: y).rotated(by: .pi/2).translatedBy(x: -x, y: -y)
+        let transform2 = CGAffineTransformRotate(CGAffineTransform(translationX: x, y: y), .pi/2).translatedBy(x: -x, y: -y)
+        
+        return rect.applying(transform2)
     }
 }
 

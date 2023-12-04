@@ -114,8 +114,21 @@ class SelectPeopleViewController: UITableViewController {
     /// This is the `Send` button on the Randomizer Modal Popup
     @objc func sendButtonPressed() {
         let randomizer = Randomizer(people: self.people)
-        randomizer?.chooseRandomPerson()
-        delegate?.sendMessage(using: randomizer)
+        guard let peopleCount = randomizer?.people.count else {
+            return
+        }
+        
+        if peopleCount > 1 {
+            randomizer?.chooseRandomPerson()
+            delegate?.sendMessage(using: randomizer)
+        } else {
+            let alert = UIAlertController(title: "Please enter at least two entries", message: "", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        }        
+        
         print("Done Button Pressed")
         }
                                              
