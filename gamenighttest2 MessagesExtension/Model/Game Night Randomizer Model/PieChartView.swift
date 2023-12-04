@@ -111,8 +111,8 @@ class PieChartView: UIView {
             
             if segment.isSelected {
                 selectedSegmentPoint = midAngle
-                shiftPoint = midAngle
-                print("Shifted point: \(shiftPoint)")
+//                shiftPoint = midAngle // Will use this for making the selection seem random.
+//                print("Shifted point: \(shiftPoint)")
             }
             
             // The text label (adjust as needed)
@@ -120,22 +120,15 @@ class PieChartView: UIView {
             
             // Calculate the bounding box and adjust for the center location
             var rect = label.boundingRect(with: CGSize(width: 1000, height: 1000), attributes: textAttrs, context: nil)
+//            rect = rotateRect(rect)
             rect.origin.x = textCenter.x - rect.size.width / 2
             rect.origin.y = textCenter.y - rect.size.height / 2
-//            rect.origin
-//            ctx?.saveGState()
-//            ctx?.rotate(by: endAngle)
-//            rect = rotateRect(rect)
-//            rect = rect.applying(CGAffineTransform(rotationAngle: 0.2))
-            
+  
             label.draw(in: rect, withAttributes: textAttrs)
-            
-            
-//            UIGraphicsPopContext()
-            
-//            ctx?.restoreGState()
-            
 
+            //TODO: Find out how to rotate the text in it's pie slice
+            
+            UIGraphicsEndImageContext()
             // update starting angle of the next segment to the ending angle of this segment
             startAngle = endAngle
         }
@@ -144,7 +137,7 @@ class PieChartView: UIView {
     
     /// Use this to rotate the pie chart to the selected slice
     func rotatePieChart() {
-        var quadrant = Quardrants.one
+        var quadrant = Quadrants.one
         quadrant = quadrant.checkQuadrant(value: selectedSegmentPoint)
         
         let actualValue = 2 * quadrant.rawValue - selectedSegmentPoint
@@ -186,15 +179,39 @@ class PieChartView: UIView {
     private func rotateRect(_ rect: CGRect) -> CGRect {
         let x = rect.midX
         let y = rect.midY
-        let transform = CGAffineTransform(translationX: x, y: y).rotated(by: .pi/2).translatedBy(x: -x, y: -y)
+//        let transform = CGAffineTransform(translationX: x, y: y).rotated(by: .pi/2).translatedBy(x: -x, y: -y)
         let transform2 = CGAffineTransformRotate(CGAffineTransform(translationX: x, y: y), .pi/2).translatedBy(x: -x, y: -y)
         
         return rect.applying(transform2)
     }
+    
+    private func rotateRect(context ctx: CGContext?) {
+        ctx?.saveGState()
+        ctx?.concatenate(CGAffineTransformMakeTranslation(0, 0))
+        ctx?.concatenate(CGAffineTransformMakeRotation(.pi))
+
+        
+        
+//            ctx?.translateBy(x: 10, y: 20)
+//            ctx?.rotate(by: -0.4636)
+        
+//            rect = rect.applying(CGAffineTransform(rotationAngle: 0.2))
+        
+//        label.draw(in: rect, withAttributes: textAttrs)
+        
+        ctx?.concatenate(CGAffineTransformInvert(CGAffineTransformMakeTranslation(0, 0)))
+        ctx?.concatenate(CGAffineTransformInvert(CGAffineTransformMakeRotation(.pi)))
+        
+        
+//            UIGraphicsPopContext()
+        
+        ctx?.restoreGState()
+    }
 }
 
 
-enum Quardrants: Double {
+/// Used to find the quadrants of the pie wheel
+enum Quadrants: Double {
     case one, two, three, four
     
     var rawValue: Double {
@@ -210,15 +227,15 @@ enum Quardrants: Double {
         }
     }
     
-    func checkQuadrant(value: Double) -> Quardrants {
-        if value > Quardrants.one.rawValue && value < Quardrants.two.rawValue {
-            return Quardrants.one
-        } else if value > Quardrants.two.rawValue && value < Quardrants.three.rawValue {
-            return Quardrants.two
-        } else if value > Quardrants.three.rawValue && value < Quardrants.four.rawValue {
-            return Quardrants.three
+    func checkQuadrant(value: Double) -> Quadrants {
+        if value > Quadrants.one.rawValue && value < Quadrants.two.rawValue {
+            return Quadrants.one
+        } else if value > Quadrants.two.rawValue && value < Quadrants.three.rawValue {
+            return Quadrants.two
+        } else if value > Quadrants.three.rawValue && value < Quadrants.four.rawValue {
+            return Quadrants.three
         } else {
-            return Quardrants.four
+            return Quadrants.four
         }
     }
 }

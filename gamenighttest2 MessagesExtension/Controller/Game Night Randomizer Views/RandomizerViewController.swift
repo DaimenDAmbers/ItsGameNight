@@ -31,22 +31,13 @@ class RandomizerViewController: UIViewController {
             let segment = Segment(name: people[i].name, color: colors[i % colors.count], isSelected: people[i].isSelected)
             pieChartView.segments.append(segment)
         }
-        
-//        pieChartView.backgroundColor = .clear
-//        triangleView.backgroundColor = .clear
-        
-        
-        // TODO: The position of the triangle view is hard coded in. Needs to be fixed
-//        let middleOfPieCircle = CGRect(x: pieChartView.bounds.size.width, y: pieChartView.bounds.size.height/2+38, width: 30, height: 30)
-//        let triangleView = TriangleView(frame: middleOfPieCircle)
-//        print("Triangle's Center: \(triangleView.center)")
-//        print("Pie's Center: \(pieChartView.center)")
-//        
-//        view.addSubview(triangleView)
     }
     
     @IBAction func spinWheel(_ sender: UIButton) {
         pieChartView.rotatePieChart()
+//        let time = dispatch_after(DISPATCH_TIME_NOW, dispatch_get_current_queue()) {
+//            self.showSelectedPerson(from: <#T##[Person]#>)
+//        }
     }
     
     private func showSelectedPerson(from people: [Person]) {
