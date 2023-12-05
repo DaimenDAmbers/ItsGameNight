@@ -30,7 +30,7 @@ struct CalendarInvite: MessageTemplateProtocol {
     }
     
     var caption: String {
-        return "Calendar Invite"
+        return "Game Night Invite"
     }
     
     var subCaption: String {
