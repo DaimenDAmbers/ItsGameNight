@@ -30,11 +30,11 @@ struct CalendarInvite: MessageTemplateProtocol {
     }
     
     var caption: String {
-        return "Game Night Invite"
+        return "Calendar Invite"
     }
     
     var subCaption: String {
-        return "Let's play together!"
+        return "Open to see the next scheduled Game Night"
     }
     
     /// - Tag: QueryItems
