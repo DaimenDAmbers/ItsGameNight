@@ -18,6 +18,7 @@ class RandomizerViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var triangleView: TriangleView!
     @IBOutlet weak var randomPersonLabel: UILabel!
+    @IBOutlet weak var spinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class RandomizerViewController: UIViewController {
         guard let unwrappedRandomizer = randomizer else { fatalError("No Randomized Message.") }
 
         let people = unwrappedRandomizer.people
-        showSelectedPerson(from: people)
+//        showSelectedPerson(from: people)
 
         for i in 0..<people.count {
             let segment = Segment(name: people[i].name, color: colors[i % colors.count], isSelected: people[i].isSelected)
@@ -35,9 +36,14 @@ class RandomizerViewController: UIViewController {
     
     @IBAction func spinWheel(_ sender: UIButton) {
         pieChartView.rotatePieChart()
-//        let time = dispatch_after(DISPATCH_TIME_NOW, dispatch_get_current_queue()) {
-//            self.showSelectedPerson(from: <#T##[Person]#>)
-//        }
+        
+        spinButton.isSelected.toggle()
+        randomPersonLabel.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            guard let people = self.randomizer?.people else { fatalError() }
+            self.showSelectedPerson(from: people)
+            self.spinButton.setTitle("See animation again?", for: .selected)
+        }
     }
     
     private func showSelectedPerson(from people: [Person]) {
@@ -45,6 +51,7 @@ class RandomizerViewController: UIViewController {
             if person.isSelected {
                 let label = "\(person.name) is the winner!"
                 randomPersonLabel.text = label
+                randomPersonLabel.isHidden = false
             }
         }
     }
