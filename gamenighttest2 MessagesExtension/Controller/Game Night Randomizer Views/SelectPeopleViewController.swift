@@ -8,6 +8,7 @@
 import UIKit
 
 class SelectPeopleViewController: UITableViewController {
+    let systemAlerts = SystemAlerts()
     
     // MARK: Variables
     static let storyboardIdentifier = "SelectPeopleViewController"
@@ -25,7 +26,6 @@ class SelectPeopleViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItems?.append(sendButton)
         self.navigationItem.rightBarButtonItems?.append(addButton)
-        
     }
 
     // MARK: - Table view data source
@@ -122,12 +122,8 @@ class SelectPeopleViewController: UITableViewController {
             randomizer?.chooseRandomPerson()
             delegate?.sendMessage(using: randomizer)
         } else {
-            let alert = UIAlertController(title: "Please enter at least two entries", message: "", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-            
-            alert.addAction(cancel)
-            present(alert, animated: true, completion: nil)
-        }        
+            self.present(systemAlerts.showLessThanTwoEntriesAlert(), animated: true, completion: nil)
+        }
         
         print("Done Button Pressed")
         }
@@ -159,7 +155,7 @@ class SelectPeopleViewController: UITableViewController {
                 print("Error decoding the people array: \(error)")
             }
         }
+        
         print("Loaded list successfully")
     }
-
 }

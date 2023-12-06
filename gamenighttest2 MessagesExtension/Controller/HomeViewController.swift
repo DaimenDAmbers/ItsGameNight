@@ -53,8 +53,6 @@ class HomeViewController: UIViewController {
             let vc = SelectPeopleViewController()
             
             vc.navigationItem.title = "Randomizer"
-//            let sendButton = UIBarButtonItem(title: "Send", style: .done, target: self, action: #selector(self.didTapDone))
-//            vc.navigationItem.rightBarButtonItems = [sendButton]
             vc.navigationItem.rightBarButtonItems = []
             vc.delegate = delegate
             vc.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")

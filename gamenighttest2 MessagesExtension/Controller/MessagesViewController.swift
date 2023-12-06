@@ -173,16 +173,13 @@ class MessagesViewController: MSMessagesAppViewController {
         
         if let myInvite = invite {
             components.queryItems = myInvite.queryItems
-//            print("inside composeMessage: \(myInvite.event.eventIdentifier)")
             
             layout.image = myInvite.image
             layout.caption = myInvite.caption
             layout.subcaption = myInvite.subCaption
         }
         
-
         print("Print the components: \(String(describing: components.queryItems))")
-
         
         let message = MSMessage(session: session ?? MSSession())
         message.url = components.url!

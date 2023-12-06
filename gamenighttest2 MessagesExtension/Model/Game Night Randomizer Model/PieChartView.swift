@@ -47,7 +47,10 @@ class PieChartView: UIView {
         }
     }
     
+    /// Used to stop the pie wheel at the selected name
     var selectedSegmentPoint: CGFloat = 0
+    
+    /// Will be used to offset where the needle lands on the selected name
     var shiftPoint: CGFloat = 0
 
     override init(frame: CGRect) {
@@ -209,7 +212,6 @@ class PieChartView: UIView {
     }
 }
 
-
 /// Used to find the quadrants of the pie wheel
 enum Quadrants: Double {
     case one, two, three, four
@@ -227,6 +229,9 @@ enum Quadrants: Double {
         }
     }
     
+    /// Check which quadrand the `selectedSegmentPoint` lands on
+    /// - Parameter value: The value of the `selectedSegmentPoint`
+    /// - Returns: The quadrant that the `value` falls in.
     func checkQuadrant(value: Double) -> Quadrants {
         if value > Quadrants.one.rawValue && value < Quadrants.two.rawValue {
             return Quadrants.one

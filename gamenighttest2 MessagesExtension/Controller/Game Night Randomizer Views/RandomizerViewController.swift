@@ -26,7 +26,6 @@ class RandomizerViewController: UIViewController {
         guard let unwrappedRandomizer = randomizer else { fatalError("No Randomized Message.") }
 
         let people = unwrappedRandomizer.people
-//        showSelectedPerson(from: people)
 
         for i in 0..<people.count {
             let segment = Segment(name: people[i].name, color: colors[i % colors.count], isSelected: people[i].isSelected)
