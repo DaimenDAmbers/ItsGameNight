@@ -16,7 +16,7 @@ struct Randomizer: MessageTemplateProtocol {
     }
     
     var image: UIImage {
-        return UIImage(named: "It's Game Night") ?? UIImage(named: "‎Let's Coast Logo")!
+        return UIImage(named: "Pie Wheel") ?? UIImage(named: "‎It's Game Night")!
     }
     
     var caption: String {

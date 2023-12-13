@@ -26,7 +26,7 @@ struct CalendarInvite: MessageTemplateProtocol {
     }
     
     var image: UIImage {
-        return UIImage(named: "It's Game Night") ?? UIImage(named: "‎Let's Coast Logo")!
+        return UIImage(named: "Calendar") ?? UIImage(named: "‎It's Game Night")!
     }
     
     var caption: String {

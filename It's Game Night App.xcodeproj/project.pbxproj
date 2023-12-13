@@ -158,15 +158,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D30B792D2B0ADF5E007606C8 /* Game Night Randomizer Model */ = {
+		D30B792D2B0ADF5E007606C8 /* Randomizer Model */ = {
 			isa = PBXGroup;
 			children = (
 				D30B792B2B0ADEE6007606C8 /* Person.swift */,
 				D32C9C132AF30FF9000D25CD /* Randomizer.swift */,
-				D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */,
-				D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */,
 			);
-			path = "Game Night Randomizer Model";
+			path = "Randomizer Model";
 			sourceTree = "<group>";
 		};
 		D30B792E2B0AF256007606C8 /* Calendar Model */ = {
@@ -181,6 +179,8 @@
 		D30B792F2B0AF272007606C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
+				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
 				D378F25C2AE823A7000A5654 /* AppState.swift */,
 				D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */,
 				D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */,
@@ -188,32 +188,30 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D30B79302B0AF2B0007606C8 /* Calendar Views */ = {
+		D30B79302B0AF2B0007606C8 /* Calendar Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */,
 				D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */,
 			);
-			path = "Calendar Views";
+			path = "Calendar Controllers";
 			sourceTree = "<group>";
 		};
-		D30B79312B0AF2BC007606C8 /* Game Night Randomizer Views */ = {
+		D30B79312B0AF2BC007606C8 /* Randomizer Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */,
 				D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */,
 			);
-			path = "Game Night Randomizer Views";
+			path = "Randomizer Controllers";
 			sourceTree = "<group>";
 		};
 		D312A62F2AE8269100A3C54D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
-				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
 				D30B792F2B0AF272007606C8 /* Supporting Files */,
 				D30B792E2B0AF256007606C8 /* Calendar Model */,
-				D30B792D2B0ADF5E007606C8 /* Game Night Randomizer Model */,
+				D30B792D2B0ADF5E007606C8 /* Randomizer Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,8 +219,8 @@
 		D312A6302AE826AA00A3C54D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D30B79302B0AF2B0007606C8 /* Calendar Views */,
-				D30B79312B0AF2BC007606C8 /* Game Night Randomizer Views */,
+				D30B79302B0AF2B0007606C8 /* Calendar Controllers */,
+				D30B79312B0AF2BC007606C8 /* Randomizer Controllers */,
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
@@ -270,6 +268,7 @@
 			children = (
 				D33D0D102AD9888700A5099A /* Info.plist */,
 				D312A62F2AE8269100A3C54D /* Model */,
+				D38A09AB2B292EF100DDB0E4 /* View */,
 				D312A6302AE826AA00A3C54D /* Controller */,
 				D33D0D0E2AD9888700A5099A /* Assets.xcassets */,
 				D33D0D0B2AD9888500A5099A /* MainInterface.storyboard */,
@@ -305,6 +304,23 @@
 			name = Stickers;
 			path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers";
 			sourceTree = "<absolute>";
+		};
+		D38A09AB2B292EF100DDB0E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D38A09AC2B292F1300DDB0E4 /* Randomizer Views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D38A09AC2B292F1300DDB0E4 /* Randomizer Views */ = {
+			isa = PBXGroup;
+			children = (
+				D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */,
+				D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */,
+			);
+			name = "Randomizer Views";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
