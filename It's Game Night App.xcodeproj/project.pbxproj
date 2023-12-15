@@ -101,6 +101,7 @@
 /* Begin PBXFileReference section */
 		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "It-s-Game-Night-App-Info.plist"; sourceTree = "<group>"; };
 		D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +232,7 @@
 		D33D0CF12AD9888300A5099A = {
 			isa = PBXGroup;
 			children = (
+				D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */,
 				D33D0CFA2AD9888300A5099A /* gamenighttest2 */,
 				D33D0D082AD9888500A5099A /* gamenighttest2 MessagesExtension */,
 				D33D0D052AD9888500A5099A /* Frameworks */,
@@ -686,6 +688,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "Please allow access to your Contacts to find locations linked to your contacts.";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -709,6 +712,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "Please allow access to your Contacts to find locations linked to your contacts.";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
