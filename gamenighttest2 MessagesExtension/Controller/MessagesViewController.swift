@@ -104,6 +104,13 @@ class MessagesViewController: MSMessagesAppViewController {
                     controller = instantiateHomeViewController(with: conversation)
                 }
                 
+            case .poll:
+                if let poll = Poll(message: conversation.selectedMessage) {
+                    controller = instantiateRatingViewController(with: poll)
+                } else {
+                    controller = instantiateHomeViewController(with: conversation)
+                }
+                
             default:
                 controller = instantiateHomeViewController(with: conversation)
             }
@@ -153,10 +160,21 @@ class MessagesViewController: MSMessagesAppViewController {
     
     fileprivate func instantiateRandomizerViewController(with randomizer: Randomizer) -> UIViewController {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: RandomizerViewController.storyboardIdentifier) as? RandomizerViewController else {
-            fatalError("Unable to instantiate a GameNightViewController from the storyboard")
+            fatalError("Unable to instantiate a RandomizerViewController from the storyboard")
         }
         
         controller.randomizer = randomizer
+        controller.delegate = self
+        
+        return controller
+    }
+    
+    fileprivate func instantiateRatingViewController(with poll: Poll) -> UIViewController {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: RatingViewController.storyboardIdentifier) as? RatingViewController else {
+            fatalError("Unable to instantiate a PollViewController from the storyboard")
+        }
+        
+        controller.poll = poll
         controller.delegate = self
         
         return controller

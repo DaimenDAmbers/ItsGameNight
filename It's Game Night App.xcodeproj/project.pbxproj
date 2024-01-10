@@ -60,6 +60,9 @@
 		D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D0D1A2AD988D300A5099A /* StickerViewController.swift */; };
 		D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0E2AD9888700A5099A /* Assets.xcassets */; };
 		D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
+		D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */; };
+		D36F0EB22B4EECC500528DE2 /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB12B4EECC500528DE2 /* PollViewController.swift */; };
+		D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */; };
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
@@ -133,6 +136,9 @@
 		D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1stPlace.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/1stPlace.png"; sourceTree = "<group>"; };
 		D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Youre Welcome.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Youre Welcome.png"; sourceTree = "<group>"; };
 		D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "I'm so high rn.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/I'm so high rn.png"; sourceTree = "<group>"; };
+		D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
+		D36F0EB12B4EECC500528DE2 /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
+		D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
 		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				D30B792F2B0AF272007606C8 /* Supporting Files */,
 				D30B792E2B0AF256007606C8 /* Calendar Model */,
 				D30B792D2B0ADF5E007606C8 /* Randomizer Model */,
+				D36F0EAD2B4EE6E000528DE2 /* Poll Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 			children = (
 				D30B79302B0AF2B0007606C8 /* Calendar Controllers */,
 				D30B79312B0AF2BC007606C8 /* Randomizer Controllers */,
+				D36F0EB02B4EEC8900528DE2 /* Poll Controllers */,
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
@@ -306,6 +314,23 @@
 			name = Stickers;
 			path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers";
 			sourceTree = "<absolute>";
+		};
+		D36F0EAD2B4EE6E000528DE2 /* Poll Model */ = {
+			isa = PBXGroup;
+			children = (
+				D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */,
+			);
+			path = "Poll Model";
+			sourceTree = "<group>";
+		};
+		D36F0EB02B4EEC8900528DE2 /* Poll Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D36F0EB12B4EECC500528DE2 /* PollViewController.swift */,
+				D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */,
+			);
+			path = "Poll Controllers";
+			sourceTree = "<group>";
 		};
 		D38A09AB2B292EF100DDB0E4 /* View */ = {
 			isa = PBXGroup;
@@ -471,14 +496,17 @@
 				D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */,
 				D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */,
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
+				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
 				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,
+				D36F0EB22B4EECC500528DE2 /* PollViewController.swift in Sources */,
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
 				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,
 				D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */,
+				D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */,
@@ -643,7 +671,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -669,7 +697,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -694,7 +722,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -718,7 +746,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
