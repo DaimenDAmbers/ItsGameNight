@@ -48,11 +48,11 @@ extension Vote: CustomStringConvertible {
 
 // MARK: - Poll Structure
 struct Poll: MessageTemplateProtocol {
-    var vote: Vote
+//    var vote: Vote
     var question: String
-    var overrated: Int?
-    var underrated: Int?
-    var properlyRated: Int?
+    var overrated: Int
+    var underrated: Int
+    var properlyRated: Int
     
     var appState: AppState {
         return .poll
@@ -63,16 +63,18 @@ struct Poll: MessageTemplateProtocol {
     }
     
     var caption: String {
-        return "Over/Under/Properly Rated"
+        return "Game Night Topic"
     }
     
     var subCaption: String {
-        return "How would you rate this?"
+        return "How would you rate this topic?"
     }
     
-    init?(vote: Vote, question: String) {
-        self.vote = vote
+    init?(question: String, overrated: Int, underrated: Int, properlyRated: Int) {
         self.question = question
+        self.overrated = overrated
+        self.underrated = underrated
+        self.properlyRated = properlyRated
     }
 }
 
@@ -82,13 +84,24 @@ extension Poll {
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
         let question = URLQueryItem(name: "Question", value: self.question)
-        let overrated = URLQueryItem(name: "Overrated", value: String(vote.value))
+        let overrated = URLQueryItem(name: "Overrated", value: String(self.overrated))
+        let underrated = URLQueryItem(name: "Underrated", value: String(self.underrated))
+        let properlyRated = URLQueryItem(name: "Properly Rated", value: String(self.properlyRated))
+        
+        items.append(question)
+        items.append(overrated)
+        items.append(underrated)
+        items.append(properlyRated)
+        items.append(appState.queryItem)
+        
         return items
     }
     
     init?(queryItems: [URLQueryItem]) {
-        self.vote = Vote.didNotVote(0)
         self.question = String()
+        self.overrated = 0
+        self.underrated = 0
+        self.properlyRated = 0
         
         for queryItem in queryItems {
             guard let value = queryItem.value else { continue }
@@ -98,8 +111,15 @@ extension Poll {
             }
             
             if queryItem.name == "Overrated" {
-                vote = Vote.overrated(1)
-                print(vote.value)
+                overrated = Int(value) ?? 0
+            }
+            
+            if queryItem.name == "Underrated" {
+                underrated = Int(value) ?? 0
+            }
+            
+            if queryItem.name == "Properly Rated" {
+                properlyRated = Int(value) ?? 0
             }
         }
     }

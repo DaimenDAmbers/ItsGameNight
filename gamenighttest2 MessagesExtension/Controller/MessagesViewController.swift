@@ -223,6 +223,10 @@ class MessagesViewController: MSMessagesAppViewController {
             if queryItem.name == "App State" && value == AppState.randomizer.rawValue {
                 self.appState = .randomizer
             }
+            
+            if queryItem.name == "App State" && value == AppState.poll.rawValue {
+                self.appState = .poll
+            }
         }
     }
     

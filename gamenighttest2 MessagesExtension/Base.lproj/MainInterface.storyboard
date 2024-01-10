@@ -87,7 +87,7 @@
                                             <color key="baseBackgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="SFS-Q4-KfF" kind="presentation" id="0fv-KS-bSi"/>
+                                            <segue destination="SFS-Q4-KfF" kind="presentation" identifier="goToPollVC" id="iCf-hr-yBY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-Ix-pUv">
@@ -127,6 +127,7 @@
                     <connections>
                         <outlet property="calendarButton" destination="ycE-un-zaC" id="08Z-iW-Va7"/>
                         <outlet property="randomizerButton" destination="ob5-rS-ctH" id="42L-Ki-CcW"/>
+                        <outlet property="rateATopicButton" destination="zSW-ba-mxO" id="aIZ-AF-2Hg"/>
                         <outlet property="stickersButton" destination="4TT-Ix-pUv" id="QMp-3p-sDV"/>
                     </connections>
                 </viewController>
@@ -283,13 +284,34 @@
                     <view key="view" contentMode="scaleToFill" id="ugq-qJ-Fxc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Question" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCc-tu-5XC">
+                                <rect key="frame" x="20" y="426" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-ai-WyM">
+                                <rect key="frame" x="176" y="626" width="64" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="SFS-Q4-KfF" eventType="touchUpInside" id="By6-zy-Yqb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p1b-7c-5Qd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CQi-Y3-pbA"/>
+                    <connections>
+                        <outlet property="questionTextField" destination="BCc-tu-5XC" id="9pV-NN-0nX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXW-UD-OKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="657"/>
+            <point key="canvasLocation" x="2987" y="656"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="r2b-ZU-Lxl">
@@ -304,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O8-1W-cWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751" y="657"/>
+            <point key="canvasLocation" x="3771" y="656"/>
         </scene>
         <!--Sticker-->
         <scene sceneID="Xe9-Kp-f2q">
@@ -321,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi8-WO-wPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2987" y="1335"/>
+            <point key="canvasLocation" x="2203" y="656"/>
         </scene>
         <!--Nav View Controller-->
         <scene sceneID="hye-Z1-LMS">
