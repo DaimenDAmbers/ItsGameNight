@@ -11,9 +11,15 @@ import Messages
 class StickerViewController: MSStickerBrowserViewController {
     static let storyboardIdentifier = "StickerViewController"
     var stickers = [MSSticker]()
+    weak var delegate: MessageDelegate?
+    
+    override var stickerSize: MSStickerSize {
+        return .large
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate?.changePresentationStyle(.expanded) // Needed to fix the bug where selecting a sticker does not dismiss the view controller.
         
         self.title = "Stickers"
         createSticker(asset: "Gamenight Logo", localizedDescription: "Game Night Logo")

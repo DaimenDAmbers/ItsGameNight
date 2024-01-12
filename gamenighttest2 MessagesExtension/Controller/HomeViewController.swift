@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     // MARK: Methods
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
+            
         case calendarButton:
 
             self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
@@ -113,6 +114,13 @@ extension HomeViewController {
             }
         } else {
             return true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToStickers" {
+            let destinationVC = segue.destination as? StickerViewController
+            destinationVC?.delegate = delegate
         }
     }
 }
