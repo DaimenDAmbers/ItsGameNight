@@ -177,7 +177,9 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.poll = poll
         controller.delegate = self
         
-        return controller
+        let navVC = UINavigationController(rootViewController: controller)
+        
+        return navVC
     }
     
     /// Composes a message for the Game Night Application.

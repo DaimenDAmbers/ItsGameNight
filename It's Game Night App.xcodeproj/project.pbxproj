@@ -72,6 +72,8 @@
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
+		D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */; };
+		D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */; };
 		D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */; };
 		D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E955A82AE6E4040012927B /* MessageDelegate.swift */; };
 		D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */; };
@@ -149,6 +151,8 @@
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
+		D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
 		D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		D3E955A82AE6E4040012927B /* MessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemRepresentable.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				D38A09AC2B292F1300DDB0E4 /* Randomizer Views */,
+				D3D123C72B546ED7007E1E62 /* Poll Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +355,15 @@
 				D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */,
 			);
 			name = "Randomizer Views";
+			sourceTree = "<group>";
+		};
+		D3D123C72B546ED7007E1E62 /* Poll Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */,
+				D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */,
+			);
+			name = "Poll Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +482,7 @@
 				D33D0D0F2AD9888700A5099A /* Assets.xcassets in Resources */,
 				D32C5EC52B13C32700E102D2 /* It's Gamenight.png in Resources */,
 				D32C5ECC2B13C32700E102D2 /* Blue Team.png in Resources */,
+				D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */,
 				D32C5ECD2B13C32700E102D2 /* 1stPlace.png in Resources */,
 				D32C5EC92B13C32700E102D2 /* idk timezones.png in Resources */,
 				D32C5EC12B13C32700E102D2 /* Nice Try.png in Resources */,
@@ -494,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */,
+				D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */,
 				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
 				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
 				D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */,

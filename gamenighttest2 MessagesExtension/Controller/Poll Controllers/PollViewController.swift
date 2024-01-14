@@ -16,11 +16,19 @@ class PollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       // Do any additional setup after loading the view.
+        questionTextField.delegate = self
+        questionTextField.returnKeyType = .done
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
         guard let question = questionTextField.text else { return }
         poll = Poll(question: question, overrated: 0, underrated: 0, properlyRated: 0)
         delegate?.sendMessage(using: poll)
+    }
+}
+
+extension PollViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
     }
 }
