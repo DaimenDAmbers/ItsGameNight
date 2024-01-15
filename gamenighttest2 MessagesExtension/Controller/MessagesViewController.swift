@@ -178,6 +178,7 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.delegate = self
         
         let navVC = UINavigationController(rootViewController: controller)
+        navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         
         return navVC
     }

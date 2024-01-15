@@ -69,6 +69,7 @@
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
 		D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */; };
 		D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */; };
+		D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3923A7D2B54BBE3007C3553 /* Vote.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
@@ -148,6 +149,7 @@
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		D3923A7D2B54BBE3007C3553 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */,
+				D3923A7D2B54BBE3007C3553 /* Vote.swift */,
 			);
 			path = "Poll Model";
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,
 				D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */,
 				D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */,
+				D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */,

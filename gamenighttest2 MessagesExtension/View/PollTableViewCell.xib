@@ -18,9 +18,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decision" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22Y-N0-nLO">
-                        <rect key="frame" x="151.33333333333334" y="57" width="65.666666666666657" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="149" y="57" width="70.333333333333314" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-ob-rSE">
@@ -31,12 +31,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFo-T6-poh">
-                        <rect key="frame" x="337.66666666666669" y="57" width="10.333333333333314" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="336.66666666666669" y="57" width="11.333333333333314" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="oFo-T6-poh" secondAttribute="trailing" constant="20" symbolic="YES" id="5QW-Za-2AW"/>
                     <constraint firstItem="22Y-N0-nLO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N1J-E6-Rnn"/>
@@ -48,6 +49,7 @@
             <connections>
                 <outlet property="customImageView" destination="NSO-ob-rSE" id="8wm-7u-Dsk"/>
                 <outlet property="decisionLabel" destination="22Y-N0-nLO" id="zwV-At-Agz"/>
+                <outlet property="voteLabel" destination="oFo-T6-poh" id="IlZ-kw-FAn"/>
             </connections>
             <point key="canvasLocation" x="56.488549618320612" y="32.04225352112676"/>
         </tableViewCell>
