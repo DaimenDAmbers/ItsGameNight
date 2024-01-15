@@ -49,7 +49,7 @@
             <connections>
                 <outlet property="customImageView" destination="NSO-ob-rSE" id="8wm-7u-Dsk"/>
                 <outlet property="decisionLabel" destination="22Y-N0-nLO" id="zwV-At-Agz"/>
-                <outlet property="voteLabel" destination="oFo-T6-poh" id="IlZ-kw-FAn"/>
+                <outlet property="voteLabel" destination="oFo-T6-poh" id="Tre-CG-dqb"/>
             </connections>
             <point key="canvasLocation" x="56.488549618320612" y="32.04225352112676"/>
         </tableViewCell>

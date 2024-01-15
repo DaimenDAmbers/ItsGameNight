@@ -29,7 +29,7 @@ extension VotingDecisions: CustomStringConvertible {
 
 // MARK: - Voting Struct
 struct Vote {
-    let choice: VotingDecisions
+    var choice: VotingDecisions = .didNotVote
     var isSelected: Bool = false
 }
 

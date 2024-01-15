@@ -12,6 +12,7 @@ class RatingViewController: UIViewController {
     var poll: Poll?
 //    var vote = Vote(choice: VotingDecisions.didNotVote)
     var vote: Vote?
+    var newVote = Vote(choice: .didNotVote)
     weak var delegate: MessageDelegate?
     @IBOutlet weak var questionText: UINavigationItem!
     var strings = ["Overrated", "Underrated", "Properly Rated"]
@@ -28,32 +29,54 @@ class RatingViewController: UIViewController {
         tableView.delegate = self
         tableView.register(PollTableViewCell.nib(), forCellReuseIdentifier: PollTableViewCell.idendifier)
     }
+    
+    
+    @IBAction func sendVote(_ sender: UIButton) {
+        if var unwrappedPoll = poll {
+            unwrappedPoll.votes[newVote.choice]! += 1
+            delegate?.sendMessage(using: unwrappedPoll)
+        }
+        
+    }
 }
 
 extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var cell = Vote(choice: VotingDecisions.allCases[indexPath.row])
+        guard var unwrappedPoll = poll else { return }
+        var cell = Array(unwrappedPoll.votes.keys)[indexPath.row].description
         
-        switch cell.choice {
-        case .overrated:
+        var oldVote = Vote(choice: .didNotVote)
+        
+        switch cell {
+        case "Overrated":
+            oldVote = newVote
             poll?.isOverrated = true
             poll?.isUnderrated = false
             poll?.isProperlyRated = false
-        case .underrated:
+            newVote.choice = .overrated
+        case "Underrated":
+            oldVote = newVote
             poll?.isOverrated = false
             poll?.isUnderrated = true
             poll?.isProperlyRated = false
-        case .properlyRated:
+            newVote.choice = .underrated
+        case "Properly Rated":
+            oldVote = newVote
             poll?.isOverrated = false
             poll?.isUnderrated = false
             poll?.isProperlyRated = true
+            newVote.choice = .properlyRated
         default:
+            oldVote = newVote
             poll?.isOverrated = false
             poll?.isUnderrated = false
             poll?.isProperlyRated = false
+            newVote.choice = .didNotVote
         }
-        print(poll?.isOverrated as Any)
+        
+        print("This topic is \(newVote.choice).")        
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,18 +86,15 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PollTableViewCell.idendifier, for: indexPath) as! PollTableViewCell
+        
         if let unwrappedPoll = poll {
-            let key = Array(poll!.votes.keys)[indexPath.section]
-            let value = Array(poll!.votes.values)[indexPath.row]
-            print("Keys: \(key)")
-            print("Values: \(value)")
+            let key = Array(unwrappedPoll.votes.keys)[indexPath.row].description
+            let value = Array(unwrappedPoll.votes.values)[indexPath.row].description
+            cell.decisionLabel.text = key
+            cell.voteLabel.text = value
         }
         
-        
         cell.customImageView.image = UIImage(systemName: "square.fill")
-        cell.decisionLabel.text = VotingDecisions.allCases[indexPath.row].description
-        
-//        cell.voteLabel.text =
         
         return cell
     }
