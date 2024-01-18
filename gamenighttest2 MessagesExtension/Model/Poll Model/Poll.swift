@@ -14,11 +14,17 @@ struct Poll: MessageTemplateProtocol {
 //    var vote: Vote
     var question: String
     var votes: [VotingDecisions: Int]
-    var overrated: Int
-    var underrated: Int
-    var properlyRated: Int
-    private var totalVotes: Int {
-        return overrated + underrated + properlyRated
+    var overratedVotes: Int {
+        return votes[.overrated] ?? 0
+    }
+    var underratedVotes: Int {
+        return votes[.underrated] ?? 0
+    }
+    var properlyRatedVotes: Int {
+        return votes[.properlyRated] ?? 0
+    }
+    var totalVotes: Int {
+        return overratedVotes + underratedVotes + properlyRatedVotes
     }
     
     var isOverrated: Bool = false
@@ -34,19 +40,16 @@ struct Poll: MessageTemplateProtocol {
     }
     
     var caption: String {
-        return "Game Night Topic"
+        return "Rate This Topic"
     }
     
     var subCaption: String {
-        return "How would you rate this topic?"
+        return "Total votes: \(totalVotes)"
     }
     
-    init?(question: String, votes: [VotingDecisions: Int], overrated: Int, underrated: Int, properlyRated: Int) {
+    init?(question: String, votes: [VotingDecisions: Int]) {
         self.question = question
         self.votes = votes
-        self.overrated = overrated
-        self.underrated = underrated
-        self.properlyRated = properlyRated
     }
 }
 
@@ -70,11 +73,7 @@ extension Poll {
     }
     
     init?(queryItems: [URLQueryItem]) {
-        self.question = String()
-        self.overrated = 0
-        self.underrated = 0
-        self.properlyRated = 0
-        
+        self.question = String()        
         self.votes = [:]
         
         for queryItem in queryItems {

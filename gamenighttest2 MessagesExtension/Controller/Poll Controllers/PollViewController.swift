@@ -22,7 +22,7 @@ class PollViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: UIButton) {
         guard let question = questionTextField.text else { return }
-        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], overrated: 0, underrated: 0, properlyRated: 0)
+        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0])
         delegate?.sendMessage(using: poll)
     }
 }

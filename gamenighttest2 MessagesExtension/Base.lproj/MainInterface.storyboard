@@ -328,7 +328,7 @@
                                     <rect key="frame" x="0.0" y="121.5" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Send Vote"/>
                                     <connections>
                                         <action selector="sendVote:" destination="zQb-gc-Z8M" eventType="touchUpInside" id="KQZ-vH-rEq"/>
                                     </connections>
@@ -358,6 +358,7 @@
                     <navigationItem key="navigationItem" id="55O-9r-6OC"/>
                     <connections>
                         <outlet property="questionText" destination="55O-9r-6OC" id="oZ0-iT-7he"/>
+                        <outlet property="sendVoteButton" destination="EKi-Ju-HEG" id="XD1-4p-IbV"/>
                         <outlet property="tableView" destination="eTj-9R-Prn" id="dIq-8T-YQI"/>
                     </connections>
                 </viewController>

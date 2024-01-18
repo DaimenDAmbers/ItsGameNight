@@ -9,92 +9,94 @@ import UIKit
 
 class RatingViewController: UIViewController {
     static let storyboardIdentifier = "RatingViewController"
-    var poll: Poll?
-//    var vote = Vote(choice: VotingDecisions.didNotVote)
-    var vote: Vote?
-    var newVote = Vote(choice: .didNotVote)
     weak var delegate: MessageDelegate?
-    @IBOutlet weak var questionText: UINavigationItem!
-    var strings = ["Overrated", "Underrated", "Properly Rated"]
+    
+    var poll: Poll?
+    var newVote = Vote(choice: .didNotVote)
+    var decisions: [VotingDecisions : Bool] = [.underrated: false, .overrated: false, .properlyRated: false]
 
+    @IBOutlet weak var sendVoteButton: UIButton!
+    @IBOutlet weak var questionText: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let unwrappedPoll = poll {
             questionText.title = unwrappedPoll.question
+            print("Number of total votes: \(unwrappedPoll.totalVotes)")
         }
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(PollTableViewCell.nib(), forCellReuseIdentifier: PollTableViewCell.idendifier)
+        shouldEnableButton()
     }
-    
     
     @IBAction func sendVote(_ sender: UIButton) {
         if var unwrappedPoll = poll {
+            decisions.keys.forEach { if decisions[$0] == true { newVote.choice = $0 }}
+            print("Submitting vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
             delegate?.sendMessage(using: unwrappedPoll)
         }
-        
+    }
+    
+    private func shouldEnableButton() {
+        let enableButton = decisions.contains { $0.value == true}
+        print("Should enable button is \(true)")
+        sendVoteButton.isEnabled = enableButton
     }
 }
 
 extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard var unwrappedPoll = poll else { return }
-        var cell = Array(unwrappedPoll.votes.keys)[indexPath.row].description
-        
-        var oldVote = Vote(choice: .didNotVote)
+        var cell = Array(decisions.keys)[indexPath.row]
         
         switch cell {
-        case "Overrated":
-            oldVote = newVote
-            poll?.isOverrated = true
-            poll?.isUnderrated = false
-            poll?.isProperlyRated = false
-            newVote.choice = .overrated
-        case "Underrated":
-            oldVote = newVote
-            poll?.isOverrated = false
-            poll?.isUnderrated = true
-            poll?.isProperlyRated = false
-            newVote.choice = .underrated
-        case "Properly Rated":
-            oldVote = newVote
-            poll?.isOverrated = false
-            poll?.isUnderrated = false
-            poll?.isProperlyRated = true
-            newVote.choice = .properlyRated
+        case .overrated:
+            decisions[.overrated]?.toggle()
+            decisions.updateValue(false, forKey: .underrated)
+            decisions.updateValue(false, forKey: .properlyRated)
+            print("Tapped Overrated")
+            shouldEnableButton()
+        case .underrated:
+            decisions[.underrated]?.toggle()
+            decisions.updateValue(false, forKey: .overrated)
+            decisions.updateValue(false, forKey: .properlyRated)
+            print("Tapped Underrated")
+            shouldEnableButton()
+        case .properlyRated:
+            decisions[.properlyRated]?.toggle()
+            decisions.updateValue(false, forKey: .overrated)
+            decisions.updateValue(false, forKey: .underrated)
+            print("Tapped Properly Rated")
+            shouldEnableButton()
         default:
-            oldVote = newVote
-            poll?.isOverrated = false
-            poll?.isUnderrated = false
-            poll?.isProperlyRated = false
-            newVote.choice = .didNotVote
+            decisions.keys.forEach { decisions[$0] = false }
+            shouldEnableButton()
+            print("No voting option selected")
         }
-        
-        print("This topic is \(newVote.choice).")        
+       
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return strings.count
-        return VotingDecisions.allCases.count - 1
+        return decisions.keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PollTableViewCell.idendifier, for: indexPath) as! PollTableViewCell
+        let key = Array(decisions.keys)[indexPath.row]
+        let value = Array(decisions.values)[indexPath.row]
         
         if let unwrappedPoll = poll {
-            let key = Array(unwrappedPoll.votes.keys)[indexPath.row].description
-            let value = Array(unwrappedPoll.votes.values)[indexPath.row].description
-            cell.decisionLabel.text = key
-            cell.voteLabel.text = value
+            cell.votePercentLabel.text = unwrappedPoll.votes[key]?.description
         }
         
-        cell.customImageView.image = UIImage(systemName: "square.fill")
+        cell.decisionLabel.text = key.description
+        cell.customImageView.image = value ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "circle.fill")
         
         return cell
     }
