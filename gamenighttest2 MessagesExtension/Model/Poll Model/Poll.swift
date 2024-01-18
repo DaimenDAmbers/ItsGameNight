@@ -35,9 +35,11 @@ struct Poll: MessageTemplateProtocol {
         return .poll
     }
     
-    var image: UIImage {
-        return UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
-    }
+//    var image: UIImage {
+//        return UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
+//    }
+    
+    var image: UIImage
     
     var caption: String {
         return "Rate This Topic"
@@ -47,9 +49,10 @@ struct Poll: MessageTemplateProtocol {
         return "Total votes: \(totalVotes)"
     }
     
-    init?(question: String, votes: [VotingDecisions: Int]) {
+    init?(question: String, votes: [VotingDecisions: Int], image: UIImage) {
         self.question = question
         self.votes = votes
+        self.image = image
     }
 }
 
@@ -75,6 +78,7 @@ extension Poll {
     init?(queryItems: [URLQueryItem]) {
         self.question = String()        
         self.votes = [:]
+        self.image = UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
         
         for queryItem in queryItems {
             guard let value = queryItem.value else { continue }

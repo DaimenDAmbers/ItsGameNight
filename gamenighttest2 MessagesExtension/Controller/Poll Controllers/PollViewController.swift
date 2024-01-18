@@ -22,7 +22,11 @@ class PollViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: UIButton) {
         guard let question = questionTextField.text else { return }
-        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0])
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let image = renderer.image { ctx in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], image: image)
         delegate?.sendMessage(using: poll)
     }
 }

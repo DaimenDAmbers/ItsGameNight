@@ -38,8 +38,17 @@ class RatingViewController: UIViewController {
             decisions.keys.forEach { if decisions[$0] == true { newVote.choice = $0 }}
             print("Submitting vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
+            unwrappedPoll.image = createImage()
             delegate?.sendMessage(using: unwrappedPoll)
         }
+    }
+    
+    private func createImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let image = renderer.image { ctx in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        return image
     }
     
     private func shouldEnableButton() {
