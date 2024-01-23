@@ -248,7 +248,7 @@ extension MessagesViewController: MessageDelegate {
     func sendMessage(using template: MessageTemplateProtocol?) {
         guard let conversation = activeConversation else { fatalError("Could not send a message.") }
 
-        let message = composeMessage(with: template)
+        let message = composeMessage(session: conversation.selectedMessage?.session, with: template)
         conversation.insert(message) { error in
             if let error = error {
                 print(error)
