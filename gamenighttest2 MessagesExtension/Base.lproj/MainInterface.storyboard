@@ -277,41 +277,81 @@
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="-29.464285714285712"/>
         </scene>
-        <!--Poll View Controller-->
+        <!--RateA Topic View Controller-->
         <scene sceneID="IAt-4R-M1T">
             <objects>
-                <viewController storyboardIdentifier="PollViewController" id="SFS-Q4-KfF" customClass="PollViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ugq-qJ-Fxc">
+                <viewController storyboardIdentifier="RateATopicViewController" id="SFS-Q4-KfF" customClass="RateATopicViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ugq-qJ-Fxc" customClass="RatingView" customModule="It_s_Game_Night" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Question" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCc-tu-5XC">
-                                <rect key="frame" x="20" y="426" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-ai-WyM">
-                                <rect key="frame" x="176" y="626" width="64" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-ai-WyM">
+                                <rect key="frame" x="157" y="806" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eOl-zB-zox"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Send"/>
                                 <connections>
                                     <action selector="sendMessage:" destination="SFS-Q4-KfF" eventType="touchUpInside" id="By6-zy-Yqb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate a Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hq-lW-yy7">
+                                <rect key="frame" x="137" y="25" width="140.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a question that will get a rating of either Overrated, Underrated or Properly Rated." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88x-q8-lWs">
+                                <rect key="frame" x="20" y="80" width="374" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fua-Cg-3Sm">
+                                <rect key="frame" x="20" y="391" width="374" height="104"/>
+                                <color key="backgroundColor" red="0.89411764705882346" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx9-1y-C25">
+                                <rect key="frame" x="352" y="362" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p1b-7c-5Qd"/>
-                        <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p1b-7c-5Qd" firstAttribute="trailing" secondItem="88x-q8-lWs" secondAttribute="trailing" constant="20" id="Kjn-NL-enp"/>
+                            <constraint firstItem="Fua-Cg-3Sm" firstAttribute="leading" secondItem="p1b-7c-5Qd" secondAttribute="leading" constant="20" id="L6f-Wb-Mfa"/>
+                            <constraint firstItem="Qks-ai-WyM" firstAttribute="centerX" secondItem="Fua-Cg-3Sm" secondAttribute="centerX" id="MGo-Cm-cQa"/>
+                            <constraint firstItem="88x-q8-lWs" firstAttribute="centerX" secondItem="ugq-qJ-Fxc" secondAttribute="centerX" id="Ocf-hd-FDm"/>
+                            <constraint firstItem="88x-q8-lWs" firstAttribute="leading" secondItem="p1b-7c-5Qd" secondAttribute="leading" constant="20" id="U5N-ob-oVd"/>
+                            <constraint firstItem="mx9-1y-C25" firstAttribute="top" secondItem="ugq-qJ-Fxc" secondAttribute="top" constant="362" id="VPE-Bz-AZP"/>
+                            <constraint firstItem="Fua-Cg-3Sm" firstAttribute="centerX" secondItem="ugq-qJ-Fxc" secondAttribute="centerX" id="X3y-Qz-zTv"/>
+                            <constraint firstItem="6hq-lW-yy7" firstAttribute="top" secondItem="p1b-7c-5Qd" secondAttribute="top" constant="25" id="ffs-l9-Atw"/>
+                            <constraint firstItem="6hq-lW-yy7" firstAttribute="centerX" secondItem="ugq-qJ-Fxc" secondAttribute="centerX" id="g6R-BA-Jhu"/>
+                            <constraint firstItem="Fua-Cg-3Sm" firstAttribute="top" secondItem="mx9-1y-C25" secondAttribute="bottom" constant="8" id="guO-cJ-UGp"/>
+                            <constraint firstItem="p1b-7c-5Qd" firstAttribute="trailing" secondItem="Fua-Cg-3Sm" secondAttribute="trailing" constant="20" id="mIg-xQ-BgB"/>
+                            <constraint firstItem="Fua-Cg-3Sm" firstAttribute="centerY" secondItem="ugq-qJ-Fxc" secondAttribute="centerY" id="nrO-ba-YaP"/>
+                            <constraint firstItem="p1b-7c-5Qd" firstAttribute="bottom" secondItem="Qks-ai-WyM" secondAttribute="bottom" constant="45" id="uV7-US-5rQ"/>
+                            <constraint firstItem="mx9-1y-C25" firstAttribute="trailing" secondItem="Fua-Cg-3Sm" secondAttribute="trailing" id="uXW-be-Dtv"/>
+                            <constraint firstItem="88x-q8-lWs" firstAttribute="top" secondItem="6hq-lW-yy7" secondAttribute="bottom" constant="25" id="xkM-SM-BwD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CQi-Y3-pbA"/>
                     <connections>
-                        <outlet property="questionTextField" destination="BCc-tu-5XC" id="9pV-NN-0nX"/>
+                        <outlet property="characterCountLabel" destination="mx9-1y-C25" id="rYY-jD-YKf"/>
+                        <outlet property="questionTextView" destination="Fua-Cg-3Sm" id="s8g-Z5-bjJ"/>
+                        <outlet property="sendButton" destination="Qks-ai-WyM" id="OO0-x3-aND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXW-UD-OKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2987" y="656"/>
+            <point key="canvasLocation" x="2986.9565217391305" y="655.58035714285711"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="r2b-ZU-Lxl">
@@ -321,9 +361,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-zQ-9BH">
+                                <rect key="frame" x="20" y="112" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-9R-Prn">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
                                 <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="YGp-o8-f2Q"/>
+                                </constraints>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EKi-Ju-HEG">
                                     <rect key="frame" x="0.0" y="121.5" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -349,15 +398,18 @@
                         <viewLayoutGuide key="safeArea" id="Glx-Rj-gaF"/>
                         <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Glx-Rj-gaF" firstAttribute="bottom" secondItem="eTj-9R-Prn" secondAttribute="bottom" id="aLJ-qr-mO0"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" id="d2F-qt-eRa"/>
-                            <constraint firstItem="Glx-Rj-gaF" firstAttribute="trailing" secondItem="eTj-9R-Prn" secondAttribute="trailing" id="dgv-JN-mfc"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="top" secondItem="Glx-Rj-gaF" secondAttribute="top" id="wIe-QP-PJA"/>
+                            <constraint firstItem="dNq-zQ-9BH" firstAttribute="top" secondItem="Glx-Rj-gaF" secondAttribute="top" constant="20" id="0ig-sL-H2U"/>
+                            <constraint firstItem="eTj-9R-Prn" firstAttribute="centerX" secondItem="Q59-xD-cfc" secondAttribute="centerX" id="N8z-Ai-VKI"/>
+                            <constraint firstItem="eTj-9R-Prn" firstAttribute="centerY" secondItem="Q59-xD-cfc" secondAttribute="centerY" id="XJF-zJ-FG8"/>
+                            <constraint firstItem="dNq-zQ-9BH" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" constant="20" id="bN2-2J-8ic"/>
+                            <constraint firstItem="eTj-9R-Prn" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" id="lLa-5i-opt"/>
+                            <constraint firstItem="Glx-Rj-gaF" firstAttribute="trailing" secondItem="dNq-zQ-9BH" secondAttribute="trailing" constant="20" id="xYx-ZE-P8g"/>
+                            <constraint firstItem="eTj-9R-Prn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dNq-zQ-9BH" secondAttribute="bottom" constant="20" id="yhI-Vh-pt6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="55O-9r-6OC"/>
                     <connections>
-                        <outlet property="questionText" destination="55O-9r-6OC" id="oZ0-iT-7he"/>
+                        <outlet property="questionText" destination="dNq-zQ-9BH" id="Abi-A4-r3k"/>
                         <outlet property="sendVoteButton" destination="EKi-Ju-HEG" id="XD1-4p-IbV"/>
                         <outlet property="tableView" destination="eTj-9R-Prn" id="dIq-8T-YQI"/>
                     </connections>
@@ -523,6 +575,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="folder" catalog="system" width="128" height="96"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="lightTextColor">
             <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

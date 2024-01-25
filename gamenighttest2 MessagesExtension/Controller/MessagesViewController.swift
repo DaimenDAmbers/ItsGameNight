@@ -171,10 +171,11 @@ class MessagesViewController: MSMessagesAppViewController {
     
     fileprivate func instantiateRatingViewController(with poll: Poll) -> UIViewController {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: RatingViewController.storyboardIdentifier) as? RatingViewController else {
-            fatalError("Unable to instantiate a PollViewController from the storyboard")
+            fatalError("Unable to instantiate a RateATopicViewController from the storyboard")
         }
         
         controller.poll = poll
+        controller.editablePoll = poll
         controller.delegate = self
         
         let navVC = UINavigationController(rootViewController: controller)

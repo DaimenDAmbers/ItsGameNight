@@ -16,7 +16,7 @@ class PollTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var customImageView: UIImageView!
-    @IBOutlet weak var votePercentLabel: UILabel!
+    @IBOutlet weak var numOfVotesLabel: UILabel!
     @IBOutlet weak var decisionLabel: UILabel!
     
     override func awakeFromNib() {

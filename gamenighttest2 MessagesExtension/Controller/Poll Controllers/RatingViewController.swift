@@ -12,18 +12,20 @@ class RatingViewController: UIViewController {
     weak var delegate: MessageDelegate?
     
     var poll: Poll?
+    var editablePoll: Poll?
     var newVote = Vote(choice: .didNotVote)
     var decisions: [VotingDecisions : Bool] = [.underrated: false, .overrated: false, .properlyRated: false]
 
     @IBOutlet weak var sendVoteButton: UIButton!
-    @IBOutlet weak var questionText: UINavigationItem!
+//    @IBOutlet weak var questionText: UINavigationItem!
+    @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let unwrappedPoll = poll {
-            questionText.title = unwrappedPoll.question
+            questionText.text = unwrappedPoll.question
             print("Number of total votes: \(unwrappedPoll.totalVotes)")
         }
         
@@ -53,7 +55,7 @@ class RatingViewController: UIViewController {
     
     private func shouldEnableButton() {
         let enableButton = decisions.contains { $0.value == true}
-        print("Should enable button is \(true)")
+        print("Send Vote button is enabled?: \(enableButton)")
         sendVoteButton.isEnabled = enableButton
     }
 }
@@ -61,7 +63,10 @@ class RatingViewController: UIViewController {
 extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editablePoll = poll // Resets the poll values
+        guard var unwrappedPoll = editablePoll else { return }
         var cell = Array(decisions.keys)[indexPath.row]
+        
         
         switch cell {
         case .overrated:
@@ -69,25 +74,32 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
             decisions.updateValue(false, forKey: .underrated)
             decisions.updateValue(false, forKey: .properlyRated)
             print("Tapped Overrated")
-            shouldEnableButton()
         case .underrated:
             decisions[.underrated]?.toggle()
             decisions.updateValue(false, forKey: .overrated)
             decisions.updateValue(false, forKey: .properlyRated)
             print("Tapped Underrated")
-            shouldEnableButton()
         case .properlyRated:
             decisions[.properlyRated]?.toggle()
             decisions.updateValue(false, forKey: .overrated)
             decisions.updateValue(false, forKey: .underrated)
             print("Tapped Properly Rated")
-            shouldEnableButton()
         default:
             decisions.keys.forEach { decisions[$0] = false }
-            shouldEnableButton()
             print("No voting option selected")
         }
-       
+        
+        // Loops through all keys and finds the ones that are try and makes the newVote.choice equal to that value.
+        decisions.keys.forEach { if decisions[$0] == true {
+            newVote.choice = $0
+            unwrappedPoll.votes[newVote.choice]! += 1
+        } else {
+                newVote.choice = .didNotVote
+            }}
+        
+        editablePoll = unwrappedPoll
+        shouldEnableButton()
+        
         tableView.reloadData()
     }
     
@@ -100,8 +112,8 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         let key = Array(decisions.keys)[indexPath.row]
         let value = Array(decisions.values)[indexPath.row]
         
-        if let unwrappedPoll = poll {
-            cell.votePercentLabel.text = unwrappedPoll.votes[key]?.description
+        if let unwrappedPoll = editablePoll {
+            cell.numOfVotesLabel.text = unwrappedPoll.votes[key]?.description
         }
         
         cell.decisionLabel.text = key.description

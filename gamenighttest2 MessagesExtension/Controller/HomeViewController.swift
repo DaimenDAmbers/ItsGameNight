@@ -127,9 +127,8 @@ extension HomeViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPollVC" {
-            let destinationVC = segue.destination as! PollViewController
+            let destinationVC = segue.destination as! RateATopicViewController
             destinationVC.delegate = delegate
-            print("Made it to prepare func")
         }
     }
 }
