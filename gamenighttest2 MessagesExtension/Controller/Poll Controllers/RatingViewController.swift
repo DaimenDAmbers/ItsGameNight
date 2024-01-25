@@ -65,7 +65,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editablePoll = poll // Resets the poll values
         guard var unwrappedPoll = editablePoll else { return }
-        var cell = Array(decisions.keys)[indexPath.row]
+        let cell = Array(decisions.keys)[indexPath.row]
         
         
         switch cell {
@@ -120,5 +120,9 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         cell.customImageView.image = value ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "circle.fill")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
     }
 }
