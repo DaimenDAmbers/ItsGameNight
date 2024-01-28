@@ -181,7 +181,7 @@ class MessagesViewController: MSMessagesAppViewController {
         let navVC = UINavigationController(rootViewController: controller)
         navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         
-        return navVC
+        return controller
     }
     
     /// Composes a message for the Game Night Application.

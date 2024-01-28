@@ -23,10 +23,6 @@ class PollTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .none
-        applyShadow(cornerRadius: 8)
-        
-        contentView.backgroundColor = .white
-        contentView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,11 +37,11 @@ extension UIView {
         backgroundColor = .clear
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = false
-        layer.shadowRadius = 4.0
+        
+        //Shadow
+        layer.shadowRadius = 10.0
         layer.shadowOpacity = 0.30
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 5)
-        
-        
     }
 }

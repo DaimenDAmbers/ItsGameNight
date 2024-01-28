@@ -23,11 +23,11 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-ob-rSE">
-                        <rect key="frame" x="17" y="3" width="87" height="128"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-ob-rSE">
+                        <rect key="frame" x="10" y="42.666666666666657" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="K5p-de-oHw"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Wzl-PD-1vK"/>
+                            <constraint firstAttribute="width" constant="50" id="p1U-2m-ZuL"/>
+                            <constraint firstAttribute="height" constant="50" id="quW-kD-Ill"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFo-T6-poh">
@@ -42,6 +42,8 @@
                     <constraint firstAttribute="trailing" secondItem="oFo-T6-poh" secondAttribute="trailing" constant="20" symbolic="YES" id="5QW-Za-2AW"/>
                     <constraint firstItem="22Y-N0-nLO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N1J-E6-Rnn"/>
                     <constraint firstItem="22Y-N0-nLO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="aBW-Uc-Amk"/>
+                    <constraint firstItem="NSO-ob-rSE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bUi-xy-B5T"/>
+                    <constraint firstItem="NSO-ob-rSE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="c5X-BI-5qD"/>
                     <constraint firstItem="oFo-T6-poh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qtw-qu-2lw"/>
                 </constraints>
             </tableViewCellContentView>
