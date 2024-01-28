@@ -362,50 +362,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-zQ-9BH">
-                                <rect key="frame" x="20" y="68" width="374" height="24"/>
+                                <rect key="frame" x="20" y="68" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-9R-Prn">
-                                <rect key="frame" x="20" y="298" width="374" height="300"/>
-                                <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-Au-49n">
+                                <rect key="frame" x="20" y="298" width="300" height="300"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-9R-Prn">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="190"/>
+                                        <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="yp3-oC-yYN">
+                                                <rect key="frame" x="0.0" y="50" width="300" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yp3-oC-yYN" id="Fh7-aC-g02">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EKi-Ju-HEG">
+                                        <rect key="frame" x="0.0" y="262" width="300" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Send Vote">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="lightTextColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sendVote:" destination="zQb-gc-Z8M" eventType="touchUpInside" id="KQZ-vH-rEq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="YGp-o8-f2Q"/>
+                                    <constraint firstAttribute="height" constant="300" id="PTO-s0-da6"/>
                                 </constraints>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EKi-Ju-HEG">
-                                    <rect key="frame" x="0.0" y="121.5" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Send Vote"/>
-                                    <connections>
-                                        <action selector="sendVote:" destination="zQb-gc-Z8M" eventType="touchUpInside" id="KQZ-vH-rEq"/>
-                                    </connections>
-                                </button>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="yp3-oC-yYN">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yp3-oC-yYN" id="Fh7-aC-g02">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Glx-Rj-gaF"/>
                         <color key="backgroundColor" red="0.89264112709999999" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dNq-zQ-9BH" firstAttribute="top" secondItem="Glx-Rj-gaF" secondAttribute="top" constant="20" id="0ig-sL-H2U"/>
-                            <constraint firstItem="Glx-Rj-gaF" firstAttribute="trailing" secondItem="eTj-9R-Prn" secondAttribute="trailing" constant="20" id="MGW-mx-zfz"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="centerX" secondItem="Q59-xD-cfc" secondAttribute="centerX" id="N8z-Ai-VKI"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="centerY" secondItem="Q59-xD-cfc" secondAttribute="centerY" id="XJF-zJ-FG8"/>
+                            <constraint firstItem="rN7-Au-49n" firstAttribute="centerY" secondItem="Q59-xD-cfc" secondAttribute="centerY" id="Nqb-45-c8W"/>
+                            <constraint firstItem="Glx-Rj-gaF" firstAttribute="trailing" secondItem="rN7-Au-49n" secondAttribute="trailing" constant="20" id="PDq-fp-pb0"/>
+                            <constraint firstItem="rN7-Au-49n" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" constant="20" id="T0l-8c-Mvw"/>
                             <constraint firstItem="dNq-zQ-9BH" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" constant="20" id="bN2-2J-8ic"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="leading" secondItem="Glx-Rj-gaF" secondAttribute="leading" constant="20" id="lLa-5i-opt"/>
+                            <constraint firstItem="rN7-Au-49n" firstAttribute="centerX" secondItem="Q59-xD-cfc" secondAttribute="centerX" id="tu1-i5-cQm"/>
                             <constraint firstItem="Glx-Rj-gaF" firstAttribute="trailing" secondItem="dNq-zQ-9BH" secondAttribute="trailing" constant="20" id="xYx-ZE-P8g"/>
-                            <constraint firstItem="eTj-9R-Prn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dNq-zQ-9BH" secondAttribute="bottom" constant="20" id="yhI-Vh-pt6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="55O-9r-6OC"/>
