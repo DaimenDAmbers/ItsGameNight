@@ -123,9 +123,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.contentView.layer.masksToBounds = true
-        
-        let verticalPadding: CGFloat = 8
+        let verticalPadding: CGFloat = 6
 
         let maskLayer = CALayer()
         maskLayer.cornerRadius = 10    //if you want round edges
