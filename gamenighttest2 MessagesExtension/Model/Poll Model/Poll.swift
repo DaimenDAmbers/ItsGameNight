@@ -42,11 +42,11 @@ struct Poll: MessageTemplateProtocol {
     var image: UIImage
     
     var caption: String {
-        return "Rate This Topic"
+        return "What's your vote?"
     }
     
     var subCaption: String {
-        return "Total votes: \(totalVotes)"
+        return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperlyRated: \(properlyRatedVotes)"
     }
     
     init?(question: String, votes: [VotingDecisions: Int], image: UIImage) {

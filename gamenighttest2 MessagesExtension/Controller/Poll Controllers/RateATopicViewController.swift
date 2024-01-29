@@ -25,6 +25,8 @@ class RateATopicViewController: UIViewController {
         questionTextView.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         questionTextView.text = "Enter a question..."
         questionTextView.textColor = .lightGray
+        questionTextView.clipsToBounds = true
+        questionTextView.layer.cornerRadius = 10
         
         sendButton.isEnabled = false
         characterCountLabel.text = String(maxTextLength)
@@ -32,20 +34,31 @@ class RateATopicViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: UIButton) {
         guard let question = questionTextView.text else { return }
-        let questionImage = questionTextView.image()
-        let backgroundImage = UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
-
-        var size = CGSize(width: questionImage!.size.width, height: 300)
-        UIGraphicsBeginImageContext(size)
-
-        let newImage = backgroundImage.createMessageImage(titleImage: questionImage!)
+        let messageImage = createImage()
 //        let newImage = questionImage!.mergeWith(topImage: backgroundImage)
 //        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
 //        let image = renderer.image { ctx in
 //            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
 //        }
-        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], image: newImage)
+        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], image: messageImage ?? UIImage(named: "It's Game Night")!)
         delegate?.sendMessage(using: poll)
+    }
+    
+    private func createImage() -> UIImage? {
+        guard let titleText = questionTextView.text else { return nil }
+        guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.text = titleText
+        titleLabel.backgroundColor = .white
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 2
+        
+        guard let titleImage = titleLabel.image() else { return nil }
+        let messageImage = backgroundImage.mergeImage(with: titleImage)
+        
+        return messageImage
     }
 }
 
@@ -136,33 +149,33 @@ extension UIImage {
     }
 }
 
-extension UIImage {
+//extension UIImage {
 
-    func mergeImage(with secondImage: UIImage, point: CGPoint? = nil) -> UIImage {
-
-        let firstImage = self
-        let newImageWidth = max(firstImage.size.width, secondImage.size.width)
-        let newImageHeight = max(firstImage.size.height, secondImage.size.height)
-        let newImageSize = CGSize(width: newImageWidth, height: newImageHeight)
-
-        UIGraphicsBeginImageContextWithOptions(newImageSize, false, UIScreen.main.scale)
-
-        let firstImagePoint = CGPoint(x: round((newImageSize.width - firstImage.size.width) / 2),
-                                      y: round((newImageSize.height - firstImage.size.height) / 2))
-
-        let secondImagePoint = point ?? CGPoint(x: round((newImageSize.width - secondImage.size.width) / 2),
-                                                y: round((newImageSize.height - secondImage.size.height) / 2))
-
-        firstImage.draw(at: firstImagePoint)
-        secondImage.draw(at: secondImagePoint)
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-
-        UIGraphicsEndImageContext()
-
-        return image ?? self
-    }
-}
+//    func mergeImage(with secondImage: UIImage, point: CGPoint? = nil) -> UIImage {
+//
+//        let firstImage = self
+//        let newImageWidth = max(firstImage.size.width, secondImage.size.width)
+//        let newImageHeight = max(firstImage.size.height, secondImage.size.height)
+//        let newImageSize = CGSize(width: newImageWidth, height: newImageHeight)
+//
+//        UIGraphicsBeginImageContextWithOptions(newImageSize, false, UIScreen.main.scale)
+//
+//        let firstImagePoint = CGPoint(x: round((newImageSize.width - firstImage.size.width) / 2),
+//                                      y: round((newImageSize.height - firstImage.size.height) / 2))
+//
+//        let secondImagePoint = point ?? CGPoint(x: round((newImageSize.width - secondImage.size.width) / 2),
+//                                                y: round((newImageSize.height - secondImage.size.height) / 2))
+//
+//        firstImage.draw(at: firstImagePoint)
+//        secondImage.draw(at: secondImagePoint)
+//
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//
+//        UIGraphicsEndImageContext()
+//
+//        return image ?? self
+//    }
+//}
 
 extension UIImage {
   func mergeWith(topImage: UIImage) -> UIImage {
@@ -182,20 +195,4 @@ extension UIImage {
   }
 }
 
-extension UIImage {
-    func createMessageImage(size: CGSize? = nil, titleImage: UIImage) -> UIImage {
-        let backgroundImage = self
-        var size = size ?? CGSize(width: 300, height: 300)
-        UIGraphicsBeginImageContext(size)
 
-        let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        backgroundImage.draw(in: areaSize)
-
-        titleImage.draw(in: CGRect(x: 0, y: 0, width: titleImage.size.width, height: titleImage.size.height))
-
-        var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        return newImage
-    }
-}

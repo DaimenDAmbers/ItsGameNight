@@ -42,23 +42,26 @@ class RatingViewController: UIViewController {
             decisions.keys.forEach { if decisions[$0] == true { newVote.choice = $0 }}
             print("Submitting vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
-            unwrappedPoll.image = createImage()
+            unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
             delegate?.sendMessage(using: unwrappedPoll)
         }
     }
     
-    private func createImage() -> UIImage {
-        var messageImage: UIImage?
-        if let backgroundImage = voteButtons.image(), let titleImage = questionText.image() {
-//            messageImage = backgroundImage.mergeImage(with: titleImage)
-            messageImage = backgroundImage.createMessageImage(titleImage: titleImage)
-        }
+    private func createImage() -> UIImage? {
+        guard let titleText = poll?.question else { return nil }
+        guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
         
-//        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-//        let image = renderer.image { ctx in
-//            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-//        }
-        return messageImage ?? UIImage(named: "It's Game Night")!
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.text = titleText
+        titleLabel.backgroundColor = .white
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 2
+        
+        guard let titleImage = titleLabel.image() else { return nil }
+        let messageImage = backgroundImage.mergeImage(with: titleImage)
+        
+        return messageImage
     }
     
     private func shouldEnableButton() {
