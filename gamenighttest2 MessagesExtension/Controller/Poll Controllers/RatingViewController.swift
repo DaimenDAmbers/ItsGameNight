@@ -16,6 +16,8 @@ class RatingViewController: UIViewController {
     var newVote = Vote(choice: .didNotVote)
     var decisions: [VotingDecisions : Bool] = [.underrated: false, .overrated: false, .properlyRated: false]
 
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var voteButtons: UITableView!
     @IBOutlet weak var sendVoteButton: UIButton!
 //    @IBOutlet weak var questionText: UINavigationItem!
     @IBOutlet weak var questionText: UILabel!
@@ -46,11 +48,17 @@ class RatingViewController: UIViewController {
     }
     
     private func createImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        let image = renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        var messageImage: UIImage?
+        if let backgroundImage = voteButtons.image(), let titleImage = questionText.image() {
+//            messageImage = backgroundImage.mergeImage(with: titleImage)
+            messageImage = backgroundImage.createMessageImage(titleImage: titleImage)
         }
-        return image
+        
+//        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+//        let image = renderer.image { ctx in
+//            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+//        }
+        return messageImage ?? UIImage(named: "It's Game Night")!
     }
     
     private func shouldEnableButton() {

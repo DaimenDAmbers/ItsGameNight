@@ -361,7 +361,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-zQ-9BH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-zQ-9BH">
                                 <rect key="frame" x="20" y="68" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,7 +420,9 @@
                     <connections>
                         <outlet property="questionText" destination="dNq-zQ-9BH" id="Abi-A4-r3k"/>
                         <outlet property="sendVoteButton" destination="EKi-Ju-HEG" id="XD1-4p-IbV"/>
+                        <outlet property="stackView" destination="rN7-Au-49n" id="clN-IR-7TQ"/>
                         <outlet property="tableView" destination="eTj-9R-Prn" id="dIq-8T-YQI"/>
+                        <outlet property="voteButtons" destination="eTj-9R-Prn" id="BcW-hX-2oM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O8-1W-cWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

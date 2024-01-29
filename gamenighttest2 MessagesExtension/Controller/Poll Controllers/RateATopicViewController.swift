@@ -34,8 +34,12 @@ class RateATopicViewController: UIViewController {
         guard let question = questionTextView.text else { return }
         let questionImage = questionTextView.image()
         let backgroundImage = UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
-        
-        let newImage = backgroundImage.mergeImage(with: questionImage!, point: CGPoint(x: 0, y: 0))
+
+        var size = CGSize(width: questionImage!.size.width, height: 300)
+        UIGraphicsBeginImageContext(size)
+
+        let newImage = backgroundImage.createMessageImage(titleImage: questionImage!)
+//        let newImage = questionImage!.mergeWith(topImage: backgroundImage)
 //        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
 //        let image = renderer.image { ctx in
 //            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
@@ -157,5 +161,41 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return image ?? self
+    }
+}
+
+extension UIImage {
+  func mergeWith(topImage: UIImage) -> UIImage {
+    let bottomImage = self
+
+    UIGraphicsBeginImageContext(size)
+
+
+    let areaSize = CGRect(x: 0, y: 0, width: bottomImage.size.width, height: bottomImage.size.height)
+    bottomImage.draw(in: areaSize)
+
+    topImage.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
+
+    let mergedImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return mergedImage
+  }
+}
+
+extension UIImage {
+    func createMessageImage(size: CGSize? = nil, titleImage: UIImage) -> UIImage {
+        let backgroundImage = self
+        var size = size ?? CGSize(width: 300, height: 300)
+        UIGraphicsBeginImageContext(size)
+
+        let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        backgroundImage.draw(in: areaSize)
+
+        titleImage.draw(in: CGRect(x: 0, y: 0, width: titleImage.size.width, height: titleImage.size.height))
+
+        var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
 }
