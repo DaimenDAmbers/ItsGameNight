@@ -104,6 +104,13 @@ class MessagesViewController: MSMessagesAppViewController {
                     controller = instantiateHomeViewController(with: conversation)
                 }
                 
+            case .poll:
+                if let poll = Poll(message: conversation.selectedMessage) {
+                    controller = instantiateRatingViewController(with: poll)
+                } else {
+                    controller = instantiateHomeViewController(with: conversation)
+                }
+                
             default:
                 controller = instantiateHomeViewController(with: conversation)
             }
@@ -135,9 +142,8 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.conversation = conversation
         controller.delegate = self
 
-        let navVC = UINavigationController(rootViewController: controller)
         
-        return navVC
+        return controller
     }
     
     fileprivate func instantiateGameNightInviteViewController(with invite: CalendarInvite) -> UIViewController {
@@ -153,10 +159,22 @@ class MessagesViewController: MSMessagesAppViewController {
     
     fileprivate func instantiateRandomizerViewController(with randomizer: Randomizer) -> UIViewController {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: RandomizerViewController.storyboardIdentifier) as? RandomizerViewController else {
-            fatalError("Unable to instantiate a GameNightViewController from the storyboard")
+            fatalError("Unable to instantiate a RandomizerViewController from the storyboard")
         }
         
         controller.randomizer = randomizer
+        controller.delegate = self
+        
+        return controller
+    }
+    
+    fileprivate func instantiateRatingViewController(with poll: Poll) -> UIViewController {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: RatingViewController.storyboardIdentifier) as? RatingViewController else {
+            fatalError("Unable to instantiate a RateATopicViewController from the storyboard")
+        }
+        
+        controller.poll = poll
+        controller.editablePoll = poll
         controller.delegate = self
         
         return controller
@@ -205,6 +223,10 @@ class MessagesViewController: MSMessagesAppViewController {
             if queryItem.name == "App State" && value == AppState.randomizer.rawValue {
                 self.appState = .randomizer
             }
+            
+            if queryItem.name == "App State" && value == AppState.poll.rawValue {
+                self.appState = .poll
+            }
         }
     }
     
@@ -223,7 +245,7 @@ extension MessagesViewController: MessageDelegate {
     func sendMessage(using template: MessageTemplateProtocol?) {
         guard let conversation = activeConversation else { fatalError("Could not send a message.") }
 
-        let message = composeMessage(with: template)
+        let message = composeMessage(session: conversation.selectedMessage?.session, with: template)
         conversation.insert(message) { error in
             if let error = error {
                 print(error)

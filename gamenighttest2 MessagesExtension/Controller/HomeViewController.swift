@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var stickersButton: UIButton!
     @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var randomizerButton: UIButton!
+    @IBOutlet weak var rateATopicButton: UIButton!
     
     // MARK: Methods
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -61,6 +62,14 @@ class HomeViewController: UIViewController {
             let navVC = UINavigationController(rootViewController: vc)
             
             self.present(navVC, animated: true, completion: nil)
+            
+        case rateATopicButton:
+            print("Rate A Topic tapped")
+//            let vc = PollViewController()
+//            vc.navigationItem.title = "Rate a Topic"
+//            vc.delegate = delegate
+//            let navVC = NavigationViewController(rootViewController: vc)
+//            self.present(vc, animated: true, completion: nil)
             
         default:
             break
@@ -121,6 +130,9 @@ extension HomeViewController {
         if segue.identifier == "goToStickers" {
             let destinationVC = segue.destination as? StickerViewController
             destinationVC?.delegate = delegate
+        if segue.identifier == "goToPollVC" {
+            let destinationVC = segue.destination as! RateATopicViewController
+            destinationVC.delegate = delegate
         }
     }
 }
