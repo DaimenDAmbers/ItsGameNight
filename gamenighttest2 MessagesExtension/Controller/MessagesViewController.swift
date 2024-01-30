@@ -144,7 +144,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
         let navVC = UINavigationController(rootViewController: controller)
         
-        return navVC
+        return controller
     }
     
     fileprivate func instantiateGameNightInviteViewController(with invite: CalendarInvite) -> UIViewController {

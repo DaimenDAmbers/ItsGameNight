@@ -14,12 +14,11 @@ class RatingViewController: UIViewController {
     var poll: Poll?
     var editablePoll: Poll?
     var newVote = Vote(choice: .didNotVote)
-    var decisions: [VotingDecisions : Bool] = [.underrated: false, .overrated: false, .properlyRated: false]
+    var decisions: [VotingDecisions : Bool] = [.overrated: false, .underrated: false, .properlyRated: false]
+    let pollHelper = PollHelper()
 
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var voteButtons: UITableView!
     @IBOutlet weak var sendVoteButton: UIButton!
-//    @IBOutlet weak var questionText: UINavigationItem!
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,7 +27,6 @@ class RatingViewController: UIViewController {
         
         if let unwrappedPoll = poll {
             questionText.text = unwrappedPoll.question
-            print("Number of total votes: \(unwrappedPoll.totalVotes)")
         }
         
         tableView.dataSource = self
@@ -40,7 +38,7 @@ class RatingViewController: UIViewController {
     @IBAction func sendVote(_ sender: UIButton) {
         if var unwrappedPoll = poll {
             decisions.keys.forEach { if decisions[$0] == true { newVote.choice = $0 }}
-            print("Submitting vote for \(newVote.choice)")
+            print("Submitting a vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
             delegate?.sendMessage(using: unwrappedPoll)
@@ -51,14 +49,9 @@ class RatingViewController: UIViewController {
         guard let titleText = poll?.question else { return nil }
         guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
         
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        titleLabel.text = titleText
-        titleLabel.backgroundColor = .white
-        titleLabel.textAlignment = .center
-        titleLabel.numberOfLines = 2
+        let titleLabel = pollHelper.createTitleLabel(for: titleText)
+        guard let titleImage = titleLabel.createImage() else { return nil }
         
-        guard let titleImage = titleLabel.image() else { return nil }
         let messageImage = backgroundImage.mergeImage(with: titleImage)
         
         return messageImage
@@ -66,7 +59,6 @@ class RatingViewController: UIViewController {
     
     private func shouldEnableButton() {
         let enableButton = decisions.contains { $0.value == true}
-        print("Send Vote button is enabled?: \(enableButton)")
         sendVoteButton.isEnabled = enableButton
     }
 }
@@ -128,7 +120,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.decisionLabel.text = key.description
-        cell.customImageView.image = value ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "circle.fill")
+        cell.customImageView.image = value ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) : UIImage(systemName: "circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
         
         return cell
     }

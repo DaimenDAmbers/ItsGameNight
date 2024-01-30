@@ -11,9 +11,11 @@ import Messages
 
 // MARK: - Poll Structure
 struct Poll: MessageTemplateProtocol {
-//    var vote: Vote
+    
     var question: String
     var votes: [VotingDecisions: Int]
+    var image: UIImage
+    
     var overratedVotes: Int {
         return votes[.overrated] ?? 0
     }
@@ -27,22 +29,12 @@ struct Poll: MessageTemplateProtocol {
         return overratedVotes + underratedVotes + properlyRatedVotes
     }
     
-    var isOverrated: Bool = false
-    var isUnderrated: Bool = false
-    var isProperlyRated: Bool = false
-    
     var appState: AppState {
         return .poll
     }
     
-//    var image: UIImage {
-//        return UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
-//    }
-    
-    var image: UIImage
-    
     var caption: String {
-        return "What's your vote?"
+        return "What's your rating?"
     }
     
     var subCaption: String {
@@ -56,11 +48,11 @@ struct Poll: MessageTemplateProtocol {
     }
 }
 
-
 // MARK: - Query Items
 extension Poll {
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
+        
         let question = URLQueryItem(name: "Question", value: self.question)
         let overrated = URLQueryItem(name: "Overrated", value: String(self.votes[.overrated] ?? 0))
         let underrated = URLQueryItem(name: "Underrated", value: String(self.votes[.underrated] ?? 0))
@@ -88,17 +80,14 @@ extension Poll {
             }
             
             if queryItem.name == "Overrated" {
-//                overrated = Int(value) ?? 0
                 votes[VotingDecisions.overrated] = Int(value) ?? 0
             }
             
             if queryItem.name == "Underrated" {
-//                underrated = Int(value) ?? 0
                 votes[VotingDecisions.underrated] = Int(value) ?? 0
             }
             
             if queryItem.name == "Properly Rated" {
-//                properlyRated = Int(value) ?? 0
                 votes[VotingDecisions.properlyRated] = Int(value) ?? 0
             }
         }
