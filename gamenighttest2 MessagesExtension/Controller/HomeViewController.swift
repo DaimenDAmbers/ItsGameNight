@@ -130,6 +130,7 @@ extension HomeViewController {
         if segue.identifier == "goToStickers" {
             let destinationVC = segue.destination as? StickerViewController
             destinationVC?.delegate = delegate
+        }
         if segue.identifier == "goToPollVC" {
             let destinationVC = segue.destination as! RateATopicViewController
             destinationVC.delegate = delegate
