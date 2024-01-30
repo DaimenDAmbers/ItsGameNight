@@ -27,6 +27,12 @@ struct PollHelper {
 }
 
 extension UIImage {
+    
+    /// Merges a title images onto the background image.
+    /// - Parameters:
+    ///   - size: The size of the images as a `CGSize`.
+    ///   - titleImage: This is the image that will be overlayed onto the background image.
+    /// - Returns: A new `UIImage` that merges both the background and the title.
     func mergeImage(size: CGSize? = nil, with titleImage: UIImage) -> UIImage {
         let backgroundImage = self
         let size = size ?? CGSize(width: 300, height: 300)

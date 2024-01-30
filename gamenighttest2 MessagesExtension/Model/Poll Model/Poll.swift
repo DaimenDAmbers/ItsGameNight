@@ -12,6 +12,7 @@ import Messages
 // MARK: - Poll Structure
 struct Poll: MessageTemplateProtocol {
     
+    // MARK: Poll Variables
     var question: String
     var votes: [VotingDecisions: Int]
     var image: UIImage
@@ -29,6 +30,7 @@ struct Poll: MessageTemplateProtocol {
         return overratedVotes + underratedVotes + properlyRatedVotes
     }
     
+    // MARK: Protocol Variables
     var appState: AppState {
         return .poll
     }
@@ -38,7 +40,7 @@ struct Poll: MessageTemplateProtocol {
     }
     
     var subCaption: String {
-        return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperlyRated: \(properlyRatedVotes)"
+        return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperly Rated: \(properlyRatedVotes)"
     }
     
     init?(question: String, votes: [VotingDecisions: Int], image: UIImage) {

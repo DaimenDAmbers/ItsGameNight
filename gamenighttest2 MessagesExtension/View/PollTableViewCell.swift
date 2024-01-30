@@ -24,7 +24,6 @@ class PollTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .none
-//        layoutSubview()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,6 +32,7 @@ class PollTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /// Layouts a subview for each cell
     func layoutSubview() {
         
         // set the shadow of the view's layer
@@ -64,6 +64,9 @@ class PollTableViewCell: UITableViewCell {
 }
 
 extension UIView {
+    
+    /// Applies a shadow to the `UIView`
+    /// - Parameter cornerRadius: Applies a `CGFloat`radius to the shadow.
     func applyShadow(cornerRadius: CGFloat) {
         backgroundColor = .clear
         layer.cornerRadius = cornerRadius

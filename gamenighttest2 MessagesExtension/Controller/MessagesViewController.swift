@@ -142,7 +142,6 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.conversation = conversation
         controller.delegate = self
 
-        let navVC = UINavigationController(rootViewController: controller)
         
         return controller
     }
@@ -177,9 +176,6 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.poll = poll
         controller.editablePoll = poll
         controller.delegate = self
-        
-        let navVC = UINavigationController(rootViewController: controller)
-        navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         
         return controller
     }

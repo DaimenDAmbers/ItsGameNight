@@ -10,7 +10,6 @@
 		D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */; };
 		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
 		D321AA352B680502001B17EA /* PollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321AA342B680502001B17EA /* PollHelper.swift */; };
-		D324177F2B61D143008029DF /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324177E2B61D143008029DF /* RatingView.swift */; };
 		D32C5EA72B13C32700E102D2 /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */; };
 		D32C5EA82B13C32700E102D2 /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */; };
 		D32C5EA92B13C32700E102D2 /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */; };
@@ -65,7 +64,6 @@
 		D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */; };
 		D36F0EB22B4EECC500528DE2 /* RateATopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */; };
 		D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */; };
-		D36F0EB62B4F25D500528DE2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB52B4F25D500528DE2 /* NavigationViewController.swift */; };
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
@@ -112,7 +110,6 @@
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "It-s-Game-Night-App-Info.plist"; sourceTree = "<group>"; };
 		D321AA342B680502001B17EA /* PollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollHelper.swift; sourceTree = "<group>"; };
-		D324177E2B61D143008029DF /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +144,6 @@
 		D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateATopicViewController.swift; sourceTree = "<group>"; };
 		D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
-		D36F0EB52B4F25D500528DE2 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTemplateProtocol.swift; sourceTree = "<group>"; };
 		D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightInviteViewController.swift; sourceTree = "<group>"; };
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -342,7 +338,6 @@
 			children = (
 				D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */,
 				D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */,
-				D36F0EB52B4F25D500528DE2 /* NavigationViewController.swift */,
 			);
 			path = "Poll Controllers";
 			sourceTree = "<group>";
@@ -370,7 +365,6 @@
 			children = (
 				D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */,
 				D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */,
-				D324177E2B61D143008029DF /* RatingView.swift */,
 			);
 			name = "Poll Views";
 			sourceTree = "<group>";
@@ -525,13 +519,11 @@
 				D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */,
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
 				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
-				D324177F2B61D143008029DF /* RatingView.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
 				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,
 				D36F0EB22B4EECC500528DE2 /* RateATopicViewController.swift in Sources */,
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
-				D36F0EB62B4F25D500528DE2 /* NavigationViewController.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
 				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,

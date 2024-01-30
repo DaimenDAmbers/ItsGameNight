@@ -8,6 +8,8 @@
 import UIKit
 
 class RateATopicViewController: UIViewController {
+    
+    // MARK: - Variables
     static let storyboardIdentifier = "RateATopicViewController"
     var poll: Poll?
     let pollHelper = PollHelper()
@@ -17,6 +19,7 @@ class RateATopicViewController: UIViewController {
     @IBOutlet weak var questionTextView: UITextView!
     let maxTextLength: Int = 50
     
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
       // Do any additional setup after loading the view.

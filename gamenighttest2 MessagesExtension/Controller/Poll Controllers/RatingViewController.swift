@@ -8,6 +8,8 @@
 import UIKit
 
 class RatingViewController: UIViewController {
+    
+    // MARK: Variables
     static let storyboardIdentifier = "RatingViewController"
     weak var delegate: MessageDelegate?
     
@@ -22,6 +24,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +48,7 @@ class RatingViewController: UIViewController {
         }
     }
     
+    // MARK: Private functions
     private func createImage() -> UIImage? {
         guard let titleText = poll?.question else { return nil }
         guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
@@ -63,8 +67,10 @@ class RatingViewController: UIViewController {
     }
 }
 
+// MARK: - Extenstions
 extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: Did select row at
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editablePoll = poll // Resets the poll values
         guard var unwrappedPoll = editablePoll else { return }
@@ -106,10 +112,12 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
+    // MARK: Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decisions.keys.count
     }
     
+    // MARK: Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PollTableViewCell.idendifier, for: indexPath) as! PollTableViewCell
         let key = Array(decisions.keys)[indexPath.row]
@@ -125,6 +133,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // MARK: Will Display
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let verticalPadding: CGFloat = 6
 
