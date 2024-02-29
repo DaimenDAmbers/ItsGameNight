@@ -69,10 +69,13 @@
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
 		D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */; };
 		D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */; };
+		D380C8E52B8D290F002A3A52 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */; };
+		D380C8E62B8D290F002A3A52 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */; };
 		D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3923A7D2B54BBE3007C3553 /* Vote.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
+		D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */; };
 		D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */; };
 		D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */; };
 		D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */; };
@@ -149,10 +152,13 @@
 		D378F25C2AE823A7000A5654 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3923A7D2B54BBE3007C3553 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
 		D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
 		D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				D378F25C2AE823A7000A5654 /* AppState.swift */,
 				D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */,
 				D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */,
+				D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -342,9 +349,19 @@
 			path = "Poll Controllers";
 			sourceTree = "<group>";
 		};
+		D380C8E72B8D2925002A3A52 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */,
+				D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */,
+			);
+			name = "Home Views";
+			sourceTree = "<group>";
+		};
 		D38A09AB2B292EF100DDB0E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D380C8E72B8D2925002A3A52 /* Home Views */,
 				D38A09AC2B292F1300DDB0E4 /* Randomizer Views */,
 				D3D123C72B546ED7007E1E62 /* Poll Views */,
 			);
@@ -492,6 +509,7 @@
 				D32C5EBB2B13C32700E102D2 /* 3rdPlace.png in Resources */,
 				D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */,
 				D32C5EBD2B13C32700E102D2 /* Did you tell them?.png in Resources */,
+				D380C8E62B8D290F002A3A52 /* HomeCollectionViewCell.xib in Resources */,
 				D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */,
 				D32C5ECB2B13C32700E102D2 /* Youre Welcome.png in Resources */,
 				D33D0D0D2AD9888500A5099A /* MainInterface.storyboard in Resources */,
@@ -516,6 +534,7 @@
 				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
 				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
 				D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */,
+				D380C8E52B8D290F002A3A52 /* HomeCollectionViewCell.swift in Sources */,
 				D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */,
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
 				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
@@ -533,6 +552,7 @@
 				D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
+				D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */,
 				D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */,
 				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
 			);
@@ -697,7 +717,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -723,7 +743,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -749,7 +769,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -774,7 +794,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;

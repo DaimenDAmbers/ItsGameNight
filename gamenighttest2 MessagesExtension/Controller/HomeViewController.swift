@@ -24,56 +24,69 @@ class HomeViewController: UIViewController {
     let systemAlerts = SystemAlerts()
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
     
-    @IBOutlet weak var stickersButton: UIButton!
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak var randomizerButton: UIButton!
-    @IBOutlet weak var rateATopicButton: UIButton!
+    var menuItems: [MenuItem] = []
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewDidLoad() {
+        collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.idendifier)
+        
+        let calendarMenuItem = MenuItem(label: "Schedule a Game Night", image: UIImage(named: "Calendar"))
+        let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: "Pie Wheel"))
+        let pollMenuItem = MenuItem(label: "Rate a Topic")
+        let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: "It's Gamenight"))
+        
+        menuItems = [calendarMenuItem, randomizerMenuItem, pollMenuItem, stickerMenuItem]
+    }
     
     // MARK: Methods
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        switch sender {
-            
-        case calendarButton:
-
-            self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
-            
-            switch authorizationStatus {
-            case .fullAccess, .writeOnly, .authorized:
-                if let event = eventHelper.createCalendarEvent(with: self.eventStore) {
-                    presentVC(with: event)
-                }
-                
-            case .notDetermined:
-                eventHelper.requestAuthorization(with: self.eventStore)
-                
-            default:
-                self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
+    private func openCalendarInvite() {
+        self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
+        
+        switch authorizationStatus {
+        case .fullAccess, .writeOnly, .authorized:
+            if let event = eventHelper.createCalendarEvent(with: self.eventStore) {
+                presentVC(with: event)
             }
             
-        case randomizerButton:
-            print("Random button tapped")
-            let vc = SelectPeopleViewController()
-            
-            vc.navigationItem.title = "Randomizer"
-            vc.navigationItem.rightBarButtonItems = []
-            vc.delegate = delegate
-            vc.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")
-
-            let navVC = UINavigationController(rootViewController: vc)
-            
-            self.present(navVC, animated: true, completion: nil)
-            
-        case rateATopicButton:
-            print("Rate A Topic tapped")
-//            let vc = PollViewController()
-//            vc.navigationItem.title = "Rate a Topic"
-//            vc.delegate = delegate
-//            let navVC = NavigationViewController(rootViewController: vc)
-//            self.present(vc, animated: true, completion: nil)
+        case .notDetermined:
+            eventHelper.requestAuthorization(with: self.eventStore)
             
         default:
-            break
-        } // End of sender switch statement
+            self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
+        }
+    }
+    
+    private func openRandomizer() {
+        let vc = SelectPeopleViewController()
+        
+        vc.navigationItem.title = "Randomizer"
+        vc.navigationItem.rightBarButtonItems = []
+        vc.delegate = delegate
+        vc.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")
+
+        let navVC = UINavigationController(rootViewController: vc)
+        
+        self.present(navVC, animated: true, completion: nil)
+    }
+    
+    private func openRateATopic() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: RateATopicViewController.storyboardIdentifier) as? RateATopicViewController else {
+            fatalError("Unable to instantiate a RateATopicViewController from the storyboard")
+        }
+        
+        controller.delegate = delegate
+        present(controller, animated: true, completion: nil)
+    }
+    
+    private func openStickers() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: StickerViewController.storyboardIdentifier) as? StickerViewController else {
+            fatalError("Unable to instantiate a StickerViewController from the storyboard")
+        }
+        
+        controller.delegate = delegate
+        
+        let navVC = UINavigationController(rootViewController: controller)
+        self.present(navVC, animated: true, completion: nil)
     }
 
 }
@@ -145,5 +158,54 @@ extension HomeViewController {
         let people = [Person]()
         let randomizer = Randomizer(people: people)
         delegate?.sendMessage(using: randomizer)
+    }
+}
+
+// MARK: Collection View for the Home Screen
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset: CGFloat = 20
+        return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let inset: CGFloat = 20
+        layout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        
+        let space: CGFloat = (layout.minimumInteritemSpacing) + (layout.sectionInset.left) + (layout.sectionInset.right)
+        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.idendifier, for: indexPath) as! HomeCollectionViewCell
+    
+        // Configure the cell
+        let menuItem = menuItems[indexPath.row]
+        cell.label.text = menuItem.label
+        cell.image.image = menuItem.image
+        cell.tag = indexPath.item
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        print("Item selected \(indexPath.row)")
+        
+        if indexPath.row == 0 {
+            openCalendarInvite()
+        } else if indexPath.row == 1 {
+            openRandomizer()
+        } else if indexPath.row == 2 {
+            openRateATopic()
+        } else {
+            openStickers()
+        }
     }
 }

@@ -141,9 +141,11 @@ class MessagesViewController: MSMessagesAppViewController {
         
         controller.conversation = conversation
         controller.delegate = self
-
+        controller.title = "It's Game Night"
         
-        return controller
+        let navVC = UINavigationController(rootViewController: controller)
+        
+        return navVC
     }
     
     fileprivate func instantiateGameNightInviteViewController(with invite: CalendarInvite) -> UIViewController {
