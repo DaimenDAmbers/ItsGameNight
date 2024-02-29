@@ -3,4 +3,54 @@
    uuid = "B492AA89-6620-48BB-BD43-A89D0B33B1DC"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47A19355-72A7-459B-91F7-5A48E26C1B62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gamenighttest2 MessagesExtension/Controller/MessagesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "didCancelSending(_:conversation:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "47A19355-72A7-459B-91F7-5A48E26C1B62 - bb5836dc02b1bd77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.MessagesViewController.didCancelSending(_: __C.MSMessage, conversation: __C.MSConversation) -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/MessagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "47A19355-72A7-459B-91F7-5A48E26C1B62 - bb5836dc02b1bd77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "It_s_Game_Night.MessagesViewController.didCancelSending(_: __C.MSMessage, conversation: __C.MSConversation) -&gt; ()"
+                  moduleName = "It&apos;s Game Night"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2%20MessagesExtension/Controller/MessagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

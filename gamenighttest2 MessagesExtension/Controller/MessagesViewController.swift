@@ -38,6 +38,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called when the user deletes the message without sending it.
         
         // Use this to clean up state related to the deleted message.
+        // FIXME: Not canceling the calendar invite anymore.
         if let cancelMessage = CalendarInvite(message: message) {
             let eventStore = EKEventStore()
             guard let identifier = cancelMessage.identifier else {
