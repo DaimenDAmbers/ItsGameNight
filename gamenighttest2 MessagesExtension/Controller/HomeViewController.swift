@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.idendifier)
         
-        let calendarMenuItem = MenuItem(label: "Schedule a Game Night", image: UIImage(named: "Calendar"))
+        let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: "Calendar"))
         let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: "Pie Wheel"))
         let pollMenuItem = MenuItem(label: "Rate a Topic")
         let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: "It's Gamenight"))
@@ -173,6 +173,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 20
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let inset: CGFloat = 20
@@ -180,6 +184,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let space: CGFloat = (layout.minimumInteritemSpacing) + (layout.sectionInset.left) + (layout.sectionInset.right)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        print("Frame size: \(collectionView.frame.size.width) - space: \(space)")
+        print("Size = \(size)")
+//        if size > CGFloat(175) {
+//            return CGSize(width: 175, height: 175)
+//        } else {
+//            return CGSize(width: size, height: size)
+//        }
+//        return CGSize(width: 150, height: 150)
         return CGSize(width: size, height: size)
     }
     
