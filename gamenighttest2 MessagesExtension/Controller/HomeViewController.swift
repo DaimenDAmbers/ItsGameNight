@@ -39,6 +39,8 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Methods
+    
+    /// Method to open the functionaility for the Calendar Invites
     private func openCalendarInvite() {
         self.authorizationStatus = eventHelper.checkAuthorization(with: self.eventStore)
         
@@ -56,6 +58,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    /// Method to open the functionaility for the Randomizer
     private func openRandomizer() {
         let vc = SelectPeopleViewController()
         
@@ -69,6 +72,7 @@ class HomeViewController: UIViewController {
         self.present(navVC, animated: true, completion: nil)
     }
     
+    /// Method to open the functionaility for the Polls
     private func openRateATopic() {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: RateATopicViewController.storyboardIdentifier) as? RateATopicViewController else {
             fatalError("Unable to instantiate a RateATopicViewController from the storyboard")
@@ -78,6 +82,7 @@ class HomeViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    /// Method to open the functionaility for the Stickers
     private func openStickers() {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: StickerViewController.storyboardIdentifier) as? StickerViewController else {
             fatalError("Unable to instantiate a StickerViewController from the storyboard")
@@ -88,12 +93,12 @@ class HomeViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: controller)
         self.present(navVC, animated: true, completion: nil)
     }
-
 }
 
 // MARK: - EKEventEditViewDelegate
 extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDelegate {
     
+    /// This method checks for actions on the Calendar Invite modal. This runs when either cancel or save is tapped.
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         if action == .saved {
             
@@ -138,17 +143,6 @@ extension HomeViewController {
             return true
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToStickers" {
-            let destinationVC = segue.destination as? StickerViewController
-            destinationVC?.delegate = delegate
-        }
-        if segue.identifier == "goToPollVC" {
-            let destinationVC = segue.destination as! RateATopicViewController
-            destinationVC.delegate = delegate
-        }
-    }
 }
 
 // MARK: Randomizer View Controller
@@ -173,10 +167,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 20
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let inset: CGFloat = 20
@@ -184,14 +174,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let space: CGFloat = (layout.minimumInteritemSpacing) + (layout.sectionInset.left) + (layout.sectionInset.right)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-        print("Frame size: \(collectionView.frame.size.width) - space: \(space)")
-        print("Size = \(size)")
-//        if size > CGFloat(175) {
-//            return CGSize(width: 175, height: 175)
-//        } else {
-//            return CGSize(width: size, height: size)
-//        }
-//        return CGSize(width: 150, height: 150)
+
         return CGSize(width: size, height: size)
     }
     

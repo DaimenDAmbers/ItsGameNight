@@ -91,7 +91,6 @@ struct CalendarInvite: MessageTemplateProtocol {
             }
             
             if queryItem.name == "All Day Checkbox" {
-                print("All Day Checkbox: \(value)")
                 event.isAllDay = Bool(value) ?? false
             }
             

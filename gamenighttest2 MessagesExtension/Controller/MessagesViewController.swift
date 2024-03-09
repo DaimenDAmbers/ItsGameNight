@@ -200,7 +200,7 @@ class MessagesViewController: MSMessagesAppViewController {
             layout.subcaption = myInvite.subCaption
         }
         
-        print("Print the components: \(String(describing: components.queryItems))")
+        print("Printing the components: \(String(describing: components.queryItems))")
         
         let message = MSMessage(session: session ?? MSSession())
         message.url = components.url!
