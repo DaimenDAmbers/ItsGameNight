@@ -245,10 +245,16 @@ class MessagesViewController: MSMessagesAppViewController {
 
 // MARK: - Extensions
 extension MessagesViewController: MessageDelegate {
-    func sendMessage(using template: MessageTemplateProtocol?) {
+    func sendMessage(using template: MessageTemplateProtocol?, isNewMessage: Bool) {
         guard let conversation = activeConversation else { fatalError("Could not send a message.") }
+        var message = MSMessage()
+        
+        if isNewMessage {
+            message = composeMessage(with: template)
+        } else {
+            message = composeMessage(session: conversation.selectedMessage?.session, with: template)
+        }
 
-        let message = composeMessage(session: conversation.selectedMessage?.session, with: template)
         conversation.insert(message) { error in
             if let error = error {
                 print(error)

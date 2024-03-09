@@ -108,7 +108,7 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
     
     /// Sends a message after tapping the `Add` button within the event creation ViewController.
     @objc func didTapAdd() {
-        delegate?.sendMessage(using: invite)
+        delegate?.sendMessage(using: invite, isNewMessage: true)
     }
     
     /// Presents the ViewController after the `Schedule a Game Night` button is tapped
@@ -157,7 +157,7 @@ extension HomeViewController {
     @objc func didTapDone() {
         let people = [Person]()
         let randomizer = Randomizer(people: people)
-        delegate?.sendMessage(using: randomizer)
+        delegate?.sendMessage(using: randomizer, isNewMessage: true)
     }
 }
 

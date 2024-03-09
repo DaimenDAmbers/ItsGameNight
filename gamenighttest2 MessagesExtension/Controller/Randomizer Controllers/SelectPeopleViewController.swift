@@ -120,7 +120,7 @@ class SelectPeopleViewController: UITableViewController {
         
         if peopleCount > 1 {
             randomizer?.chooseRandomPerson()
-            delegate?.sendMessage(using: randomizer)
+            delegate?.sendMessage(using: randomizer, isNewMessage: true)
         } else {
             self.present(systemAlerts.showLessThanTwoEntriesAlert(), animated: true, completion: nil)
         }

@@ -44,7 +44,7 @@ class RatingViewController: UIViewController {
             print("Submitting a vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
-            delegate?.sendMessage(using: unwrappedPoll)
+            delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false)
         }
     }
     

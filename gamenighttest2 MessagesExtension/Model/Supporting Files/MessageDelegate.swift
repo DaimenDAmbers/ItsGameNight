@@ -10,6 +10,6 @@ import Messages
 /// Delegation for the MessagesViewController
 protocol MessageDelegate: AnyObject {
     func changePresentationStyle(_ style: MSMessagesAppPresentationStyle)
-    func sendMessage(using template: MessageTemplateProtocol?)
+    func sendMessage(using template: MessageTemplateProtocol?, isNewMessage: Bool)
     func changeAppState(to currentState: AppState)
 }
