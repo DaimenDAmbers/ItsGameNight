@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30374792BB3673E00E89FB7 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30374782BB3673E00E89FB7 /* Defaults.swift */; };
 		D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */; };
 		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
 		D321AA352B680502001B17EA /* PollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321AA342B680502001B17EA /* PollHelper.swift */; };
@@ -72,6 +73,8 @@
 		D380C8E52B8D290F002A3A52 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */; };
 		D380C8E62B8D290F002A3A52 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */; };
 		D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3923A7D2B54BBE3007C3553 /* Vote.swift */; };
+		D3A11A212BAC775600F45EBE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A11A202BAC775600F45EBE /* InfoViewController.swift */; };
+		D3A11A232BACF9A000F45EBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A11A222BACF9A000F45EBE /* Constants.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
@@ -109,6 +112,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D30374782BB3673E00E89FB7 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "It-s-Game-Night-App-Info.plist"; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3923A7D2B54BBE3007C3553 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		D3A11A202BAC775600F45EBE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		D3A11A222BACF9A000F45EBE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 				D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */,
 				D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */,
 				D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */,
+				D3A11A222BACF9A000F45EBE /* Constants.swift */,
+				D30374782BB3673E00E89FB7 /* Defaults.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
+				D3A11A202BAC775600F45EBE /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -540,8 +549,10 @@
 				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
+				D3A11A232BACF9A000F45EBE /* Constants.swift in Sources */,
 				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,
 				D36F0EB22B4EECC500528DE2 /* RateATopicViewController.swift in Sources */,
+				D3A11A212BAC775600F45EBE /* InfoViewController.swift in Sources */,
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
@@ -553,6 +564,7 @@
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */,
+				D30374792BB3673E00E89FB7 /* Defaults.swift in Sources */,
 				D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */,
 				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
 			);
@@ -717,7 +729,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.1.1;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -743,7 +755,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.1.1;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -769,7 +781,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.1.1;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -794,7 +806,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.1.1;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;

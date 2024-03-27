@@ -206,6 +206,10 @@ class MessagesViewController: MSMessagesAppViewController {
         message.url = components.url!
         message.layout = layout
         
+        if let summaryText = invite?.summaryText {
+            message.summaryText = summaryText
+        }
+        
         return message
     }
     

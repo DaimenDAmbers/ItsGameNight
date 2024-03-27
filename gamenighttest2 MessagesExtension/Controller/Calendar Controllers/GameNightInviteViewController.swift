@@ -40,7 +40,10 @@ class GameNightInviteViewController: UIViewController {
         dateFormatter.timeStyle = .short
         time = dateFormatter.string(from: unwrappedInvite.event.startDate)
         
-        gameNightDetailsLabel.text = "Game Night is scheduled on \(date) at \(time)."
+        let title: String
+        title = unwrappedInvite.event.title
+        
+        gameNightDetailsLabel.text = "\(title) is scheduled on \(date) at \(time)."
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {

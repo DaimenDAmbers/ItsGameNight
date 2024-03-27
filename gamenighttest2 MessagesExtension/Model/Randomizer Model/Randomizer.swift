@@ -27,6 +27,8 @@ struct Randomizer: MessageTemplateProtocol {
         return "Open to see the random selection"
     }
     
+    var summaryText: String?
+    
     init?(people: [Person]) {
         self.people = people
     }

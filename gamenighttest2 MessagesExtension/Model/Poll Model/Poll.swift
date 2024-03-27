@@ -43,6 +43,8 @@ struct Poll: MessageTemplateProtocol {
         return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperly Rated: \(properlyRatedVotes)"
     }
     
+    var summaryText: String?
+    
     init?(question: String, votes: [VotingDecisions: Int], image: UIImage) {
         self.question = question
         self.votes = votes

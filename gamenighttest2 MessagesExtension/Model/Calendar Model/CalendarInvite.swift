@@ -37,6 +37,8 @@ struct CalendarInvite: MessageTemplateProtocol {
         return "Open to see the next scheduled Game Night"
     }
     
+    var summaryText: String?
+    
     /// - Tag: QueryItems
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()

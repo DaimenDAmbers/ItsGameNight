@@ -9,5 +9,5 @@ import UIKit
 import EventKitUI
 
 class CalendarViewController: EKEventEditViewController {
-
+    static let storyboardIdentifier = "CalendarViewController"
 }

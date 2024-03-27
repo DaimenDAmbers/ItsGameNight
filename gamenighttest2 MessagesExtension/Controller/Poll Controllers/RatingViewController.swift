@@ -18,6 +18,7 @@ class RatingViewController: UIViewController {
     var newVote = Vote(choice: .didNotVote)
     var decisions: [VotingDecisions : Bool] = [.overrated: false, .underrated: false, .properlyRated: false]
     let pollHelper = PollHelper()
+    let defaults = Defaults()
 
     @IBOutlet weak var voteButtons: UITableView!
     @IBOutlet weak var sendVoteButton: UIButton!
@@ -44,6 +45,7 @@ class RatingViewController: UIViewController {
             print("Submitting a vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
+            unwrappedPoll.summaryText = createSummaryText(for: defaults.getUsername(), with: newVote.choice)
             delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false)
         }
     }
@@ -64,6 +66,11 @@ class RatingViewController: UIViewController {
     private func shouldEnableButton() {
         let enableButton = decisions.contains { $0.value == true}
         sendVoteButton.isEnabled = enableButton
+    }
+    
+    private func createSummaryText(for name: String?, with decision: VotingDecisions) -> String? {
+        guard let name = name else { return "Anonymous voted \(decision.description)" }
+        return "\(name) voted \(decision.description)"
     }
 }
 

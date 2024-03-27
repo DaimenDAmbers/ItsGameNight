@@ -36,9 +36,21 @@ class HomeViewController: UIViewController {
         let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: "It's Gamenight"))
         
         menuItems = [calendarMenuItem, randomizerMenuItem, pollMenuItem, stickerMenuItem]
+        
+        let infoButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(self.infoButtonTapped))
+        self.navigationItem.rightBarButtonItem = infoButton
     }
     
     // MARK: Methods
+    @objc func infoButtonTapped() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: InfoViewController.storyboardIdentifier) as? InfoViewController else {
+            fatalError("Unable to instantiate a InfoViewController from the storyboard")
+        }
+        controller.navigationItem.title = "Settings"
+        let navVC = UINavigationController(rootViewController: controller)
+        
+        self.present(navVC, animated: true, completion: nil)
+    }
     
     /// Method to open the functionaility for the Calendar Invites
     private func openCalendarInvite() {
@@ -60,14 +72,16 @@ class HomeViewController: UIViewController {
     
     /// Method to open the functionaility for the Randomizer
     private func openRandomizer() {
-        let vc = SelectPeopleViewController()
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: SelectPeopleViewController.storyboardIdentifier) as? SelectPeopleViewController else {
+            fatalError("Unable to instantiate a SelectPeopleViewController from the storyboard")
+        }
         
-        vc.navigationItem.title = "Randomizer"
-        vc.navigationItem.rightBarButtonItems = []
-        vc.delegate = delegate
-        vc.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")
+        controller.navigationItem.title = "Randomizer"
+        controller.navigationItem.rightBarButtonItems = []
+        controller.delegate = delegate
+        controller.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PersonCell")
 
-        let navVC = UINavigationController(rootViewController: vc)
+        let navVC = UINavigationController(rootViewController: controller)
         
         self.present(navVC, animated: true, completion: nil)
     }
@@ -119,6 +133,10 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
     /// Presents the ViewController after the `Schedule a Game Night` button is tapped
     private func presentVC(with event: EKEvent) {
         let editVC: EKEventEditViewController = CalendarViewController() // Needed to be able to dismiss modal even after changing the presentation style
+//        guard let controller = storyboard?.instantiateViewController(withIdentifier: CalendarViewController.storyboardIdentifier) as? CalendarViewController else {
+//            fatalError("Unable to instantiate a CalendarViewController from the storyboard")
+//        }
+        
         editVC.eventStore = self.eventStore
         editVC.event = event
         editVC.delegate = self
@@ -144,16 +162,16 @@ extension HomeViewController {
         }
     }
 }
-
-// MARK: Randomizer View Controller
-extension HomeViewController {
-    /// Sends a message after tapping the `Done` button within the randomizer ViewController.
-    @objc func didTapDone() {
-        let people = [Person]()
-        let randomizer = Randomizer(people: people)
-        delegate?.sendMessage(using: randomizer, isNewMessage: true)
-    }
-}
+//
+//// MARK: Randomizer View Controller
+//extension HomeViewController {
+//    /// Sends a message after tapping the `Done` button within the randomizer ViewController.
+//    @objc func didTapDone() {
+//        let people = [Person]()
+//        let randomizer = Randomizer(people: people)
+//        delegate?.sendMessage(using: randomizer, isNewMessage: true)
+//    }
+//}
 
 // MARK: Collection View for the Home Screen
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

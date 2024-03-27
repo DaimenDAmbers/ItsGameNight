@@ -12,6 +12,7 @@ class EventHelper {
     
     // MARK: Properties
     var store: EKEventStore!
+    let defaults = Defaults()
     
     // MARK: Methods
     /*
@@ -32,7 +33,11 @@ class EventHelper {
         event.endDate = event.startDate.addingTimeInterval(twoHourInterval!)
         
         event.timeZone = .current
-        event.notes = "Event created from \"It's Game Night\"."
+        if let name = defaults.getUsername() {
+            event.notes = "\(name) created an event from \"It's Game Night\"."
+        } else {
+            event.notes = "Event created from \"It's Game Night\"."
+        }
         event.calendar = self.store.defaultCalendarForNewEvents
         
         return event

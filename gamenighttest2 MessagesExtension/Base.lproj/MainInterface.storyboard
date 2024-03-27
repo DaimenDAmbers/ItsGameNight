@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -94,7 +95,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="nlW-p7-HSp">
             <objects>
-                <viewController id="Cd7-Uh-CSP" customClass="CalendarViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="Cd7-Uh-CSP" customClass="CalendarViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chI-rT-3au">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,24 +381,6 @@
             </objects>
             <point key="canvasLocation" x="2203" y="656"/>
         </scene>
-        <!--Nav View Controller-->
-        <scene sceneID="hye-Z1-LMS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vw2-r0-fbb" customClass="NavViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u8O-ZM-ECh">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aVB-Bz-hh9" kind="relationship" relationship="rootViewController" id="GHS-2Q-2Xu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EVI-SP-Xqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2988" y="-29"/>
-        </scene>
         <!--Randomizer View Controller-->
         <scene sceneID="pa3-To-Hrd">
             <objects>
@@ -492,9 +475,118 @@
             </objects>
             <point key="canvasLocation" x="4479.4921875" y="-29.868228404099558"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="VqP-iv-bbJ">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="HoI-8e-GP9" customClass="InfoViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ntm-5k-mMg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Z6-Gm-o0W">
+                                <rect key="frame" x="20" y="707" width="374" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-9u-iQW">
+                                        <rect key="frame" x="112" y="0.0" width="150" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Vgt-CP-Jgd"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Privacy Policy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" title="Share Feedback">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="MenuBackground"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="4Yy-ap-zZ7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Bo-nUV">
+                                        <rect key="frame" x="112" y="44.5" width="150" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="dOO-H6-eLK"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Privacy Policy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" title="Privacy Policy">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="MenuBackground"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="8RA-x3-Ow9"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2023 Daimen's Design Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-VL-zhH">
+                                        <rect key="frame" x="82" y="89" width="210" height="18"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyU-H0-FTi">
+                                        <rect key="frame" x="161.5" y="117" width="51.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-zV-aB2">
+                                <rect key="frame" x="50" y="404.5" width="314" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-td-ZL3">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rev-W0-ogc">
+                                        <rect key="frame" x="0.0" y="25.5" width="314" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize the app by adding your name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Uj-ah-VIc">
+                                        <rect key="frame" x="0.0" y="70" width="314" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WLD-Dn-Wlc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nay-zV-aB2" firstAttribute="centerY" secondItem="Ntm-5k-mMg" secondAttribute="centerY" id="1Dq-8T-O7e"/>
+                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="Nay-zV-aB2" secondAttribute="trailing" constant="50" id="Kao-9w-gql"/>
+                            <constraint firstItem="7Z6-Gm-o0W" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="20" id="W30-bc-slq"/>
+                            <constraint firstItem="7Z6-Gm-o0W" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="Y8H-iW-6tq"/>
+                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="bottom" secondItem="7Z6-Gm-o0W" secondAttribute="bottom" constant="20" id="oli-5s-Y0f"/>
+                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="7Z6-Gm-o0W" secondAttribute="trailing" constant="20" id="pqZ-yU-45N"/>
+                            <constraint firstItem="Nay-zV-aB2" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="r45-So-I3q"/>
+                            <constraint firstItem="Nay-zV-aB2" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="50" id="sNw-EN-sWk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="rev-W0-ogc" id="yoj-F6-mHn"/>
+                        <outlet property="privacyPolicyButton" destination="Vax-Bo-nUV" id="XIj-z6-e7h"/>
+                        <outlet property="shareFeedbackButton" destination="7KK-9u-iQW" id="Vx4-fJ-1oC"/>
+                        <outlet property="versionNumberLabel" destination="iyU-H0-FTi" id="Cbb-hF-g2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxv-AP-LWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198.5507246376815" y="-675"/>
+        </scene>
     </scenes>
     <resources>
         <image name="folder" catalog="system" width="128" height="96"/>
+        <namedColor name="MenuBackground">
+            <color red="0.85490196078431369" green="0.8666666666666667" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
