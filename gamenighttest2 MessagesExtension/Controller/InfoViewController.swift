@@ -24,9 +24,13 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        privacyPolicyButton.backgroundColor = UIColor(named: "MenuBackground")
+        privacyPolicyButton.backgroundColor = UIColor(named: Constans.menuBackground)
         privacyPolicyButton.applyShadow(cornerRadius: 5)
         privacyPolicyButton.layer.cornerRadius = 5
+        
+        shareFeedbackButton.backgroundColor = UIColor(named: Constans.menuBackground)
+        shareFeedbackButton.applyShadow(cornerRadius: 5)
+        shareFeedbackButton.layer.cornerRadius = 5
         
         versionNumberLabel.text = Bundle.main.releaseVersionNumber
         nameTextField.delegate = self

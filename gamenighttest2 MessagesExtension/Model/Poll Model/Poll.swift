@@ -43,12 +43,25 @@ struct Poll: MessageTemplateProtocol {
         return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperly Rated: \(properlyRatedVotes)"
     }
     
+    /// This is populated if the user adds their name to the app in the Settigns.
+    var sentBy: String?
+    
     var summaryText: String?
     
-    init?(question: String, votes: [VotingDecisions: Int], image: UIImage) {
+    init?(question: String, votes: [VotingDecisions: Int], image: UIImage, sentBy: String?) {
         self.question = question
         self.votes = votes
         self.image = image
+        
+        if let sentBy = sentBy {
+            self.sentBy = "Question sent by \(sentBy)"
+        }
+    }
+    
+    /// Summary text is created if the user has added their name to the app in Settings
+    mutating func createSummaryText(for name: String?, with decision: VotingDecisions) {
+        guard let name = name else { return }
+        self.summaryText = "\(name) voted \(decision.description)"
     }
 }
 
@@ -61,11 +74,13 @@ extension Poll {
         let overrated = URLQueryItem(name: "Overrated", value: String(self.votes[.overrated] ?? 0))
         let underrated = URLQueryItem(name: "Underrated", value: String(self.votes[.underrated] ?? 0))
         let properlyRated = URLQueryItem(name: "Properly Rated", value: String(self.votes[.properlyRated] ?? 0))
+        let sentBy = URLQueryItem(name: "Sent By", value: self.sentBy)
         
         items.append(question)
         items.append(overrated)
         items.append(underrated)
         items.append(properlyRated)
+        items.append(sentBy)
         items.append(appState.queryItem)
         
         return items
@@ -93,6 +108,10 @@ extension Poll {
             
             if queryItem.name == "Properly Rated" {
                 votes[VotingDecisions.properlyRated] = Int(value) ?? 0
+            }
+            
+            if queryItem.name == "Sent By" {
+                sentBy = value
             }
         }
     }

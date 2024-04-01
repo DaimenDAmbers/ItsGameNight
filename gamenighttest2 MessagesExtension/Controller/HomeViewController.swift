@@ -30,10 +30,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.idendifier)
         
-        let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: "Calendar"))
-        let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: "Pie Wheel"))
-        let pollMenuItem = MenuItem(label: "Rate a Topic")
-        let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: "It's Gamenight"))
+        let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: Constans.ImageTiles.calendar))
+        let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: Constans.ImageTiles.pieWheel))
+        let pollMenuItem = MenuItem(label: "Rate a Topic", image: UIImage(named: Constans.ImageTiles.rateATopic))
+        let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: Constans.ImageTiles.stickers))
         
         menuItems = [calendarMenuItem, randomizerMenuItem, pollMenuItem, stickerMenuItem]
         

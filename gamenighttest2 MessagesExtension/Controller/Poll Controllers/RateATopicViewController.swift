@@ -13,10 +13,12 @@ class RateATopicViewController: UIViewController {
     static let storyboardIdentifier = "RateATopicViewController"
     var poll: Poll?
     let pollHelper = PollHelper()
+    let defaults = Defaults()
     weak var delegate: MessageDelegate?
     @IBOutlet weak var characterCountLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var questionTextView: UITextView!
+    
     let maxTextLength: Int = 50
     
     // MARK: viewDidLoad
@@ -33,18 +35,20 @@ class RateATopicViewController: UIViewController {
         
         sendButton.isEnabled = false
         characterCountLabel.text = String(maxTextLength)
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApperence(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
         guard let question = questionTextView.text else { return }
         let messageImage = createImage() ?? UIImage(named: "It's Game Night")!
-        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], image: messageImage)
+        poll = Poll(question: question, votes: [VotingDecisions.didNotVote: 0], image: messageImage, sentBy: defaults.getUsername())
         delegate?.sendMessage(using: poll, isNewMessage: true)
     }
     
     private func createImage() -> UIImage? {
         guard let titleText = questionTextView.text else { return nil }
-        guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
+        guard let backgroundImage = UIImage(named: Constans.ImageTiles.rateATopic) else { return nil }
         
         let titleLabel = pollHelper.createTitleLabel(for: titleText)
         guard let titleImage = titleLabel.createImage() else { return nil }
@@ -53,6 +57,12 @@ class RateATopicViewController: UIViewController {
         
         return messageImage
     }
+        
+//    @objc func keyboardApperence(notification: NSNotification){
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            sendButton.frame.origin.y -= keyboardSize.height
+//        }
+//    }
 }
 
 // MARK: - Extensions

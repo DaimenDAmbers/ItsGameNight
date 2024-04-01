@@ -24,6 +24,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var sendVoteButton: UIButton!
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sentByLabel: UILabel!
     
     // MARK: viewDidLoad
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class RatingViewController: UIViewController {
         
         if let unwrappedPoll = poll {
             questionText.text = unwrappedPoll.question
+            sentByLabel.text = unwrappedPoll.sentBy
         }
         
         tableView.dataSource = self
@@ -45,7 +47,7 @@ class RatingViewController: UIViewController {
             print("Submitting a vote for \(newVote.choice)")
             unwrappedPoll.votes[newVote.choice]! += 1
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
-            unwrappedPoll.summaryText = createSummaryText(for: defaults.getUsername(), with: newVote.choice)
+            unwrappedPoll.createSummaryText(for: defaults.getUsername(), with: newVote.choice)
             delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false)
         }
     }
@@ -53,7 +55,7 @@ class RatingViewController: UIViewController {
     // MARK: Private functions
     private func createImage() -> UIImage? {
         guard let titleText = poll?.question else { return nil }
-        guard let backgroundImage = UIImage(named: "It's Game Night") else { return nil }
+        guard let backgroundImage = UIImage(named: Constans.ImageTiles.rateATopic) else { return nil }
         
         let titleLabel = pollHelper.createTitleLabel(for: titleText)
         guard let titleImage = titleLabel.createImage() else { return nil }
@@ -66,11 +68,6 @@ class RatingViewController: UIViewController {
     private func shouldEnableButton() {
         let enableButton = decisions.contains { $0.value == true}
         sendVoteButton.isEnabled = enableButton
-    }
-    
-    private func createSummaryText(for name: String?, with decision: VotingDecisions) -> String? {
-        guard let name = name else { return "Anonymous voted \(decision.description)" }
-        return "\(name) voted \(decision.description)"
     }
 }
 
