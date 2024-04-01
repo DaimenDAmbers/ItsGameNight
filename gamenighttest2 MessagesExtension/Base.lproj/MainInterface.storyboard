@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -484,18 +483,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Z6-Gm-o0W">
-                                <rect key="frame" x="20" y="707" width="374" height="135"/>
+                                <rect key="frame" x="20" y="705" width="374" height="137"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-9u-iQW">
-                                        <rect key="frame" x="112" y="0.0" width="150" height="34.5"/>
+                                        <rect key="frame" x="102" y="0.0" width="170" height="35.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="Vgt-CP-Jgd"/>
+                                            <constraint firstAttribute="width" constant="170" id="Vgt-CP-Jgd"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <buttonConfiguration key="configuration" style="filled" title="Share Feedback">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" name="MenuBackground"/>
                                         </buttonConfiguration>
@@ -504,15 +504,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Bo-nUV">
-                                        <rect key="frame" x="112" y="44.5" width="150" height="34.5"/>
+                                        <rect key="frame" x="102" y="45.5" width="170" height="35.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="dOO-H6-eLK"/>
+                                            <constraint firstAttribute="width" constant="170" id="dOO-H6-eLK"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <buttonConfiguration key="configuration" style="filled" title="Privacy Policy">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" name="MenuBackground"/>
                                         </buttonConfiguration>
@@ -521,13 +522,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2023 Daimen's Design Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-VL-zhH">
-                                        <rect key="frame" x="82" y="89" width="210" height="18"/>
+                                        <rect key="frame" x="82" y="91" width="210" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyU-H0-FTi">
-                                        <rect key="frame" x="161.5" y="117" width="51.5" height="18"/>
+                                        <rect key="frame" x="161.5" y="119" width="51.5" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -539,7 +540,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-td-ZL3">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
