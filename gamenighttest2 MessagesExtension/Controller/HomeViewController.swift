@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Methods
-    @objc func infoButtonTapped() {
+    @objc private func infoButtonTapped() {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: InfoViewController.storyboardIdentifier) as? InfoViewController else {
             fatalError("Unable to instantiate a InfoViewController from the storyboard")
         }

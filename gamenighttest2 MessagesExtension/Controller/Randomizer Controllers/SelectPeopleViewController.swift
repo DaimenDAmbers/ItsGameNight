@@ -84,7 +84,7 @@ class SelectPeopleViewController: UITableViewController {
     @objc func addButtonPressed() {
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add a new name", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a new item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             print("Success")

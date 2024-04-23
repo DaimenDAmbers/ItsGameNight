@@ -17,6 +17,7 @@ class RatingViewController: UIViewController {
     var editablePoll: Poll?
     var newVote = Vote(choice: .didNotVote)
     var decisions: [VotingDecisions : Bool] = [.overrated: false, .underrated: false, .properlyRated: false]
+    let choices = [VotingDecisions.overrated, VotingDecisions.underrated, VotingDecisions.properlyRated]
     let pollHelper = PollHelper()
     let defaults = Defaults()
 
@@ -45,7 +46,8 @@ class RatingViewController: UIViewController {
         if var unwrappedPoll = poll {
             decisions.keys.forEach { if decisions[$0] == true { newVote.choice = $0 }}
             print("Submitting a vote for \(newVote.choice)")
-            unwrappedPoll.votes[newVote.choice]! += 1
+            newVote.voterName = defaults.getUsername()
+            unwrappedPoll.votes!.append(newVote)
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
             unwrappedPoll.createSummaryText(for: defaults.getUsername(), with: newVote.choice)
             delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false)
@@ -78,8 +80,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editablePoll = poll // Resets the poll values
         guard var unwrappedPoll = editablePoll else { return }
-        let cell = Array(decisions.keys)[indexPath.row]
-        
+        let cell = choices[indexPath.row]
         
         switch cell {
         case .overrated:
@@ -105,7 +106,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         // Loops through all keys and finds the ones that are try and makes the newVote.choice equal to that value.
         decisions.keys.forEach { if decisions[$0] == true {
             newVote.choice = $0
-            unwrappedPoll.votes[newVote.choice]! += 1
+            unwrappedPoll.votes!.append(newVote)
         } else {
                 newVote.choice = .didNotVote
             }}
@@ -124,15 +125,16 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PollTableViewCell.idendifier, for: indexPath) as! PollTableViewCell
-        let key = Array(decisions.keys)[indexPath.row]
-        let value = Array(decisions.values)[indexPath.row]
+        let isSelected = decisions[choices[indexPath.row]]
         
         if let unwrappedPoll = editablePoll {
-            cell.numOfVotesLabel.text = unwrappedPoll.votes[key]?.description
+            cell.numOfVotesLabel.text = unwrappedPoll.getNumOfVotes(for: choices[indexPath.row]).description
         }
         
-        cell.decisionLabel.text = key.description
-        cell.customImageView.image = value ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) : UIImage(systemName: "circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
+        cell.decisionLabel.text = choices[indexPath.row].description
+        cell.customImageView.image = isSelected! ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) : UIImage(systemName: "circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
+        cell.infoButton.tag = indexPath.row
+        cell.infoButton.addTarget(self, action: #selector(infoButtonTapped), for: UIControl.Event.touchUpInside)
         
         return cell
     }
@@ -146,5 +148,32 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
         maskLayer.backgroundColor = UIColor.black.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
         cell.layer.mask = maskLayer
+    }
+    
+    @objc func infoButtonTapped(_ sender: UIButton) {
+        guard let unwrappedPoll = poll else { return }
+        if sender.tag == 0 {
+            print("Overrated info button tapped")
+            presentInfoVC(title: "Overrated Votes", votes: unwrappedPoll.returnVotes(for: .overrated))
+            
+        } else if sender.tag == 1 {
+            print("Underrated info button tapped")
+            presentInfoVC(title: "Underrated Votes", votes: unwrappedPoll.returnVotes(for: .underrated))
+            
+        } else {
+            print("Properly Rated info button tapped")
+            presentInfoVC(title: "Properly Rated Votes", votes: unwrappedPoll.returnVotes(for: .properlyRated))
+        }
+    }
+    
+    private func presentInfoVC(title: String, votes: [Vote]?) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: VoteInfoViewController.storyboardIdentifier) as? VoteInfoViewController else {
+            fatalError("Unable to instantiate a StickerViewController from the storyboard")
+        }
+        
+        controller.navigationItem.title = title
+        controller.votes = votes
+        let navVC = UINavigationController(rootViewController: controller)
+        self.present(navVC, animated: true, completion: nil)
     }
 }

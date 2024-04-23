@@ -14,17 +14,18 @@ struct Poll: MessageTemplateProtocol {
     
     // MARK: Poll Variables
     var question: String
-    var votes: [VotingDecisions: Int]
+//    var votes: [VotingDecisions: Int]
+    var votes: [Vote]?
     var image: UIImage
     
     var overratedVotes: Int {
-        return votes[.overrated] ?? 0
+        return getNumOfVotes(for: .overrated)
     }
     var underratedVotes: Int {
-        return votes[.underrated] ?? 0
+        return getNumOfVotes(for: .underrated)
     }
     var properlyRatedVotes: Int {
-        return votes[.properlyRated] ?? 0
+        return getNumOfVotes(for: .properlyRated)
     }
     var totalVotes: Int {
         return overratedVotes + underratedVotes + properlyRatedVotes
@@ -48,7 +49,7 @@ struct Poll: MessageTemplateProtocol {
     
     var summaryText: String?
     
-    init?(question: String, votes: [VotingDecisions: Int], image: UIImage, sentBy: String?) {
+    init?(question: String, votes: [Vote]? = nil, image: UIImage, sentBy: String?) {
         self.question = question
         self.votes = votes
         self.image = image
@@ -63,6 +64,29 @@ struct Poll: MessageTemplateProtocol {
         guard let name = name else { return }
         self.summaryText = "\(name) voted \(decision.description)"
     }
+    
+    func getNumOfVotes(for descision: VotingDecisions) -> Int {
+        guard let votes = votes else { return 0 }
+        var numOfVotes = Int()
+        for vote in votes {
+            if vote.choice == descision {
+                numOfVotes+=1
+            }
+        }
+        return numOfVotes
+    }
+    
+    func returnVotes(for decision: VotingDecisions) -> [Vote]? {
+        guard let votes = votes else { return nil }
+        var specificVotes = [Vote]()
+        for vote in votes {
+            if vote.choice == decision {
+                specificVotes.append(vote)
+            }
+        }
+        
+        return specificVotes
+    }
 }
 
 // MARK: - Query Items
@@ -71,15 +95,18 @@ extension Poll {
         var items = [URLQueryItem]()
         
         let question = URLQueryItem(name: "Question", value: self.question)
-        let overrated = URLQueryItem(name: "Overrated", value: String(self.votes[.overrated] ?? 0))
-        let underrated = URLQueryItem(name: "Underrated", value: String(self.votes[.underrated] ?? 0))
-        let properlyRated = URLQueryItem(name: "Properly Rated", value: String(self.votes[.properlyRated] ?? 0))
+        
+        if let votes = votes {
+            for vote in votes {
+                
+                let voterDescision = URLQueryItem(name: vote.choice.description, value: vote.voterName?.description ?? "Anonymous")
+                items.append(voterDescision)
+            }
+        }
+        
         let sentBy = URLQueryItem(name: "Sent By", value: self.sentBy)
         
         items.append(question)
-        items.append(overrated)
-        items.append(underrated)
-        items.append(properlyRated)
         items.append(sentBy)
         items.append(appState.queryItem)
         
@@ -88,7 +115,7 @@ extension Poll {
     
     init?(queryItems: [URLQueryItem]) {
         self.question = String()        
-        self.votes = [:]
+        self.votes = [Vote]()
         self.image = UIImage(named: "It's Game Night") ?? UIImage(named: "‎It's Game Night")!
         
         for queryItem in queryItems {
@@ -97,17 +124,20 @@ extension Poll {
             if queryItem.name == "Question" {
                 question = value
             }
-            
+
             if queryItem.name == "Overrated" {
-                votes[VotingDecisions.overrated] = Int(value) ?? 0
+                let vote = Vote(choice: .overrated, voterName: value)
+                votes!.append(vote)
             }
             
             if queryItem.name == "Underrated" {
-                votes[VotingDecisions.underrated] = Int(value) ?? 0
+                let vote = Vote(choice: .underrated, voterName: value)
+                votes!.append(vote)
             }
             
             if queryItem.name == "Properly Rated" {
-                votes[VotingDecisions.properlyRated] = Int(value) ?? 0
+                let vote = Vote(choice: .properlyRated, voterName: value)
+                votes!.append(vote)
             }
             
             if queryItem.name == "Sent By" {

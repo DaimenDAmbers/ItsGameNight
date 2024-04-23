@@ -82,6 +82,7 @@
 		D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */; };
 		D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */; };
 		D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */; };
+		D3D58F2D2BD075DA00626EF6 /* VoteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */; };
 		D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */; };
 		D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E955A82AE6E4040012927B /* MessageDelegate.swift */; };
 		D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */; };
@@ -169,6 +170,7 @@
 		D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
 		D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
+		D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteInfoViewController.swift; sourceTree = "<group>"; };
 		D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		D3E955A82AE6E4040012927B /* MessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemRepresentable.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */,
+				D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */,
 				D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */,
 			);
 			path = "Poll Controllers";
@@ -566,6 +569,7 @@
 				D321AA352B680502001B17EA /* PollHelper.swift in Sources */,
 				D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
+				D3D58F2D2BD075DA00626EF6 /* VoteInfoViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
 				D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */,
 				D30374792BB3673E00E89FB7 /* Defaults.swift in Sources */,
@@ -722,7 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
@@ -733,7 +737,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.2.1;
+				MARKETING_VERSION = 4.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -748,7 +752,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
@@ -759,7 +763,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.2.1;
+				MARKETING_VERSION = 4.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -775,7 +779,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
@@ -785,7 +789,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.2.1;
+				MARKETING_VERSION = 4.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -800,7 +804,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
@@ -810,7 +814,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.2.1;
+				MARKETING_VERSION = 4.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;

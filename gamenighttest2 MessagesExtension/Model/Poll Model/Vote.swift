@@ -31,6 +31,7 @@ extension VotingDecisions: CustomStringConvertible {
 struct Vote {
     var choice: VotingDecisions = .didNotVote
     var isSelected: Bool = false
+    var voterName: String?
 }
 
 

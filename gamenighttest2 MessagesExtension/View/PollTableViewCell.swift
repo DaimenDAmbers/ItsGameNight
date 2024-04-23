@@ -19,6 +19,7 @@ class PollTableViewCell: UITableViewCell {
     @IBOutlet weak var customImageView: UIImageView!
     @IBOutlet weak var numOfVotesLabel: UILabel!
     @IBOutlet weak var decisionLabel: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,6 +62,11 @@ class PollTableViewCell: UITableViewCell {
         shadowLayer.topAnchor.constraint(equalTo: topAnchor).isActive = true
         shadowLayer.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
+    
+//    @IBAction func infoButtonTapped(_ sender: UIButton) {
+//        print("Info button tapped")
+//    }
+    
 }
 
 extension UIView {
