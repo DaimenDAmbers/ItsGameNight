@@ -23,8 +23,8 @@ class HomeViewController: UIViewController {
     let eventHelper = EventHelper()
     let systemAlerts = SystemAlerts()
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
-    
     var menuItems: [MenuItem] = []
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class HomeViewController: UIViewController {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: InfoViewController.storyboardIdentifier) as? InfoViewController else {
             fatalError("Unable to instantiate a InfoViewController from the storyboard")
         }
+        
         controller.navigationItem.title = "Settings"
         let navVC = UINavigationController(rootViewController: controller)
         
@@ -181,17 +182,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset: CGFloat = 20
+        let inset: CGFloat = 10
         return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let inset: CGFloat = 20
+        
+        /// This is the number of rows that we want for the collection view.
+        let cellColumns: CGFloat = 1.0
+        
         layout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         
         let space: CGFloat = (layout.minimumInteritemSpacing) + (layout.sectionInset.left) + (layout.sectionInset.right)
-        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        let size:CGFloat = (collectionView.frame.size.height - space) / cellColumns
 
         return CGSize(width: size, height: size)
     }

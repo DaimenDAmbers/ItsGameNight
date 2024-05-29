@@ -19,9 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N20-iv-Ted">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="335.5" width="414" height="225"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bvL-Uk-2F9">
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" constant="225" id="5wg-Uh-PEd"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bvL-Uk-2F9">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,7 +32,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="JfP-EQ-aUv" customClass="HomeCollectionViewCell" customModule="It_s_Game_Night" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tQ3-Bw-CHw">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -46,13 +49,14 @@
                         <viewLayoutGuide key="safeArea" id="Rgc-5l-hAa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N20-iv-Ted" firstAttribute="bottom" secondItem="Rgc-5l-hAa" secondAttribute="bottom" id="155-dw-yjA"/>
-                            <constraint firstItem="N20-iv-Ted" firstAttribute="leading" secondItem="Rgc-5l-hAa" secondAttribute="leading" id="7tu-Uw-0kp"/>
-                            <constraint firstItem="N20-iv-Ted" firstAttribute="top" secondItem="Rgc-5l-hAa" secondAttribute="top" id="Jw1-Xo-ctx"/>
-                            <constraint firstItem="N20-iv-Ted" firstAttribute="trailing" secondItem="Rgc-5l-hAa" secondAttribute="trailing" id="WC3-bv-nEO"/>
+                            <constraint firstItem="N20-iv-Ted" firstAttribute="leading" secondItem="Rgc-5l-hAa" secondAttribute="leading" id="1Om-mP-wTR"/>
+                            <constraint firstItem="N20-iv-Ted" firstAttribute="centerY" secondItem="2Bu-WD-alm" secondAttribute="centerY" id="2S7-aZ-o2d"/>
+                            <constraint firstItem="N20-iv-Ted" firstAttribute="centerX" secondItem="2Bu-WD-alm" secondAttribute="centerX" id="f1n-YD-2sf"/>
+                            <constraint firstItem="N20-iv-Ted" firstAttribute="trailing" secondItem="Rgc-5l-hAa" secondAttribute="trailing" id="xL6-kn-5C1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionHieghtConstraint" destination="5wg-Uh-PEd" id="5dp-QS-oC5"/>
                         <outlet property="collectionView" destination="N20-iv-Ted" id="IfI-uk-Xqv"/>
                     </connections>
                 </viewController>
