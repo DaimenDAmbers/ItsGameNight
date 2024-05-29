@@ -571,52 +571,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Z6-Gm-o0W">
-                                <rect key="frame" x="20" y="705" width="374" height="137"/>
+                                <rect key="frame" x="20" y="750.5" width="374" height="91.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-9u-iQW">
-                                        <rect key="frame" x="102" y="0.0" width="170" height="35.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="Vgt-CP-Jgd"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Privacy Policy">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="filled" title="Share Feedback">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" name="MenuBackground"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="4Yy-ap-zZ7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Bo-nUV">
-                                        <rect key="frame" x="102" y="45.5" width="170" height="35.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="dOO-H6-eLK"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Privacy Policy">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="filled" title="Privacy Policy">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" name="MenuBackground"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="8RA-x3-Ow9"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7uT-Lt-bVQ">
+                                        <rect key="frame" x="12" y="0.0" width="350" height="35.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-9u-iQW">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="35.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="Vgt-CP-Jgd"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Privacy Policy">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="filled" title="Share Feedback">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" name="MenuBackground"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="4Yy-ap-zZ7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Bo-nUV">
+                                                <rect key="frame" x="180" y="0.0" width="170" height="35.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="dOO-H6-eLK"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Privacy Policy">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="filled" title="Privacy Policy">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" name="MenuBackground"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedButton:" destination="HoI-8e-GP9" eventType="touchUpInside" id="8RA-x3-Ow9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2023 Daimen's Design Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-VL-zhH">
-                                        <rect key="frame" x="82" y="91" width="210" height="18"/>
+                                        <rect key="frame" x="82" y="45.5" width="210" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyU-H0-FTi">
-                                        <rect key="frame" x="161.5" y="119" width="51.5" height="18"/>
+                                        <rect key="frame" x="161.5" y="73.5" width="51.5" height="18"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -662,19 +667,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-HH-5K2" userLabel="ImageContainer">
-                                <rect key="frame" x="0.0" y="68" width="414" height="298.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fM0-h4-IwR" userLabel="Image View">
+                                <rect key="frame" x="20" y="68" width="374" height="298.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHX-d5-RfT" userLabel="GameNightImage">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="298.5"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-HH-5K2" userLabel="ImageContainer">
+                                        <rect key="frame" x="87" y="49.5" width="200" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="It's Game Night" translatesAutoresizingMaskIntoConstraints="NO" id="aHX-d5-RfT" userLabel="GameNightImage">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aHX-d5-RfT" secondAttribute="trailing" id="3Ka-YY-7To"/>
+                                            <constraint firstAttribute="bottom" secondItem="aHX-d5-RfT" secondAttribute="bottom" id="W6s-Ko-eRW"/>
+                                            <constraint firstItem="aHX-d5-RfT" firstAttribute="top" secondItem="Gwg-HH-5K2" secondAttribute="top" id="gpL-cK-JFm"/>
+                                            <constraint firstAttribute="width" constant="200" id="kxr-gc-Frh"/>
+                                            <constraint firstAttribute="width" secondItem="Gwg-HH-5K2" secondAttribute="height" multiplier="1:1" id="nfB-m4-Lwc"/>
+                                            <constraint firstItem="aHX-d5-RfT" firstAttribute="leading" secondItem="Gwg-HH-5K2" secondAttribute="leading" id="wab-Hd-hy3"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="aHX-d5-RfT" firstAttribute="top" secondItem="Gwg-HH-5K2" secondAttribute="top" id="2Ju-Xx-yyo"/>
-                                    <constraint firstItem="aHX-d5-RfT" firstAttribute="leading" secondItem="Gwg-HH-5K2" secondAttribute="leading" id="4Gf-Si-ttz"/>
-                                    <constraint firstAttribute="trailing" secondItem="aHX-d5-RfT" secondAttribute="trailing" id="9jr-IB-e6o"/>
-                                    <constraint firstAttribute="bottom" secondItem="aHX-d5-RfT" secondAttribute="bottom" id="UkH-U7-WQ8"/>
+                                    <constraint firstItem="Gwg-HH-5K2" firstAttribute="centerX" secondItem="fM0-h4-IwR" secondAttribute="centerX" id="8cu-5D-aXr"/>
+                                    <constraint firstItem="Gwg-HH-5K2" firstAttribute="centerY" secondItem="fM0-h4-IwR" secondAttribute="centerY" id="yXI-6c-daa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -682,18 +699,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Nay-zV-aB2" firstAttribute="centerY" secondItem="Ntm-5k-mMg" secondAttribute="centerY" id="1Dq-8T-O7e"/>
-                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="top" secondItem="WLD-Dn-Wlc" secondAttribute="top" constant="20" id="6cV-Cz-JW6"/>
-                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="Gwg-HH-5K2" secondAttribute="trailing" id="Bmq-LI-n8I"/>
-                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" id="BoF-mC-aaK"/>
-                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="K8c-Jx-duC"/>
                             <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="Nay-zV-aB2" secondAttribute="trailing" constant="50" id="Kao-9w-gql"/>
-                            <constraint firstItem="Nay-zV-aB2" firstAttribute="top" secondItem="Gwg-HH-5K2" secondAttribute="bottom" constant="20" id="Mkz-tD-TWG"/>
                             <constraint firstItem="7Z6-Gm-o0W" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="20" id="W30-bc-slq"/>
+                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="fM0-h4-IwR" secondAttribute="trailing" constant="20" id="WWb-lf-9OA"/>
                             <constraint firstItem="7Z6-Gm-o0W" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="Y8H-iW-6tq"/>
+                            <constraint firstItem="Nay-zV-aB2" firstAttribute="top" secondItem="fM0-h4-IwR" secondAttribute="bottom" constant="20" id="Zld-3G-GiR"/>
                             <constraint firstItem="WLD-Dn-Wlc" firstAttribute="bottom" secondItem="7Z6-Gm-o0W" secondAttribute="bottom" constant="20" id="oli-5s-Y0f"/>
                             <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="7Z6-Gm-o0W" secondAttribute="trailing" constant="20" id="pqZ-yU-45N"/>
                             <constraint firstItem="Nay-zV-aB2" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="r45-So-I3q"/>
                             <constraint firstItem="Nay-zV-aB2" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="50" id="sNw-EN-sWk"/>
+                            <constraint firstItem="fM0-h4-IwR" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="20" id="x3y-c3-Zi0"/>
+                            <constraint firstItem="fM0-h4-IwR" firstAttribute="top" secondItem="WLD-Dn-Wlc" secondAttribute="top" constant="20" id="zXa-QZ-etb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -712,6 +728,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="It's Game Night" width="1024" height="1024"/>
         <image name="folder" catalog="system" width="128" height="96"/>
         <namedColor name="MenuBackground">
             <color red="0.85490196078431369" green="0.8666666666666667" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
