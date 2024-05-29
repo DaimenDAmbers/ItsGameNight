@@ -48,7 +48,7 @@ class RateATopicViewController: UIViewController {
     
     private func createImage() -> UIImage? {
         guard let titleText = questionTextView.text else { return nil }
-        guard let backgroundImage = UIImage(named: Constans.ImageTiles.rateATopic) else { return nil }
+        guard let backgroundImage = UIImage(named: Constants.ImageTiles.rateATopic) else { return nil }
         
         let titleLabel = pollHelper.createTitleLabel(for: titleText)
         guard let titleImage = titleLabel.createImage() else { return nil }

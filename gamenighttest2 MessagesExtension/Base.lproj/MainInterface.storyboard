@@ -56,7 +56,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionHieghtConstraint" destination="5wg-Uh-PEd" id="5dp-QS-oC5"/>
                         <outlet property="collectionView" destination="N20-iv-Ted" id="IfI-uk-Xqv"/>
                     </connections>
                 </viewController>
@@ -625,7 +624,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-zV-aB2">
-                                <rect key="frame" x="50" y="404.5" width="314" height="87"/>
+                                <rect key="frame" x="50" y="386.5" width="314" height="123"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-td-ZL3">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
@@ -644,14 +643,51 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU8-kz-c1x">
+                                        <rect key="frame" x="0.0" y="92" width="314" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haptic Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-cV-7hz" userLabel="hapticFeedbackLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="265" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFm-sl-5X1" userLabel="hapticFeedbackSwitch">
+                                                <rect key="frame" x="265" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="tappedSwitch:" destination="HoI-8e-GP9" eventType="valueChanged" id="hm5-uS-90A"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-HH-5K2" userLabel="ImageContainer">
+                                <rect key="frame" x="0.0" y="68" width="414" height="298.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHX-d5-RfT" userLabel="GameNightImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="298.5"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="aHX-d5-RfT" firstAttribute="top" secondItem="Gwg-HH-5K2" secondAttribute="top" id="2Ju-Xx-yyo"/>
+                                    <constraint firstItem="aHX-d5-RfT" firstAttribute="leading" secondItem="Gwg-HH-5K2" secondAttribute="leading" id="4Gf-Si-ttz"/>
+                                    <constraint firstAttribute="trailing" secondItem="aHX-d5-RfT" secondAttribute="trailing" id="9jr-IB-e6o"/>
+                                    <constraint firstAttribute="bottom" secondItem="aHX-d5-RfT" secondAttribute="bottom" id="UkH-U7-WQ8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WLD-Dn-Wlc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Nay-zV-aB2" firstAttribute="centerY" secondItem="Ntm-5k-mMg" secondAttribute="centerY" id="1Dq-8T-O7e"/>
+                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="top" secondItem="WLD-Dn-Wlc" secondAttribute="top" constant="20" id="6cV-Cz-JW6"/>
+                            <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="Gwg-HH-5K2" secondAttribute="trailing" id="Bmq-LI-n8I"/>
+                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" id="BoF-mC-aaK"/>
+                            <constraint firstItem="Gwg-HH-5K2" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="K8c-Jx-duC"/>
                             <constraint firstItem="WLD-Dn-Wlc" firstAttribute="trailing" secondItem="Nay-zV-aB2" secondAttribute="trailing" constant="50" id="Kao-9w-gql"/>
+                            <constraint firstItem="Nay-zV-aB2" firstAttribute="top" secondItem="Gwg-HH-5K2" secondAttribute="bottom" constant="20" id="Mkz-tD-TWG"/>
                             <constraint firstItem="7Z6-Gm-o0W" firstAttribute="leading" secondItem="WLD-Dn-Wlc" secondAttribute="leading" constant="20" id="W30-bc-slq"/>
                             <constraint firstItem="7Z6-Gm-o0W" firstAttribute="centerX" secondItem="Ntm-5k-mMg" secondAttribute="centerX" id="Y8H-iW-6tq"/>
                             <constraint firstItem="WLD-Dn-Wlc" firstAttribute="bottom" secondItem="7Z6-Gm-o0W" secondAttribute="bottom" constant="20" id="oli-5s-Y0f"/>
@@ -661,6 +697,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gameNightImage" destination="aHX-d5-RfT" id="Pcm-nk-gSB"/>
+                        <outlet property="hapticFeedbackSwitch" destination="cFm-sl-5X1" id="cJQ-UT-0nt"/>
+                        <outlet property="imageContainer" destination="Gwg-HH-5K2" id="FbR-d2-3mW"/>
                         <outlet property="nameTextField" destination="rev-W0-ogc" id="yoj-F6-mHn"/>
                         <outlet property="privacyPolicyButton" destination="Vax-Bo-nUV" id="XIj-z6-e7h"/>
                         <outlet property="shareFeedbackButton" destination="7KK-9u-iQW" id="Vx4-fJ-1oC"/>

@@ -16,6 +16,7 @@ class SelectPeopleViewController: UITableViewController {
     weak var delegate: MessageDelegate?
     var people = [Person]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("People.plist")
+    let defaults = Defaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,9 @@ class SelectPeopleViewController: UITableViewController {
         let person = people[indexPath.row]
         
         person.isIncluded.toggle() // When tapped, this changes the inlcude property from true to false or vice versa.
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        let hapticFeedback = defaults.getHapticFeedbackSetting()
+        if hapticFeedback { generator.impactOccurred() }
         
         tableView.deselectRow(at: indexPath, animated: true)
         

@@ -19,22 +19,30 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var versionNumberLabel: UILabel!
     @IBOutlet weak var shareFeedbackButton: UIButton!
+    @IBOutlet weak var hapticFeedbackSwitch: UISwitch!
+    @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var gameNightImage: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        privacyPolicyButton.backgroundColor = UIColor(named: Constans.menuBackground)
+
+        imageContainer.applyShadow(cornerRadius: imageContainer.frame.width / 2)
+        gameNightImage.layer.cornerRadius = gameNightImage.frame.width / 2
+        
+        privacyPolicyButton.backgroundColor = UIColor(named: Constants.menuBackground)
         privacyPolicyButton.applyShadow(cornerRadius: 5)
         privacyPolicyButton.layer.cornerRadius = 5
         
-        shareFeedbackButton.backgroundColor = UIColor(named: Constans.menuBackground)
+        shareFeedbackButton.backgroundColor = UIColor(named: Constants.menuBackground)
         shareFeedbackButton.applyShadow(cornerRadius: 5)
         shareFeedbackButton.layer.cornerRadius = 5
         
         versionNumberLabel.text = Bundle.main.releaseVersionNumber
         nameTextField.delegate = self
-        nameTextField.text = userDefaults.string(forKey: Constans.username)
+        nameTextField.text = userDefaults.string(forKey: Constants.username)
+        hapticFeedbackSwitch.isOn = userDefaults.bool(forKey: Constants.hapticFeedback)
+        
     }
     
     @IBAction func tappedButton(_ sender: UIButton) {
@@ -52,7 +60,7 @@ class InfoViewController: UIViewController {
             let composeVC = MFMailComposeViewController()
             composeVC.mailComposeDelegate = self
             
-            composeVC.setToRecipients([Constans.developerEmail])
+            composeVC.setToRecipients([Constants.developerEmail])
             composeVC.setSubject("Share Feedback for It's Game Night")
             
             self.parent?.present(composeVC, animated: true, completion: nil)
@@ -60,6 +68,10 @@ class InfoViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func tappedSwitch(_ sender: UISwitch) {
+        userDefaults.set(hapticFeedbackSwitch.isOn, forKey: Constants.hapticFeedback)
     }
 }
 
@@ -77,7 +89,7 @@ extension InfoViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let name = textField.text {
             nameTextField.text = name
-            userDefaults.set(name, forKey: Constans.username)
+            userDefaults.set(name, forKey: Constants.username)
         }
     }
 }

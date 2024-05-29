@@ -11,10 +11,15 @@ struct Defaults {
     private let userDefaults = UserDefaults.standard
     
     func getUsername() -> String? {
-        if let name = userDefaults.string(forKey: Constans.username), !name.trimmingCharacters(in: .whitespaces).isEmpty {
+        if let name = userDefaults.string(forKey: Constants.username), !name.trimmingCharacters(in: .whitespaces).isEmpty {
             return name
         } else {
             return nil
         }
+    }
+    
+    func getHapticFeedbackSetting() -> Bool {
+        let hapticFeedbackSetting = userDefaults.bool(forKey: Constants.hapticFeedback)
+        return hapticFeedbackSetting
     }
 }

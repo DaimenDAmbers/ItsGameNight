@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Constans {
+struct Constants {
     static let menuBackground = "MenuBackground"
     static let gameNightBackground = "GameNightBackground"
     static let username = "username"
     static let developerEmail = "daimenambers@yahoo.com"
+    static let hapticFeedback = "Haptic Feedback"
     
     
     /// Tiles on the home screen
