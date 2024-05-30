@@ -17,7 +17,7 @@ class SelectPeopleViewController: UITableViewController {
     var people = [Person]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("People.plist")
     let defaults = Defaults()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadList()
@@ -28,14 +28,13 @@ class SelectPeopleViewController: UITableViewController {
         self.navigationItem.rightBarButtonItems?.append(sendButton)
         self.navigationItem.rightBarButtonItems?.append(addButton)
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Returns the number of rows
         return people.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath)
@@ -44,7 +43,7 @@ class SelectPeopleViewController: UITableViewController {
         cell.textLabel?.text = person.name
         
         cell.accessoryType = person.isIncluded == true ? .checkmark : .none // Ternary operator for setting the accessory type
-
+        
         return cell
     }
     
@@ -122,7 +121,9 @@ class SelectPeopleViewController: UITableViewController {
             return
         }
         
-        if peopleCount > 1 {
+        guard let people = randomizer?.people else { return }
+        
+        if checkIfRandomiserIsValid(people: people) {
             randomizer?.chooseRandomPerson()
             delegate?.sendMessage(using: randomizer, isNewMessage: true)
         } else {
@@ -130,8 +131,8 @@ class SelectPeopleViewController: UITableViewController {
         }
         
         print("Done Button Pressed")
-        }
-                                             
+    }
+    
     // MARK: - Private Methods
     
     /// Saves the list using a `PropertyListEncoder`
@@ -161,5 +162,22 @@ class SelectPeopleViewController: UITableViewController {
         }
         
         print("Loaded list successfully")
+    }
+    
+    private func checkIfRandomiserIsValid(people: [Person]) -> Bool {
+        if people.count > 1 {
+            var includedPeople: Int = 0
+            for person in people {
+                if person.isIncluded {
+                    includedPeople += 1
+                }
+            }
+            
+            if includedPeople > 1 {
+                return true
+            }
+        }
+        
+        return false
     }
 }
