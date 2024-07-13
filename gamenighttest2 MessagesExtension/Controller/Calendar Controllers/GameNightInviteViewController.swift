@@ -20,30 +20,48 @@ class GameNightInviteViewController: UIViewController {
     let systemAlerts = SystemAlerts()
     var invite: CalendarInvite?
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
+    let defaults = Defaults()
 
+    // MARK: View Variables
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var gameNightDetailsLabel: UILabel!
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var dateText: UILabel!
+    @IBOutlet weak var startTimeText: UILabel!
+    @IBOutlet weak var endTimeText: UILabel!
     
 
     // MARK: Methods
     override func viewDidLoad() {
         guard let unwrappedInvite = invite else { fatalError("No Invitation.") }
         let date: String
-        let time: String
+        let startTime: String
+        let endTime: String
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .none
+//        dateFormatter.dateStyle = .long
+//        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "EEEE, MMMM d, YYYY"
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         date = dateFormatter.string(from: unwrappedInvite.event.startDate)
         
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        time = dateFormatter.string(from: unwrappedInvite.event.startDate)
+        startTime = dateFormatter.string(from: unwrappedInvite.event.startDate)
+        endTime = dateFormatter.string(from: unwrappedInvite.event.endDate)
         
         let title: String
         title = unwrappedInvite.event.title
-        
-        gameNightDetailsLabel.text = "\(title) is scheduled on \(date) at \(time)."
+        if let username = defaults.getUsername() {
+            gameNightDetailsLabel.text = "\(username) scheduled the next Game Night!"
+        } else {
+            gameNightDetailsLabel.text = "The next Game Night has been scheduled!"
+        }
+
+        titleText.text = title
+        dateText.text = date
+        startTimeText.text = startTime
+        endTimeText.text = endTime
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
