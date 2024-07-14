@@ -20,7 +20,6 @@ class GameNightInviteViewController: UIViewController {
     let systemAlerts = SystemAlerts()
     var invite: CalendarInvite?
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
-    let defaults = Defaults()
 
     // MARK: View Variables
     @IBOutlet weak var saveButton: UIButton!
@@ -34,10 +33,13 @@ class GameNightInviteViewController: UIViewController {
     // MARK: Methods
     override func viewDidLoad() {
         guard let unwrappedInvite = invite else { fatalError("No Invitation.") }
+        let title: String
         let date: String
         let startTime: String
         let endTime: String
         let dateFormatter = DateFormatter()
+        
+        title = unwrappedInvite.event.title
         
         dateFormatter.dateFormat = "EEEE, MMMM d, YYYY"
         date = dateFormatter.string(from: unwrappedInvite.event.startDate)
@@ -47,9 +49,7 @@ class GameNightInviteViewController: UIViewController {
         startTime = dateFormatter.string(from: unwrappedInvite.event.startDate)
         endTime = dateFormatter.string(from: unwrappedInvite.event.endDate)
         
-        let title: String
-        title = unwrappedInvite.event.title
-        if let username = defaults.getUsername() {
+        if let username = unwrappedInvite.sentBy {
             gameNightDetailsLabel.text = "\(username) scheduled the next Game Night!"
         } else {
             gameNightDetailsLabel.text = "The next Game Night has been scheduled!"

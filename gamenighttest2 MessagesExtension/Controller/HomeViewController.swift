@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     let systemAlerts = SystemAlerts()
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
     var menuItems: [MenuItem] = []
+    let defaults = Defaults()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -128,6 +129,7 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
     
     /// Sends a message after tapping the `Add` button within the event creation ViewController.
     @objc func didTapAdd() {
+        invite?.sentBy = defaults.getUsername()
         delegate?.sendMessage(using: invite, isNewMessage: true)
     }
     
