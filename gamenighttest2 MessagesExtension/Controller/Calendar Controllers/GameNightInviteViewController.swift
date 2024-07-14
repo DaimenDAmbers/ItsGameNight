@@ -39,10 +39,7 @@ class GameNightInviteViewController: UIViewController {
         let endTime: String
         let dateFormatter = DateFormatter()
         
-//        dateFormatter.dateStyle = .long
-//        dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "EEEE, MMMM d, YYYY"
-//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         date = dateFormatter.string(from: unwrappedInvite.event.startDate)
         
         dateFormatter.dateStyle = .none

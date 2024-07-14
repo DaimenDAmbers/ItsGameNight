@@ -39,6 +39,8 @@ struct CalendarInvite: MessageTemplateProtocol {
     
     var summaryText: String?
     
+    var sentBy: String?
+    
     /// - Tag: QueryItems
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
@@ -54,6 +56,7 @@ struct CalendarInvite: MessageTemplateProtocol {
         let notes = URLQueryItem(name: "Notes", value: event.notes)
         let url = URLQueryItem(name: "Url", value: event.url?.absoluteString)
         let identifier = URLQueryItem(name: "Event Identifier", value: event.eventIdentifier)
+        let sentBy = URLQueryItem(name: "Sent By", value: self.sentBy)
         
         // TODO: Phase 2 - Save the event on send.
 //        let store = URLQueryItem(name: "Event Store", value: eventStore.description)
@@ -67,6 +70,7 @@ struct CalendarInvite: MessageTemplateProtocol {
         items.append(notes)
         items.append(url)
         items.append(identifier)
+        items.append(sentBy)
 //        items.append(store)  // PHASE 2
         
         items.append(appState.queryItem)
@@ -125,6 +129,10 @@ struct CalendarInvite: MessageTemplateProtocol {
             
             if queryItem.name == "Event Identifier" {
                 identifier = value
+            }
+            
+            if queryItem.name == "Sent By" {
+                sentBy = value
             }
             
             // TODO: Phase 2 for saving on send.
