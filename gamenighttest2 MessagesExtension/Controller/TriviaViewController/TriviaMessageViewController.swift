@@ -42,6 +42,8 @@ class TriviaMessageViewController: UIViewController {
         guard let message = trivia else { return }
         let triviaModel = message.triviaModel
         
+        print("Trivia Message VC Query Items: \(message.queryItems)")
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TriviaTableViewCell.nib(), forCellReuseIdentifier: TriviaTableViewCell.identifier)
@@ -77,7 +79,6 @@ class TriviaMessageViewController: UIViewController {
         for index in 0..<answers.count {
             if answers[index] == userAnswer {
                 userAnswerIndex = index
-                print("User answer index: \(index)")
             }
         }
     }

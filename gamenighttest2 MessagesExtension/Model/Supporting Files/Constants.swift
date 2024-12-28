@@ -23,5 +23,6 @@ struct Constants {
         static let rateATopic = "Rate A Topic"
         static let stickers = "It's Game Night"
         static let trivia = "Trivia"
+        static let logo = "It's Game Night"
     }
 }

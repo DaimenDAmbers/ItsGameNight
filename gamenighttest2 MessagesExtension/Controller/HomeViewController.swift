@@ -31,13 +31,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.idendifier)
         
+        let triviaMenuItem = MenuItem(label: "Trivia", image: UIImage(named: Constants.ImageTiles.trivia))
         let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: Constants.ImageTiles.calendar))
         let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: Constants.ImageTiles.pieWheel))
-        let triviaMenuItem = MenuItem(label: "Trivia", image: UIImage(named: Constants.ImageTiles.pieWheel))
         let pollMenuItem = MenuItem(label: "Rate a Topic", image: UIImage(named: Constants.ImageTiles.rateATopic))
         let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: Constants.ImageTiles.stickers))
         
-        menuItems = [calendarMenuItem, randomizerMenuItem, triviaMenuItem, pollMenuItem, stickerMenuItem]
+        menuItems = [triviaMenuItem, calendarMenuItem, randomizerMenuItem, pollMenuItem, stickerMenuItem]
         
         let infoButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(self.infoButtonTapped))
         self.navigationItem.rightBarButtonItem = infoButton
@@ -220,11 +220,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print("Item selected \(indexPath.row)")
         
         if indexPath.row == 0 {
-            openCalendarInvite()
-        } else if indexPath.row == 1 {
-            openRandomizer()
-        } else if indexPath.row == 2 {
             openTrivia()
+        } else if indexPath.row == 1 {
+            openCalendarInvite()
+        } else if indexPath.row == 2 {
+            openRandomizer()
         } else if indexPath.row == 3 {
             openRateATopic()
         } else {

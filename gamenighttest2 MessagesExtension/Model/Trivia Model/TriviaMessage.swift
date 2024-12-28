@@ -48,7 +48,7 @@ struct TriviaMessage: MessageTemplateProtocol {
     }
     
     var image: UIImage {
-        return UIImage(named: "Calendar") ?? UIImage(named: "It's Game Night")!
+        return UIImage(named: Constants.ImageTiles.trivia) ?? UIImage(named: Constants.ImageTiles.logo)!
     }
     
     var caption: String {
@@ -98,12 +98,17 @@ struct TriviaMessage: MessageTemplateProtocol {
         }
     }
     
+    /// Checks against the `localParticipantIdenifier` from the conversation.
+    /// - Parameter id: This is the user's `localParticipantIdentifer`
+    /// - Returns: True when the ID is found inside of the array of the people that have submitted an answer.
     func checkIfPersonAnswered(id: UUID?) -> Bool {
-        if id == senderID {
-            return true
-        } else {
-            return false
+        for submission in submissions {
+            if submission.id == id {
+                return true
+            }
         }
+        
+        return false
     }
     
     /// Assigns the user's answer to a QueryItem for any answer
