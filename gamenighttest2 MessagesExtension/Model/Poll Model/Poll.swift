@@ -44,10 +44,20 @@ struct Poll: MessageTemplateProtocol {
         return "Overrated: \(overratedVotes)\nUnderrated: \(underratedVotes)\nProperly Rated: \(properlyRatedVotes)"
     }
     
+    var trailingCaption: String?
+    
+    var trailingSubcaption: String?
+    
+    var imageTitle: String?
+    
+    var imageSubtitle: String?
+    
     /// This is populated if the user adds their name to the app in the Settigns.
     var sentBy: String?
     
     var summaryText: String?
+    
+    var senderID: UUID?
     
     init?(question: String, votes: [Vote]? = nil, image: UIImage, sentBy: String?) {
         self.question = question
@@ -99,7 +109,7 @@ extension Poll {
         if let votes = votes {
             for vote in votes {
                 
-                let voterDescision = URLQueryItem(name: vote.choice.description, value: vote.voterName?.description ?? "Anonymous")
+                let voterDescision = URLQueryItem(name: vote.choice.description, value: vote.voterName?.description ?? "Gamenight User")
                 items.append(voterDescision)
             }
         }

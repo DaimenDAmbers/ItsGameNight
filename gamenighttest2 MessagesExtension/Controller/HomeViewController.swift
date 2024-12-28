@@ -33,10 +33,11 @@ class HomeViewController: UIViewController {
         
         let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: Constants.ImageTiles.calendar))
         let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: Constants.ImageTiles.pieWheel))
+        let triviaMenuItem = MenuItem(label: "Trivia", image: UIImage(named: Constants.ImageTiles.pieWheel))
         let pollMenuItem = MenuItem(label: "Rate a Topic", image: UIImage(named: Constants.ImageTiles.rateATopic))
         let stickerMenuItem = MenuItem(label: "Stickers", image: UIImage(named: Constants.ImageTiles.stickers))
         
-        menuItems = [calendarMenuItem, randomizerMenuItem, pollMenuItem, stickerMenuItem]
+        menuItems = [calendarMenuItem, randomizerMenuItem, triviaMenuItem, pollMenuItem, stickerMenuItem]
         
         let infoButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(self.infoButtonTapped))
         self.navigationItem.rightBarButtonItem = infoButton
@@ -109,6 +110,19 @@ class HomeViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: controller)
         self.present(navVC, animated: true, completion: nil)
     }
+    
+    /// Method to open the functionality for Trivia
+    private func openTrivia() {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: SelectModeViewController.storyboardIdentifier) as? SelectModeViewController else {
+            fatalError("Unable to instantiate a CategoryViewController from the storyboard")
+        }
+        
+        controller.navigationItem.title = "Trivia"
+        controller.delegate = delegate
+        
+        let navVC = UINavigationController(rootViewController: controller)
+        self.present(navVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - EKEventEditViewDelegate
@@ -130,15 +144,12 @@ extension HomeViewController: EKEventEditViewDelegate, UINavigationControllerDel
     /// Sends a message after tapping the `Add` button within the event creation ViewController.
     @objc func didTapAdd() {
         invite?.sentBy = defaults.getUsername()
-        delegate?.sendMessage(using: invite, isNewMessage: true)
+        delegate?.sendMessage(using: invite, isNewMessage: true, sendImmediately: false)
     }
     
     /// Presents the ViewController after the `Schedule a Game Night` button is tapped
     private func presentVC(with event: EKEvent) {
         let editVC: EKEventEditViewController = CalendarViewController() // Needed to be able to dismiss modal even after changing the presentation style
-//        guard let controller = storyboard?.instantiateViewController(withIdentifier: CalendarViewController.storyboardIdentifier) as? CalendarViewController else {
-//            fatalError("Unable to instantiate a CalendarViewController from the storyboard")
-//        }
         
         editVC.eventStore = self.eventStore
         editVC.event = event
@@ -165,16 +176,6 @@ extension HomeViewController {
         }
     }
 }
-//
-//// MARK: Randomizer View Controller
-//extension HomeViewController {
-//    /// Sends a message after tapping the `Done` button within the randomizer ViewController.
-//    @objc func didTapDone() {
-//        let people = [Person]()
-//        let randomizer = Randomizer(people: people)
-//        delegate?.sendMessage(using: randomizer, isNewMessage: true)
-//    }
-//}
 
 // MARK: Collection View for the Home Screen
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -223,6 +224,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else if indexPath.row == 1 {
             openRandomizer()
         } else if indexPath.row == 2 {
+            openTrivia()
+        } else if indexPath.row == 3 {
             openRateATopic()
         } else {
             openStickers()

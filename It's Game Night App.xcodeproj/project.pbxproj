@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D30374792BB3673E00E89FB7 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30374782BB3673E00E89FB7 /* Defaults.swift */; };
+		D304E09C2D15E19500CB85FA /* SelectQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304E09A2D15E19500CB85FA /* SelectQuestionTableViewCell.swift */; };
+		D304E09D2D15E19500CB85FA /* SelectQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D304E09B2D15E19500CB85FA /* SelectQuestionTableViewCell.xib */; };
 		D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */; };
 		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
 		D321AA352B680502001B17EA /* PollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321AA342B680502001B17EA /* PollHelper.swift */; };
@@ -53,6 +55,8 @@
 		D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6F2B0BF39C00A8B6A1 /* Bad Dinner.png */; };
 		D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */; };
 		D32C9C142AF30FF9000D25CD /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32C9C132AF30FF9000D25CD /* Randomizer.swift */; };
+		D32D7C9F2D13589C0078E788 /* TriviaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32D7C9D2D13589C0078E788 /* TriviaTableViewCell.swift */; };
+		D32D7CA02D13589C0078E788 /* TriviaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32D7C9E2D13589C0078E788 /* TriviaTableViewCell.xib */; };
 		D33D0CFC2AD9888500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
 		D33D0D022AD9888500A5099A /* It's Game Night.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D33D0D012AD9888500A5099A /* It's Game Night.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33D0D062AD9888500A5099A /* Messages.framework */; };
@@ -62,6 +66,12 @@
 		D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D0D1A2AD988D300A5099A /* StickerViewController.swift */; };
 		D33D0D1C2AD9890500A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0D0E2AD9888700A5099A /* Assets.xcassets */; };
 		D33D0D1D2AD98A6900A5099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33D0CFB2AD9888500A5099A /* Assets.xcassets */; };
+		D3530E192D11F2190000936B /* SelectQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3530E182D11F2190000936B /* SelectQuestionViewController.swift */; };
+		D35A95782D171DCC00DC714B /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35A95772D171DCC00DC714B /* CategoryTableViewCell.xib */; };
+		D35A95792D171DCC00DC714B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A95762D171DCC00DC714B /* CategoryTableViewCell.swift */; };
+		D36C19C42D0DC9360055599C /* TriviaMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C19C32D0DC9360055599C /* TriviaMessage.swift */; };
+		D36C19C62D0DCBD20055599C /* TriviaAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C19C52D0DCBD20055599C /* TriviaAPIData.swift */; };
+		D36C19C92D0DD1260055599C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C19C82D0DD1260055599C /* CategoryViewController.swift */; };
 		D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */; };
 		D36F0EB22B4EECC500528DE2 /* RateATopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */; };
 		D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */; };
@@ -74,8 +84,11 @@
 		D380C8E62B8D290F002A3A52 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */; };
 		D38420362BBB4D58007CFAAD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D38420352BBB48A0007CFAAD /* PrivacyInfo.xcprivacy */; };
 		D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3923A7D2B54BBE3007C3553 /* Vote.swift */; };
+		D393411B2D18914300640D11 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393411A2D18914300640D11 /* SelectModeViewController.swift */; };
+		D393411D2D18A99C00640D11 /* CreateAQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393411C2D18A99C00640D11 /* CreateAQuizViewController.swift */; };
 		D3A11A212BAC775600F45EBE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A11A202BAC775600F45EBE /* InfoViewController.swift */; };
 		D3A11A232BACF9A000F45EBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A11A222BACF9A000F45EBE /* Constants.swift */; };
+		D3B0FCDD2D1F1C210075F245 /* TriviaResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0FCDC2D1F1C210075F245 /* TriviaResultsViewController.swift */; };
 		D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */; };
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
@@ -83,10 +96,13 @@
 		D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */; };
 		D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */; };
 		D3D58F2D2BD075DA00626EF6 /* VoteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */; };
+		D3D7FE1A2D0F90F300B58034 /* TriviaMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7FE192D0F90F300B58034 /* TriviaMessageViewController.swift */; };
 		D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */; };
 		D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E955A82AE6E4040012927B /* MessageDelegate.swift */; };
 		D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */; };
 		D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C42AEF11A200FD158F /* CalendarInvite.swift */; };
+		D3F622242D14B8250002EDE1 /* TriviaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F622232D14B8250002EDE1 /* TriviaManager.swift */; };
+		D3F622262D14C6890002EDE1 /* TriviaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F622252D14C6890002EDE1 /* TriviaModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,12 +131,16 @@
 
 /* Begin PBXFileReference section */
 		D30374782BB3673E00E89FB7 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		D304E09A2D15E19500CB85FA /* SelectQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		D304E09B2D15E19500CB85FA /* SelectQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		D30B79292B0ACC71007606C8 /* SelectPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPeopleViewController.swift; sourceTree = "<group>"; };
 		D30B792B2B0ADEE6007606C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "It-s-Game-Night-App-Info.plist"; sourceTree = "<group>"; };
 		D321AA342B680502001B17EA /* PollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollHelper.swift; sourceTree = "<group>"; };
 		D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
+		D32D7C9D2D13589C0078E788 /* TriviaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriviaTableViewCell.swift; path = "gamenighttest2 MessagesExtension/View/TriviaTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		D32D7C9E2D13589C0078E788 /* TriviaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TriviaTableViewCell.xib; path = "gamenighttest2 MessagesExtension/View/TriviaTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		D33D0CF82AD9888300A5099A /* It's Game Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's Game Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33D0CFB2AD9888500A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33D0D012AD9888500A5099A /* It's Game Night.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "It's Game Night.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +150,9 @@
 		D33D0D0E2AD9888700A5099A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33D0D102AD9888700A5099A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33D0D1A2AD988D300A5099A /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
+		D3530E182D11F2190000936B /* SelectQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewController.swift; sourceTree = "<group>"; };
+		D35A95762D171DCC00DC714B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		D35A95772D171DCC00DC714B /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		D367DC692B0BF39C00A8B6A1 /* Too Bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Too Bad.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Too Bad.png"; sourceTree = "<group>"; };
 		D367DC6A2B0BF39C00A8B6A1 /* ‎Let's Coast Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "‎Let's Coast Logo.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/‎Let's Coast Logo.png"; sourceTree = "<group>"; };
 		D367DC6B2B0BF39C00A8B6A1 /* Nice Try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Nice Try.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Nice Try.png"; sourceTree = "<group>"; };
@@ -150,6 +173,9 @@
 		D367DC7A2B0BF39C00A8B6A1 /* 1stPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1stPlace.png; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/1stPlace.png"; sourceTree = "<group>"; };
 		D367DC7B2B0BF39C00A8B6A1 /* Youre Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Youre Welcome.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/Youre Welcome.png"; sourceTree = "<group>"; };
 		D367DC7C2B0BF39C00A8B6A1 /* I'm so high rn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "I'm so high rn.png"; path = "../../../../../Documents/Hobbies/Game Night/iMessage App/Stickers/I'm so high rn.png"; sourceTree = "<group>"; };
+		D36C19C32D0DC9360055599C /* TriviaMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaMessage.swift; sourceTree = "<group>"; };
+		D36C19C52D0DCBD20055599C /* TriviaAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaAPIData.swift; sourceTree = "<group>"; };
+		D36C19C82D0DD1260055599C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D36F0EAE2B4EE6FE00528DE2 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		D36F0EB12B4EECC500528DE2 /* RateATopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateATopicViewController.swift; sourceTree = "<group>"; };
 		D36F0EB32B4EF0D200528DE2 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +188,11 @@
 		D380C8E42B8D290F002A3A52 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D38420352BBB48A0007CFAAD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D3923A7D2B54BBE3007C3553 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		D393411A2D18914300640D11 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
+		D393411C2D18A99C00640D11 /* CreateAQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAQuizViewController.swift; sourceTree = "<group>"; };
 		D3A11A202BAC775600F45EBE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D3A11A222BACF9A000F45EBE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3B0FCDC2D1F1C210075F245 /* TriviaResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaResultsViewController.swift; sourceTree = "<group>"; };
 		D3B5871D2AF97EE700466FDE /* SystemAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlerts.swift; sourceTree = "<group>"; };
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -171,10 +200,13 @@
 		D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
 		D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
 		D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteInfoViewController.swift; sourceTree = "<group>"; };
+		D3D7FE192D0F90F300B58034 /* TriviaMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaMessageViewController.swift; sourceTree = "<group>"; };
 		D3E20FDA2AF53B4E00211BFD /* EventHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		D3E955A82AE6E4040012927B /* MessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		D3E971C22AEEFBF600FD158F /* QueryItemRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemRepresentable.swift; sourceTree = "<group>"; };
 		D3E971C42AEF11A200FD158F /* CalendarInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInvite.swift; sourceTree = "<group>"; };
+		D3F622232D14B8250002EDE1 /* TriviaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaManager.swift; sourceTree = "<group>"; };
+		D3F622252D14C6890002EDE1 /* TriviaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +279,7 @@
 				D30B792E2B0AF256007606C8 /* Calendar Model */,
 				D30B792D2B0ADF5E007606C8 /* Randomizer Model */,
 				D36F0EAD2B4EE6E000528DE2 /* Poll Model */,
+				D36C19C22D0DC8CB0055599C /* Trivia Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,12 +290,26 @@
 				D30B79302B0AF2B0007606C8 /* Calendar Controllers */,
 				D30B79312B0AF2BC007606C8 /* Randomizer Controllers */,
 				D36F0EB02B4EEC8900528DE2 /* Poll Controllers */,
+				D36C19C72D0DD1000055599C /* TriviaViewController */,
 				D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */,
 				D33D0D092AD9888500A5099A /* MessagesViewController.swift */,
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
 				D3A11A202BAC775600F45EBE /* InfoViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D32D7CA12D1358B60078E788 /* Trivia Views */ = {
+			isa = PBXGroup;
+			children = (
+				D32D7C9D2D13589C0078E788 /* TriviaTableViewCell.swift */,
+				D32D7C9E2D13589C0078E788 /* TriviaTableViewCell.xib */,
+				D304E09A2D15E19500CB85FA /* SelectQuestionTableViewCell.swift */,
+				D304E09B2D15E19500CB85FA /* SelectQuestionTableViewCell.xib */,
+				D35A95762D171DCC00DC714B /* CategoryTableViewCell.swift */,
+				D35A95772D171DCC00DC714B /* CategoryTableViewCell.xib */,
+			);
+			path = "Trivia Views";
 			sourceTree = "<group>";
 		};
 		D33D0CF12AD9888300A5099A = {
@@ -344,6 +391,30 @@
 			path = "/Users/daimenambers/Library/XCode/gamenighttest2/gamenighttest2 MessagesExtension/Stickers";
 			sourceTree = "<absolute>";
 		};
+		D36C19C22D0DC8CB0055599C /* Trivia Model */ = {
+			isa = PBXGroup;
+			children = (
+				D36C19C32D0DC9360055599C /* TriviaMessage.swift */,
+				D3F622252D14C6890002EDE1 /* TriviaModel.swift */,
+				D36C19C52D0DCBD20055599C /* TriviaAPIData.swift */,
+				D3F622232D14B8250002EDE1 /* TriviaManager.swift */,
+			);
+			path = "Trivia Model";
+			sourceTree = "<group>";
+		};
+		D36C19C72D0DD1000055599C /* TriviaViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D36C19C82D0DD1260055599C /* CategoryViewController.swift */,
+				D3D7FE192D0F90F300B58034 /* TriviaMessageViewController.swift */,
+				D3530E182D11F2190000936B /* SelectQuestionViewController.swift */,
+				D393411A2D18914300640D11 /* SelectModeViewController.swift */,
+				D393411C2D18A99C00640D11 /* CreateAQuizViewController.swift */,
+				D3B0FCDC2D1F1C210075F245 /* TriviaResultsViewController.swift */,
+			);
+			path = TriviaViewController;
+			sourceTree = "<group>";
+		};
 		D36F0EAD2B4EE6E000528DE2 /* Poll Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +450,7 @@
 				D380C8E72B8D2925002A3A52 /* Home Views */,
 				D38A09AC2B292F1300DDB0E4 /* Randomizer Views */,
 				D3D123C72B546ED7007E1E62 /* Poll Views */,
+				D32D7CA12D1358B60078E788 /* Trivia Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,8 +582,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32D7CA02D13589C0078E788 /* TriviaTableViewCell.xib in Resources */,
 				D32C5EBC2B13C32700E102D2 /* 2ndPlace.png in Resources */,
 				D32C5ECA2B13C32700E102D2 /* Plus Six.png in Resources */,
+				D304E09D2D15E19500CB85FA /* SelectQuestionTableViewCell.xib in Resources */,
 				D32C5EC62B13C32700E102D2 /* YouTried.png in Resources */,
 				D32C5EBF2B13C32700E102D2 /* Red Team.png in Resources */,
 				D32C5EC32B13C32700E102D2 /* Get Outta Here.png in Resources */,
@@ -523,6 +597,7 @@
 				D32C5EC92B13C32700E102D2 /* idk timezones.png in Resources */,
 				D32C5EC12B13C32700E102D2 /* Nice Try.png in Resources */,
 				D32C5EBB2B13C32700E102D2 /* 3rdPlace.png in Resources */,
+				D35A95782D171DCC00DC714B /* CategoryTableViewCell.xib in Resources */,
 				D32C5ECE2B13C32700E102D2 /* Bad Dinner.png in Resources */,
 				D32C5EBD2B13C32700E102D2 /* Did you tell them?.png in Resources */,
 				D380C8E62B8D290F002A3A52 /* HomeCollectionViewCell.xib in Resources */,
@@ -547,6 +622,7 @@
 			files = (
 				D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */,
 				D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */,
+				D36C19C42D0DC9360055599C /* TriviaMessage.swift in Sources */,
 				D3E971C32AEEFBF600FD158F /* QueryItemRepresentable.swift in Sources */,
 				D3B5871E2AF97EE700466FDE /* SystemAlerts.swift in Sources */,
 				D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */,
@@ -555,24 +631,36 @@
 				D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */,
 				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
+				D304E09C2D15E19500CB85FA /* SelectQuestionTableViewCell.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
 				D3A11A232BACF9A000F45EBE /* Constants.swift in Sources */,
 				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,
+				D393411B2D18914300640D11 /* SelectModeViewController.swift in Sources */,
+				D35A95792D171DCC00DC714B /* CategoryTableViewCell.swift in Sources */,
 				D36F0EB22B4EECC500528DE2 /* RateATopicViewController.swift in Sources */,
 				D3A11A212BAC775600F45EBE /* InfoViewController.swift in Sources */,
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
+				D32D7C9F2D13589C0078E788 /* TriviaTableViewCell.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
+				D36C19C92D0DD1260055599C /* CategoryViewController.swift in Sources */,
 				D30B792A2B0ACC71007606C8 /* SelectPeopleViewController.swift in Sources */,
+				D3B0FCDD2D1F1C210075F245 /* TriviaResultsViewController.swift in Sources */,
 				D32C5ED02B13CD6500E102D2 /* PieChartView.swift in Sources */,
+				D3F622242D14B8250002EDE1 /* TriviaManager.swift in Sources */,
 				D36F0EAF2B4EE6FE00528DE2 /* Poll.swift in Sources */,
+				D36C19C62D0DCBD20055599C /* TriviaAPIData.swift in Sources */,
 				D321AA352B680502001B17EA /* PollHelper.swift in Sources */,
 				D3923A7E2B54BBE3007C3553 /* Vote.swift in Sources */,
+				D3F622262D14C6890002EDE1 /* TriviaModel.swift in Sources */,
 				D33D0D0A2AD9888500A5099A /* MessagesViewController.swift in Sources */,
 				D3D58F2D2BD075DA00626EF6 /* VoteInfoViewController.swift in Sources */,
 				D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */,
+				D3D7FE1A2D0F90F300B58034 /* TriviaMessageViewController.swift in Sources */,
+				D3530E192D11F2190000936B /* SelectQuestionViewController.swift in Sources */,
 				D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */,
 				D30374792BB3673E00E89FB7 /* Defaults.swift in Sources */,
+				D393411D2D18A99C00640D11 /* CreateAQuizViewController.swift in Sources */,
 				D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */,
 				D3E955A92AE6E4040012927B /* MessageDelegate.swift in Sources */,
 			);
@@ -726,7 +814,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
@@ -737,7 +825,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.4.1;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -752,7 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
@@ -763,7 +851,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.4.1;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -779,7 +867,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
@@ -789,7 +877,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.4.1;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -804,7 +892,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
@@ -814,7 +902,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 4.4.1;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;

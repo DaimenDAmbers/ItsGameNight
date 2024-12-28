@@ -50,7 +50,7 @@ class RatingViewController: UIViewController {
             unwrappedPoll.votes!.append(newVote)
             unwrappedPoll.image = createImage() ?? UIImage(named: "It's Game Night")!
             unwrappedPoll.createSummaryText(for: defaults.getUsername(), with: newVote.choice)
-            delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false)
+            delegate?.sendMessage(using: unwrappedPoll, isNewMessage: false, sendImmediately: false)
         }
     }
     
@@ -172,7 +172,7 @@ extension RatingViewController: UITableViewDataSource, UITableViewDelegate {
     
     private func presentInfoVC(title: String, votes: [Vote]?) {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: VoteInfoViewController.storyboardIdentifier) as? VoteInfoViewController else {
-            fatalError("Unable to instantiate a StickerViewController from the storyboard")
+            fatalError("Unable to instantiate a ViewController from the storyboard")
         }
         
         controller.navigationItem.title = title

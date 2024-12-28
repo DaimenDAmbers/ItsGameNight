@@ -27,7 +27,19 @@ struct Randomizer: MessageTemplateProtocol {
         return "Open to see the random selection"
     }
     
+    var trailingCaption: String?
+    
+    var trailingSubcaption: String?
+    
+    var imageTitle: String?
+    
+    var imageSubtitle: String?
+    
     var summaryText: String?
+    
+    var sentBy: String?
+    
+    var senderID: UUID?
     
     init?(people: [Person]) {
         self.people = people

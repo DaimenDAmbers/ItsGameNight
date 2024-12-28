@@ -8,7 +8,7 @@
 import Foundation
 
 enum AppState: String {
-    case home, gameInvite, randomizer, poll
+    case home, gameInvite, randomizer, poll, trivia
 }
 
 extension AppState: QueryItemRepresentable {

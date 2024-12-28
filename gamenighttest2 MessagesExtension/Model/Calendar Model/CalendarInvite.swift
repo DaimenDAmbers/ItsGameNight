@@ -37,9 +37,19 @@ struct CalendarInvite: MessageTemplateProtocol {
         return "Open to see the next scheduled Game Night"
     }
     
+    var trailingCaption: String?
+    
+    var trailingSubcaption: String?
+    
+    var imageTitle: String?
+    
+    var imageSubtitle: String?
+    
     var summaryText: String?
     
     var sentBy: String?
+    
+    var senderID: UUID?
     
     /// - Tag: QueryItems
     var queryItems: [URLQueryItem] {

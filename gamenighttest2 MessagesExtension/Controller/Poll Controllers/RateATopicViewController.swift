@@ -43,7 +43,7 @@ class RateATopicViewController: UIViewController {
         guard let question = questionTextView.text else { return }
         let messageImage = createImage() ?? UIImage(named: "It's Game Night")!
         poll = Poll(question: question, image: messageImage, sentBy: defaults.getUsername())
-        delegate?.sendMessage(using: poll, isNewMessage: true)
+        delegate?.sendMessage(using: poll, isNewMessage: true, sendImmediately: false)
     }
     
     private func createImage() -> UIImage? {

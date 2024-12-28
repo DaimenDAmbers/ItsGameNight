@@ -10,11 +10,11 @@ import Foundation
 struct Defaults {
     private let userDefaults = UserDefaults.standard
     
-    func getUsername() -> String? {
+    func getUsername() -> String {
         if let name = userDefaults.string(forKey: Constants.username), !name.trimmingCharacters(in: .whitespaces).isEmpty {
             return name
         } else {
-            return nil
+            return Constants.noUserName
         }
     }
     

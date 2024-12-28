@@ -39,25 +39,34 @@ class MessagesViewController: MSMessagesAppViewController {
         
         // Use this to clean up state related to the deleted message.
         // FIXME: Not canceling the calendar invite anymore.
-        if let cancelMessage = CalendarInvite(message: message) {
-            let eventStore = EKEventStore()
-            guard let identifier = cancelMessage.identifier else {
-                print("No event identifier available. Exiting the didCancelSending method")
-                return
+        if appState == .gameInvite {
+            if let cancelMessage = CalendarInvite(message: message) {
+                let eventStore = EKEventStore()
+                guard let identifier = cancelMessage.identifier else {
+                    print("No event identifier available. Exiting the didCancelSending method")
+                    return
+                }
+                
+                guard let eventToRemove = eventStore.event(withIdentifier: identifier) else {
+                    print("No event to remove. Exiting the didCancelSending method")
+                    return
+                }
+                
+                do {
+                    try eventStore.remove(eventToRemove, span: .thisEvent, commit: true)
+                    print("Event Removed.")
+                } catch {
+                    print("Could not remove the event with the error: \(error)")
+                }
             }
-            
-            guard let eventToRemove = eventStore.event(withIdentifier: identifier) else {
-                print("No event to remove. Exiting the didCancelSending method")
-                return
+        }
+        
+        if appState == .trivia {
+            if let triviaMessage = TriviaMessage(message: message) {
+                print("Trivia message canceled")
+                print("\(triviaMessage.queryItems)")
             }
-            
-            do {
-                try eventStore.remove(eventToRemove, span: .thisEvent, commit: true)
-                print("Event Removed.")
-            } catch {
-                print("Could not remove the event with the error: \(error)")
-            }
-        }        
+        }
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -108,6 +117,14 @@ class MessagesViewController: MSMessagesAppViewController {
             case .poll:
                 if let poll = Poll(message: conversation.selectedMessage) {
                     controller = instantiateRatingViewController(with: poll)
+                } else {
+                    controller = instantiateHomeViewController(with: conversation)
+                }
+                
+            case .trivia:
+                if var trivia = TriviaMessage(message: conversation.selectedMessage) {
+                    trivia.senderID = conversation.selectedMessage?.senderParticipantIdentifier
+                    controller = instantiateTriviaMessageViewController(with: trivia)
                 } else {
                     controller = instantiateHomeViewController(with: conversation)
                 }
@@ -183,6 +200,17 @@ class MessagesViewController: MSMessagesAppViewController {
         return controller
     }
     
+    fileprivate func instantiateTriviaMessageViewController(with trivia: TriviaMessage) -> UIViewController {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: TriviaMessageViewController.storyboardIdentifier) as? TriviaMessageViewController else {
+            fatalError("Unable to instantiate a TriviaMessageViewController from the storyboard")
+        }
+        
+        controller.trivia = trivia
+        controller.delegate = self
+        
+        return controller
+    }
+    
     /// Composes a message for the Game Night Application.
     /// - Parameters:
     ///   - session: The conversation that the user currently has open.
@@ -191,6 +219,7 @@ class MessagesViewController: MSMessagesAppViewController {
     fileprivate func composeMessage(session: MSSession? = nil, with invite: MessageTemplateProtocol? = nil) -> MSMessage {
         var components = URLComponents()
         let layout = MSMessageTemplateLayout()
+        let message = MSMessage(session: session ?? MSSession())
         
         if let myInvite = invite {
             components.queryItems = myInvite.queryItems
@@ -198,17 +227,18 @@ class MessagesViewController: MSMessagesAppViewController {
             layout.image = myInvite.image
             layout.caption = myInvite.caption
             layout.subcaption = myInvite.subCaption
+            layout.trailingCaption = myInvite.trailingCaption
+            layout.trailingSubcaption = myInvite.trailingSubcaption
+            layout.imageTitle = myInvite.imageTitle
+            layout.imageSubtitle = myInvite.imageSubtitle
+            
+            message.summaryText = myInvite.summaryText
         }
         
         print("Printing the components: \(String(describing: components.queryItems))")
         
-        let message = MSMessage(session: session ?? MSSession())
         message.url = components.url!
         message.layout = layout
-        
-        if let summaryText = invite?.summaryText {
-            message.summaryText = summaryText
-        }
         
         return message
     }
@@ -234,6 +264,10 @@ class MessagesViewController: MSMessagesAppViewController {
             if queryItem.name == "App State" && value == AppState.poll.rawValue {
                 self.appState = .poll
             }
+            
+            if queryItem.name == "App State" && value == AppState.trivia.rawValue {
+                self.appState = .trivia
+            }
         }
     }
     
@@ -249,7 +283,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
 // MARK: - Extensions
 extension MessagesViewController: MessageDelegate {
-    func sendMessage(using template: MessageTemplateProtocol?, isNewMessage: Bool) {
+    func sendMessage(using template: MessageTemplateProtocol?, isNewMessage: Bool, sendImmediately: Bool = false) {
         guard let conversation = activeConversation else { fatalError("Could not send a message.") }
         var message = MSMessage()
         
@@ -258,14 +292,24 @@ extension MessagesViewController: MessageDelegate {
         } else {
             message = composeMessage(session: conversation.selectedMessage?.session, with: template)
         }
-
-        conversation.insert(message) { error in
-            if let error = error {
-                print(error)
+        
+        // if `sendImmediately` is false, the message will be entered into the text bar first.
+        if !sendImmediately {
+            conversation.insert(message) { error in
+                if let error = error {
+                    print(error)
+                }
+            }
+            
+            dismiss()
+            
+        } else {
+            conversation.send(message) { error in
+                if let error = error {
+                    print(error)
+                }
             }
         }
-        
-        dismiss()
     }
     
     func changeAppState(to currentState: AppState) {
