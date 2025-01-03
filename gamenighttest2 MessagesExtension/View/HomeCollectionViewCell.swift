@@ -11,6 +11,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     static let idendifier = "HomeCollectionViewCell"
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var infoButton: UIButton!
     
     static func nib() -> UINib {
         return UINib(nibName: HomeCollectionViewCell.idendifier, bundle: nil)

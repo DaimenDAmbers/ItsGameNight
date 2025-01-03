@@ -24,6 +24,7 @@ protocol MessageTemplateProtocol {
     var summaryText: String? {get set}
     var sentBy: String? {get set}
     var senderID: UUID? {get set}
+    var longDescription: String? {get set}
     
     // Initializer for the queryitems
     var queryItems: [URLQueryItem] {get}

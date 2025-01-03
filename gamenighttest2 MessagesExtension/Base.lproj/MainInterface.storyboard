@@ -64,6 +64,37 @@
             </objects>
             <point key="canvasLocation" x="2201.449275362319" y="-30.133928571428569"/>
         </scene>
+        <!--Core Info View Controller-->
+        <scene sceneID="LZ1-tj-Eb5">
+            <objects>
+                <viewController storyboardIdentifier="CoreInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vYO-4o-eaE" customClass="CoreInfoViewController" customModule="It_s_Game_Night" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wI2-Zs-di0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-5h-f1h">
+                                <rect key="frame" x="20" y="68" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MLw-JX-dag"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7EO-5h-f1h" firstAttribute="top" secondItem="MLw-JX-dag" secondAttribute="top" constant="20" id="SAh-i1-ZlR"/>
+                            <constraint firstItem="7EO-5h-f1h" firstAttribute="leading" secondItem="MLw-JX-dag" secondAttribute="leading" constant="20" id="VTb-jW-uDW"/>
+                            <constraint firstItem="MLw-JX-dag" firstAttribute="trailing" secondItem="7EO-5h-f1h" secondAttribute="trailing" constant="20" id="ziJ-Uh-Zoj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="7EO-5h-f1h" id="oHR-ok-oYA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWX-sQ-oJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3021.739130434783" y="-16.071428571428569"/>
+        </scene>
         <!--Select to Randomize-->
         <scene sceneID="Agh-c6-Han">
             <objects>

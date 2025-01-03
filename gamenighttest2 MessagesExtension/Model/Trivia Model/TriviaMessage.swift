@@ -73,6 +73,8 @@ struct TriviaMessage: MessageTemplateProtocol {
     
     var senderID: UUID?
     
+    var longDescription: String?
+    
     init?(triviaModel: TriviaModel, submissions: [TriviaMessage.PersonSubmission], sentby: String? = nil, questionType: TriviaModel.QuestionType) {
         self.triviaModel = triviaModel
         self.submissions = submissions
@@ -250,7 +252,7 @@ extension TriviaMessage {
             }
             
             for submission in submissions {
-                if queryItem.name == submission.id?.uuidString && queryItem.value == "correct" || queryItem.value == "incorrect" {
+                if queryItem.name == submission.id?.uuidString && (queryItem.value == "correct" || queryItem.value == "incorrect") {
                     let decision = TriviaMessage.PersonSubmission.Decision(rawValue: value)
                     submission.choice = decision ?? .didNotSelect
                 } else if queryItem.name == submission.id?.uuidString && (queryItem.value == "incorrectAnswer_1" || queryItem.value == "incorrectAnswer_2" || queryItem.value == "incorrectAnswer_3" || queryItem.value == "correctAnswer") {

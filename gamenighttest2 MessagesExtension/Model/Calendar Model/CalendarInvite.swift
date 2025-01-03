@@ -51,6 +51,8 @@ struct CalendarInvite: MessageTemplateProtocol {
     
     var senderID: UUID?
     
+    var longDescription: String?
+    
     /// - Tag: QueryItems
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()

@@ -41,6 +41,8 @@ struct Randomizer: MessageTemplateProtocol {
     
     var senderID: UUID?
     
+    var longDescription: String?
+    
     init?(people: [Person]) {
         self.people = people
     }

@@ -88,6 +88,7 @@ class TriviaMessageViewController: UIViewController {
     private func sendResults(for user: TriviaMessage.PersonSubmission) {
         if var message = trivia {
             message.submissions.append(user)
+            print("User's selected answer: \(user.selectedAnswer)")
             message.summaryText = "\(user.name ?? Constants.noUserName) was \(user.choice)"
             delegate?.sendMessage(using: message, isNewMessage: false, sendImmediately: true)
         }

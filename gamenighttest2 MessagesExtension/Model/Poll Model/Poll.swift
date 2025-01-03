@@ -59,6 +59,8 @@ struct Poll: MessageTemplateProtocol {
     
     var senderID: UUID?
     
+    var longDescription: String?
+    
     init?(question: String, votes: [Vote]? = nil, image: UIImage, sentBy: String?) {
         self.question = question
         self.votes = votes

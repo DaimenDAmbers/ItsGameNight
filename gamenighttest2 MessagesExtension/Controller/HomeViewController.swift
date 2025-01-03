@@ -123,6 +123,31 @@ class HomeViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: controller)
         self.present(navVC, animated: true, completion: nil)
     }
+    
+    @objc func openInfo(_ sender: UIButton) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: CoreInfoViewController.storyboardIdentifier) as? CoreInfoViewController else {
+            fatalError("Unable to instantiate a ViewController from the storyboard")
+        }
+        if sender.tag == 0 {
+            controller.navigationItem.title = "Trivia"
+            controller.longDescription = Constants.CoreInfoLongDescription.trivia
+        } else if sender.tag == 1 {
+            controller.navigationItem.title = "Scheduler"
+            controller.longDescription = Constants.CoreInfoLongDescription.scheduler
+        } else if sender.tag == 2 {
+            controller.navigationItem.title = "Randomizer"
+            controller.longDescription = Constants.CoreInfoLongDescription.randomizer
+        } else if sender.tag == 3 {
+            controller.navigationItem.title = "Rate a Topic"
+            controller.longDescription = Constants.CoreInfoLongDescription.rateATopic
+        } else {
+            controller.navigationItem.title = "Stickers"
+            controller.longDescription = Constants.CoreInfoLongDescription.stickers
+        }
+        
+        let navVC = UINavigationController(rootViewController: controller)
+        self.present(navVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - EKEventEditViewDelegate
@@ -179,7 +204,7 @@ extension HomeViewController {
 
 // MARK: Collection View for the Home Screen
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuItems.count
     }
@@ -200,17 +225,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let space: CGFloat = (layout.minimumInteritemSpacing) + (layout.sectionInset.left) + (layout.sectionInset.right)
         let size:CGFloat = (collectionView.frame.size.height - space) / cellColumns
-
+        
         return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.idendifier, for: indexPath) as! HomeCollectionViewCell
-    
+        
         // Configure the cell
         let menuItem = menuItems[indexPath.row]
         cell.label.text = menuItem.label
         cell.image.image = menuItem.image
+        cell.infoButton.tag = indexPath.row
+        cell.infoButton.addTarget(self, action: #selector(openInfo), for: UIControl.Event.touchUpInside)
         cell.tag = indexPath.item
         return cell
     }
@@ -226,6 +253,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else if indexPath.row == 2 {
             openRandomizer()
         } else if indexPath.row == 3 {
+            openRateATopic()
+        } else {
+            openStickers()
+        }
+    }
+    
+    @objc private func cardInfoButtonTapped(_ sender: UIButton) {
+        if sender.tag == 0 {
+            openTrivia()
+        } else if sender.tag == 1 {
+            openCalendarInvite()
+        } else if sender.tag == 2 {
+            openRandomizer()
+        } else if sender.tag == 3 {
             openRateATopic()
         } else {
             openStickers()
