@@ -57,7 +57,7 @@ struct Poll: MessageTemplateProtocol {
     
     var summaryText: String?
     
-    var senderID: UUID?
+    var localIdentifier: UUID?
     
     var longDescription: String?
     

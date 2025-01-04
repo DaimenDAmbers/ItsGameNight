@@ -72,18 +72,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-5h-f1h">
-                                <rect key="frame" x="20" y="68" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-5h-f1h">
+                                <rect key="frame" x="20" y="68" width="374" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Long Description">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="20"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bec-LK-qDe">
+                                <rect key="frame" x="40" y="784" width="334" height="38"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Close"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Close">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                    <color key="baseBackgroundColor" red="0.89411764709999997" green="0.90519255399999998" blue="0.8430262208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="vYO-4o-eaE" eventType="touchUpInside" id="Wgr-mP-0i6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MLw-JX-dag"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bec-LK-qDe" firstAttribute="leading" secondItem="MLw-JX-dag" secondAttribute="leading" constant="40" id="4hW-Ge-aJ6"/>
                             <constraint firstItem="7EO-5h-f1h" firstAttribute="top" secondItem="MLw-JX-dag" secondAttribute="top" constant="20" id="SAh-i1-ZlR"/>
                             <constraint firstItem="7EO-5h-f1h" firstAttribute="leading" secondItem="MLw-JX-dag" secondAttribute="leading" constant="20" id="VTb-jW-uDW"/>
+                            <constraint firstItem="MLw-JX-dag" firstAttribute="trailing" secondItem="bec-LK-qDe" secondAttribute="trailing" constant="40" id="YnB-rW-EeF"/>
+                            <constraint firstItem="MLw-JX-dag" firstAttribute="bottom" secondItem="bec-LK-qDe" secondAttribute="bottom" constant="40" id="ush-vf-Q12"/>
                             <constraint firstItem="MLw-JX-dag" firstAttribute="trailing" secondItem="7EO-5h-f1h" secondAttribute="trailing" constant="20" id="ziJ-Uh-Zoj"/>
                         </constraints>
                     </view>
@@ -643,7 +665,7 @@
                         <outlet property="difficultyLabel" destination="MXR-QP-oEQ" id="f6h-Z5-31L"/>
                         <outlet property="feedbackLabel" destination="GfR-2D-MT8" id="Vwi-Cb-cdQ"/>
                         <outlet property="questionLabel" destination="o6q-NQ-ANq" id="ckd-v4-Fjg"/>
-                        <outlet property="seeResults" destination="RLX-KC-bS6" id="xHc-Ze-oUo"/>
+                        <outlet property="seeResultsButton" destination="RLX-KC-bS6" id="xHc-Ze-oUo"/>
                         <outlet property="tableView" destination="o1X-em-u8a" id="BSW-95-naz"/>
                     </connections>
                 </viewController>

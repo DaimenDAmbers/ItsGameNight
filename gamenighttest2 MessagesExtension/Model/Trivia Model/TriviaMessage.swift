@@ -71,7 +71,7 @@ struct TriviaMessage: MessageTemplateProtocol {
     
     var sentBy: String?
     
-    var senderID: UUID?
+    var localIdentifier: UUID?
     
     var longDescription: String?
     
@@ -146,6 +146,30 @@ struct TriviaMessage: MessageTemplateProtocol {
         
         return userAnswer
     }
+    
+    func returnUserAnswerandIndex(for value: String) -> (answer: String, index: Int) {
+        var userAnswer = String()
+        var index = Int()
+        
+        
+        if value == "incorrectAnswer_1" {
+            userAnswer = incorrectAnswer_1
+        } else if value == "incorrectAnswer_2" {
+            userAnswer = incorrectAnswer_2
+        } else if value == "incorrectAnswer_3" {
+            userAnswer = incorrectAnswer_3
+        } else {
+            userAnswer = correctAnswer
+        }
+        
+        for i in 0..<shuffledAnswers.count {
+            if userAnswer == shuffledAnswers[i] {
+                index = i
+            }
+        }
+        
+        return (userAnswer, index)
+    }
 }
 
 //MARK: - Query Items
@@ -186,8 +210,8 @@ extension TriviaMessage {
             let newSubmission = URLQueryItem(name: "submission", value: submission.id?.uuidString)
 
             
-            let choice = URLQueryItem(name: submission.id?.uuidString ?? "No ID", value: submission.choice.rawValue)
-            let selectedAnswer = URLQueryItem(name: submission.id?.uuidString ?? "No ID", value: submission.selectedAnswer)
+            let choice = URLQueryItem(name: submission.id?.uuidString ?? "No ID", value: submission.result.rawValue)
+            let selectedAnswer = URLQueryItem(name: submission.id?.uuidString ?? "No ID", value: submission.getQueryItemAnswer())
             items.append(newSubmission)
             items.append(choice)
             items.append(selectedAnswer)
@@ -254,9 +278,9 @@ extension TriviaMessage {
             for submission in submissions {
                 if queryItem.name == submission.id?.uuidString && (queryItem.value == "correct" || queryItem.value == "incorrect") {
                     let decision = TriviaMessage.PersonSubmission.Decision(rawValue: value)
-                    submission.choice = decision ?? .didNotSelect
+                    submission.result = decision ?? .didNotSelect
                 } else if queryItem.name == submission.id?.uuidString && (queryItem.value == "incorrectAnswer_1" || queryItem.value == "incorrectAnswer_2" || queryItem.value == "incorrectAnswer_3" || queryItem.value == "correctAnswer") {
-                    submission.selectedAnswer = value
+                    submission.setQueryItemAnswer(to: value)
                 } else if queryItem.name == submission.id?.uuidString {
                     submission.name = value
                 }
@@ -280,16 +304,48 @@ extension TriviaMessage {
     class PersonSubmission: Identifiable {
         var id: UUID?
         var name: String?
-        var choice: Decision = .didNotSelect
-        var selectedAnswer: String = ""
+        var result: Decision = .didNotSelect
+        var queryItemAnswer: String = ""
+        var answer: String = ""
+        var selectedAnswerIndex: Int = 0
         
         enum Decision: String, CaseIterable {
             case correct, incorrect, didNotSelect
         }
         
         // MARK: Functions
+        
+        /// Returns the query item for the answer that the user selected
+        /// - Returns: Returns a string value that matches the name of the query item if they are correct or incorrect.
         func getQueryItemAnswer() -> String {
-            return selectedAnswer
-        }        
+            return queryItemAnswer
+        }
+        
+        /// Set's the query item for the answer that was selected.
+        func setQueryItemAnswer(to value: String) {
+            self.queryItemAnswer = value
+        }
+        
+        /// Sets the user's answer to the value from the list of answers
+        func setAnswer(to value: String) {
+            self.answer = value
+        }
+        
+        /// The user's answer
+        /// - Returns: Returns the string value of the user's answer
+        func getAnswer() -> String {
+            return answer
+        }
+        
+        /// This is the index of the selected answer of the user
+        /// - Returns: Returns an integer of where the index is of the selected answer.
+        func getSelectedAnswerIndex() -> Int {
+            return selectedAnswerIndex
+        }
+        
+        /// Sets the user's selected index to the value that was choosen.
+        func setSelectedAnswerIndex(to value: Int) {
+            self.selectedAnswerIndex = value
+        }
     }
 }

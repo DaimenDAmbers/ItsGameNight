@@ -23,7 +23,7 @@ protocol MessageTemplateProtocol {
     var imageSubtitle: String? {get set}
     var summaryText: String? {get set}
     var sentBy: String? {get set}
-    var senderID: UUID? {get set}
+    var localIdentifier: UUID? {get set}
     var longDescription: String? {get set}
     
     // Initializer for the queryitems

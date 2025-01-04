@@ -24,13 +24,18 @@ extension TriviaResultsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let submission = message?.submissions[indexPath.row] else { return cell }
+        guard let message = message else { return cell }
+        let submission = message.submissions[indexPath.row]
+        
+        let queryItemAnswer = submission.getQueryItemAnswer()
+        let (answer,_) = message.returnUserAnswerandIndex(for: queryItemAnswer)
+        submission.setAnswer(to: answer)
         
         var textLabel = String()
         if let name = submission.name {
-            textLabel = "\(name) was \(submission.choice)"
+            textLabel = "\(name) was \(submission.result)"
         } else {
-            textLabel = "A \(Constants.noUserName) was \(submission.choice)"
+            textLabel = "A \(Constants.noUserName) was \(submission.result)"
         }
         
         cell.textLabel?.text = textLabel

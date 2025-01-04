@@ -49,7 +49,7 @@ struct CalendarInvite: MessageTemplateProtocol {
     
     var sentBy: String?
     
-    var senderID: UUID?
+    var localIdentifier: UUID?
     
     var longDescription: String?
     

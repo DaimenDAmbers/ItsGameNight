@@ -123,7 +123,7 @@ class MessagesViewController: MSMessagesAppViewController {
                 
             case .trivia:
                 if var trivia = TriviaMessage(message: conversation.selectedMessage) {
-                    trivia.senderID = conversation.localParticipantIdentifier
+                    trivia.localIdentifier = conversation.localParticipantIdentifier
                     controller = instantiateTriviaMessageViewController(with: trivia)
                 } else {
                     controller = instantiateHomeViewController(with: conversation)

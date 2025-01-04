@@ -29,7 +29,7 @@ class TriviaMessageViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var seeResults: UIButton!
+    @IBOutlet weak var seeResultsButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
     
     // MARK: Image Constants
@@ -42,7 +42,7 @@ class TriviaMessageViewController: UIViewController {
         guard let message = trivia else { return }
         let triviaModel = message.triviaModel
         
-        print("Trivia Message VC Query Items: \(message.queryItems)")
+        print("TriviaMessageVC Query Items: \(message.queryItems)")
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -57,11 +57,13 @@ class TriviaMessageViewController: UIViewController {
         
         setupChoices(answers: allShuffledAnswers)
 
-        if message.checkIfPersonAnswered(id: message.senderID) {
-            disableUserInput(for: message, answers: allShuffledAnswers)
-            seeResults.isEnabled = true
+        if message.checkIfPersonAnswered(id: message.localIdentifier) {
+            disableUserInput()
+            showUserAnswer(for: message)
+            showCorrectAnswer()
+            seeResultsButton.isEnabled = true
         } else {
-            seeResults.isEnabled = false
+            seeResultsButton.isEnabled = false
         }
     }
     
@@ -75,36 +77,28 @@ class TriviaMessageViewController: UIViewController {
         }
     }
     
-    private func setUserAnswerIndex(for answers: [String]) {
-        for index in 0..<answers.count {
-            if answers[index] == userAnswer {
-                userAnswerIndex = index
-            }
-        }
-    }
-    
     /// Sends the results of the question as another message.
     /// - Parameter user: This is the user's name and choice from the question.
     private func sendResults(for user: TriviaMessage.PersonSubmission) {
         if var message = trivia {
             message.submissions.append(user)
-            print("User's selected answer: \(user.selectedAnswer)")
-            message.summaryText = "\(user.name ?? Constants.noUserName) was \(user.choice)"
+            message.summaryText = "\(user.name ?? Constants.noUserName) was \(user.result)"
             delegate?.sendMessage(using: message, isNewMessage: false, sendImmediately: true)
         }
         
     }
     
-    private func disableUserInput(for message: TriviaMessage, answers: [String]) {
+    private func disableUserInput() {
+        seeResultsButton.isEnabled = false
+        tableView.allowsSelection = false
+    }
+    
+    private func showUserAnswer(for message: TriviaMessage) {
         for submission in message.submissions {
-            if submission.id == message.senderID {
-                seeResults.isEnabled = false
-                tableView.allowsSelection = false
-                updateFeedbackLabel(for: submission.choice)
-                userAnswer = message.fetechUserAnswer(for: submission.getQueryItemAnswer())
-                setUserAnswerIndex(for: answers)
-                showUserAnswer(choice: submission.choice)
-                showCorrectAnswer()
+            if submission.id == message.localIdentifier {
+                let (_, index) = message.returnUserAnswerandIndex(for: submission.getQueryItemAnswer())
+                userAnswerIndex = index
+                displayUserAnswer(choice: submission.result)
             }
         }
     }
@@ -134,7 +128,7 @@ class TriviaMessageViewController: UIViewController {
         choiceSelected[correctAnswerIndex] = .correct
     }
     
-    private func showUserAnswer(choice: TriviaMessage.PersonSubmission.Decision) {
+    private func displayUserAnswer(choice: TriviaMessage.PersonSubmission.Decision) {
         switch choice {
         case .correct:
             choiceSelected[userAnswerIndex] = .correct
@@ -146,12 +140,12 @@ class TriviaMessageViewController: UIViewController {
     }
     
     private func sendUserResults() {
-        guard let senderID = trivia?.senderID else { return }
+        guard let senderID = trivia?.localIdentifier else { return }
         let user = TriviaMessage.PersonSubmission()
         user.id = senderID
         user.name = defaults.getUsername()
-        user.choice = userResults
-        user.selectedAnswer = userAnswer
+        user.result = userResults
+        user.queryItemAnswer = userAnswer
         sendResults(for: user)
     }
     

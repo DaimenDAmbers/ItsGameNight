@@ -14,6 +14,9 @@ class CoreInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         descriptionLabel.text = longDescription
-        descriptionLabel.sizeToFit()
+//        descriptionLabel.sizeToFit()
+    }
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }
