@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class RandomizerViewController: UIViewController {
     
@@ -20,6 +21,9 @@ class RandomizerViewController: UIViewController {
     @IBOutlet weak var randomPersonLabel: UILabel!
     @IBOutlet weak var spinButton: UIButton!
     
+    // MARK: Google Banner Ad
+    var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +35,14 @@ class RandomizerViewController: UIViewController {
             let segment = Segment(name: people[i].name, color: colors[i % colors.count], isSelected: people[i].isSelected)
             pieChartView.segments.append(segment)
         }
+        
+        randomPersonLabel.isHidden = true
+        
+        var googleAdsManager = GoogleAdsManager(controller: self)
+        bannerView = googleAdsManager.createBannerAd()
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     @IBAction func spinWheel(_ sender: UIButton) {

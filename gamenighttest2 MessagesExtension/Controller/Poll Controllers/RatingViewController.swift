@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class RatingViewController: UIViewController {
     
@@ -27,6 +28,9 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sentByLabel: UILabel!
     
+    // MARK: Google Ad
+    var bannerView: GADBannerView!
+    
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,13 @@ class RatingViewController: UIViewController {
         tableView.delegate = self
         tableView.register(PollTableViewCell.nib(), forCellReuseIdentifier: PollTableViewCell.idendifier)
         shouldEnableButton()
+        
+        var googleAdsManager = GoogleAdsManager(controller: self)
+        bannerView = googleAdsManager.createBannerAd()
+        
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     @IBAction func sendVote(_ sender: UIButton) {

@@ -1,0 +1,6 @@
+framework module Pods_It_s_Game_Night_App {
+  umbrella header "Pods-It's Game Night App-umbrella.h"
+
+  export *
+  module * { export * }
+}

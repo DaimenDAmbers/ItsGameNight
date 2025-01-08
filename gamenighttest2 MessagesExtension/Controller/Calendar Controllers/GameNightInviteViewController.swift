@@ -9,6 +9,7 @@ import UIKit
 import Messages
 import EventKit
 import EventKitUI
+import GoogleMobileAds
 
 class GameNightInviteViewController: UIViewController {
     
@@ -29,6 +30,8 @@ class GameNightInviteViewController: UIViewController {
     @IBOutlet weak var startTimeText: UILabel!
     @IBOutlet weak var endTimeText: UILabel!
     
+    // MARK: Google Ads
+    var bannerView: GADBannerView!
 
     // MARK: Methods
     override func viewDidLoad() {
@@ -59,6 +62,12 @@ class GameNightInviteViewController: UIViewController {
         dateText.text = date
         startTimeText.text = startTime
         endTimeText.text = endTime
+        
+        var googleAdsManager = GoogleAdsManager(controller: self)
+        bannerView = googleAdsManager.createBannerAd()
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {

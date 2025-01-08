@@ -7,6 +7,7 @@
 
 import UIKit
 import Messages
+import GoogleMobileAds
 
 class TriviaMessageViewController: UIViewController {
 
@@ -32,6 +33,10 @@ class TriviaMessageViewController: UIViewController {
     @IBOutlet weak var seeResultsButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
     
+    // MARK: Google Ad
+//    var googleAdsManager = GoogleAdsManager()
+    var bannerView: GADBannerView!
+    
     // MARK: Image Constants
     let correctImage = UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
     let incorrectImage = UIImage(systemName: "x.circle.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
@@ -41,6 +46,8 @@ class TriviaMessageViewController: UIViewController {
         super.viewDidLoad()
         guard let message = trivia else { return }
         let triviaModel = message.triviaModel
+        
+        feedbackLabel.isHidden = true
         
         print("TriviaMessageVC Query Items: \(message.queryItems)")
         
@@ -65,7 +72,14 @@ class TriviaMessageViewController: UIViewController {
         } else {
             seeResultsButton.isEnabled = false
         }
+        
+        var googleAdsManager = GoogleAdsManager(controller:  self)
+        bannerView = googleAdsManager.createBannerAd()
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
+    
     
     // MARK: Private functions
     /// Sets up the choices for the answers
@@ -99,6 +113,7 @@ class TriviaMessageViewController: UIViewController {
                 let (_, index) = message.returnUserAnswerandIndex(for: submission.getQueryItemAnswer())
                 userAnswerIndex = index
                 displayUserAnswer(choice: submission.result)
+                updateFeedbackLabel(for: submission.result)
             }
         }
     }

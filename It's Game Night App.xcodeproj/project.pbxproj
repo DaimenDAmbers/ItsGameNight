@@ -79,6 +79,7 @@
 		D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */; };
 		D378F25B2AE81FCB000A5654 /* GameNightInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25A2AE81FCB000A5654 /* GameNightInviteViewController.swift */; };
 		D378F25D2AE823A7000A5654 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378F25C2AE823A7000A5654 /* AppState.swift */; };
+		D379B5242D2B4FD000E09987 /* Pods_It_s_Game_Night_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0A941FEA6895FD2B5877F1 /* Pods_It_s_Game_Night_App.framework */; };
 		D37AD0B12B0E3D0D00D4166D /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AD0B02B0E3D0D00D4166D /* RandomizerViewController.swift */; };
 		D37FEC942B17BF7C00CE5B5D /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FEC932B17BF7C00CE5B5D /* TriangleView.swift */; };
 		D380C8E52B8D290F002A3A52 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D380C8E32B8D290F002A3A52 /* HomeCollectionViewCell.swift */; };
@@ -94,6 +95,7 @@
 		D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */; };
 		D3C37CB42ADC623600AEA1A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */; };
 		D3CBE7AE2B8F937D00BC53B3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */; };
+		D3CDB6212D2C9A4B00AD1FF8 /* GoogleAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDB6202D2C9A4900AD1FF8 /* GoogleAds.swift */; };
 		D3D123CA2B546F2C007E1E62 /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */; };
 		D3D123CB2B546F2C007E1E62 /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */; };
 		D3D58F2D2BD075DA00626EF6 /* VoteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */; };
@@ -104,6 +106,7 @@
 		D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E971C42AEF11A200FD158F /* CalendarInvite.swift */; };
 		D3F622242D14B8250002EDE1 /* TriviaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F622232D14B8250002EDE1 /* TriviaManager.swift */; };
 		D3F622262D14C6890002EDE1 /* TriviaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F622252D14C6890002EDE1 /* TriviaModel.swift */; };
+		D494BF28DD311970EF2A1550 /* Pods_It_s_Game_Night_App_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5E5F5B41511D7C8166BD88 /* Pods_It_s_Game_Night_App_MessagesExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0441A0C70D497A55C7DD7086 /* Pods-It's Game Night App MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It's Game Night App MessagesExtension.release.xcconfig"; path = "Target Support Files/Pods-It's Game Night App MessagesExtension/Pods-It's Game Night App MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		38DE81180D2D089F276BBA37 /* Pods-It's Game Night App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It's Game Night App.release.xcconfig"; path = "Target Support Files/Pods-It's Game Night App/Pods-It's Game Night App.release.xcconfig"; sourceTree = "<group>"; };
+		42F049BD7A24CEF04F2C9554 /* Pods-It's Game Night App MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It's Game Night App MessagesExtension.debug.xcconfig"; path = "Target Support Files/Pods-It's Game Night App MessagesExtension/Pods-It's Game Night App MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6C0A941FEA6895FD2B5877F1 /* Pods_It_s_Game_Night_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_s_Game_Night_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6C5D21FA2726161BCC9E0A /* Pods-It's Game Night App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It's Game Night App.debug.xcconfig"; path = "Target Support Files/Pods-It's Game Night App/Pods-It's Game Night App.debug.xcconfig"; sourceTree = "<group>"; };
 		D30374782BB3673E00E89FB7 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		D304E09A2D15E19500CB85FA /* SelectQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		D304E09B2D15E19500CB85FA /* SelectQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectQuestionTableViewCell.xib; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 		D3B952B92AFB2B9B00C46330 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		D3C37CB32ADC623600AEA1A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D3CBE7AD2B8F937D00BC53B3 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		D3CDB6202D2C9A4900AD1FF8 /* GoogleAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAds.swift; sourceTree = "<group>"; };
 		D3D123C82B546F2C007E1E62 /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
 		D3D123C92B546F2C007E1E62 /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
 		D3D58F2C2BD075DA00626EF6 /* VoteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteInfoViewController.swift; sourceTree = "<group>"; };
@@ -209,20 +218,41 @@
 		D3E971C42AEF11A200FD158F /* CalendarInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInvite.swift; sourceTree = "<group>"; };
 		D3F622232D14B8250002EDE1 /* TriviaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaManager.swift; sourceTree = "<group>"; };
 		D3F622252D14C6890002EDE1 /* TriviaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaModel.swift; sourceTree = "<group>"; };
+		EF5E5F5B41511D7C8166BD88 /* Pods_It_s_Game_Night_App_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_s_Game_Night_App_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4352D405EE18DCE3E2519C90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D379B5242D2B4FD000E09987 /* Pods_It_s_Game_Night_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D33D0CFE2AD9888500A5099A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D33D0D072AD9888500A5099A /* Messages.framework in Frameworks */,
+				D494BF28DD311970EF2A1550 /* Pods_It_s_Game_Night_App_MessagesExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D05E8D895FE235406B3619F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB6C5D21FA2726161BCC9E0A /* Pods-It's Game Night App.debug.xcconfig */,
+				38DE81180D2D089F276BBA37 /* Pods-It's Game Night App.release.xcconfig */,
+				42F049BD7A24CEF04F2C9554 /* Pods-It's Game Night App MessagesExtension.debug.xcconfig */,
+				0441A0C70D497A55C7DD7086 /* Pods-It's Game Night App MessagesExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D30B792D2B0ADF5E007606C8 /* Randomizer Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +274,7 @@
 		D30B792F2B0AF272007606C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3CDB6202D2C9A4900AD1FF8 /* GoogleAds.swift */,
 				D37313612ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift */,
 				D3E955A82AE6E4040012927B /* MessageDelegate.swift */,
 				D378F25C2AE823A7000A5654 /* AppState.swift */,
@@ -323,6 +354,7 @@
 				D33D0D082AD9888500A5099A /* gamenighttest2 MessagesExtension */,
 				D33D0D052AD9888500A5099A /* Frameworks */,
 				D33D0CF92AD9888300A5099A /* Products */,
+				7D05E8D895FE235406B3619F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -347,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				D33D0D062AD9888500A5099A /* Messages.framework */,
+				6C0A941FEA6895FD2B5877F1 /* Pods_It_s_Game_Night_App.framework */,
+				EF5E5F5B41511D7C8166BD88 /* Pods_It_s_Game_Night_App_MessagesExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,8 +517,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D33D0D172AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App" */;
 			buildPhases = (
+				D9F57260B0CA4DC55E7D817D /* [CP] Check Pods Manifest.lock */,
 				D33D0CF62AD9888300A5099A /* Resources */,
 				D33D0D162AD9888700A5099A /* Embed Foundation Extensions */,
+				4352D405EE18DCE3E2519C90 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -500,9 +536,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D33D0D132AD9888700A5099A /* Build configuration list for PBXNativeTarget "It's Game Night App MessagesExtension" */;
 			buildPhases = (
+				C0A283BA5B1BB1605DA80E68 /* [CP] Check Pods Manifest.lock */,
 				D33D0CFD2AD9888500A5099A /* Sources */,
 				D33D0CFE2AD9888500A5099A /* Frameworks */,
 				D33D0CFF2AD9888500A5099A /* Resources */,
+				EA7C2CD752B941955DBE0748 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -618,6 +656,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C0A283BA5B1BB1605DA80E68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-It's Game Night App MessagesExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9F57260B0CA4DC55E7D817D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-It's Game Night App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA7C2CD752B941955DBE0748 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-It's Game Night App MessagesExtension/Pods-It's Game Night App MessagesExtension-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-It's Game Night App MessagesExtension/Pods-It's Game Night App MessagesExtension-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-It's Game Night App MessagesExtension/Pods-It's Game Night App MessagesExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D33D0CFD2AD9888500A5099A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -644,6 +746,7 @@
 				D3A11A212BAC775600F45EBE /* InfoViewController.swift in Sources */,
 				D3E20FDB2AF53B4E00211BFD /* EventHelper.swift in Sources */,
 				D3B952BA2AFB2B9B00C46330 /* CalendarViewController.swift in Sources */,
+				D3CDB6212D2C9A4B00AD1FF8 /* GoogleAds.swift in Sources */,
 				D32D7C9F2D13589C0078E788 /* TriviaTableViewCell.swift in Sources */,
 				D37313622ADF4F0C00DC09B6 /* MessageTemplateProtocol.swift in Sources */,
 				D30DC8522D2731B0001F8395 /* CoreInfoViewController.swift in Sources */,
@@ -815,11 +918,13 @@
 		};
 		D33D0D142AD9888700A5099A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F049BD7A24CEF04F2C9554 /* Pods-It's Game Night App MessagesExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "It's Game Night";
@@ -829,7 +934,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -841,11 +946,13 @@
 		};
 		D33D0D152AD9888700A5099A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0441A0C70D497A55C7DD7086 /* Pods-It's Game Night App MessagesExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gamenighttest2 MessagesExtension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "It's Game Night";
@@ -855,7 +962,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -867,12 +974,14 @@
 		};
 		D33D0D182AD9888700A5099A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6C5D21FA2726161BCC9E0A /* Pods-It's Game Night App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
@@ -881,7 +990,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -892,12 +1001,14 @@
 		};
 		D33D0D192AD9888700A5099A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38DE81180D2D089F276BBA37 /* Pods-It's Game Night App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJD4Q393WJ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "It-s-Game-Night-App-Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow access to your Calendar app to create events.";
@@ -906,7 +1017,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
