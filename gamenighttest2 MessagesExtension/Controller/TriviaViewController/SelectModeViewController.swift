@@ -17,6 +17,11 @@ class SelectModeViewController: UIViewController {
     @IBOutlet weak var oneQuestionButton: UIButton!
     @IBOutlet weak var quizButton: UIButton!
     
+    override func viewDidLoad() {
+        oneQuestionButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
+        quizButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
+    }
+    
     @IBAction func tappedButton(_ sender: UIButton) {
         
         switch sender {

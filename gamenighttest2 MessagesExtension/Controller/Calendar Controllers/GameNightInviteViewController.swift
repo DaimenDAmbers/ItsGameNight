@@ -63,6 +63,8 @@ class GameNightInviteViewController: UIViewController {
         startTimeText.text = startTime
         endTimeText.text = endTime
         
+        saveButton.applyShadow(cornerRadius: 5)
+        
         var googleAdsManager = GoogleAdsManager(controller: self)
         bannerView = googleAdsManager.createBannerAd()
         self.addBannerViewToView(bannerView)

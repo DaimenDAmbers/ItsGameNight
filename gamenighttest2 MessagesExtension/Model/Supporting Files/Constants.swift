@@ -13,7 +13,7 @@ struct Constants {
     static let username = "username"
     static let developerEmail = "daimenambers@yahoo.com"
     static let hapticFeedback = "Haptic Feedback"
-    static let noUserName = "Gamenight User"
+    static let noUserName = "No name"
     
     
     /// Tiles on the home screen

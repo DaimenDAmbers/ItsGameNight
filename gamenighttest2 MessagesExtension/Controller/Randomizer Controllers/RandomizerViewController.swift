@@ -37,6 +37,7 @@ class RandomizerViewController: UIViewController {
         }
         
         randomPersonLabel.isHidden = true
+        spinButton.applyShadow(cornerRadius: 5)
         
         var googleAdsManager = GoogleAdsManager(controller: self)
         bannerView = googleAdsManager.createBannerAd()

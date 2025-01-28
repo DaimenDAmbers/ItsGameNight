@@ -81,6 +81,9 @@ class RatingViewController: UIViewController {
     private func shouldEnableButton() {
         let enableButton = decisions.contains { $0.value == true}
         sendVoteButton.isEnabled = enableButton
+        if enableButton {
+            sendVoteButton.applyShadow(cornerRadius: 5)
+        }
     }
 }
 

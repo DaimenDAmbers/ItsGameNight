@@ -1,5 +1,5 @@
 //
-//  InfoViewController.swift
+//  SettingsViewController.swift
 //  It's Game Night App MessagesExtension
 //
 //  Created by Daimen Ambers on 3/21/24.
@@ -9,8 +9,8 @@ import UIKit
 import SafariServices
 import MessageUI
 
-class InfoViewController: UIViewController {
-    static let storyboardIdentifier = "InfoViewController"
+class SettingsViewController: UIViewController {
+    static let storyboardIdentifier = "SettingsViewController"
     
     let privacyPolicyURL = URL(string: "https://www.letscoastmerchandise.com/privacy-policy")
     let userDefaults = UserDefaults.standard
@@ -27,15 +27,15 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageContainer.applyShadow(cornerRadius: imageContainer.frame.width / 2)
+        imageContainer.applyShadow(cornerRadius: imageContainer.frame.width / 2, interfaceStyle: traitCollection.userInterfaceStyle)
         gameNightImage.layer.cornerRadius = gameNightImage.frame.width / 2
         
         privacyPolicyButton.backgroundColor = UIColor(named: Constants.menuBackground)
-        privacyPolicyButton.applyShadow(cornerRadius: 5)
+        privacyPolicyButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
         privacyPolicyButton.layer.cornerRadius = 5
         
         shareFeedbackButton.backgroundColor = UIColor(named: Constants.menuBackground)
-        shareFeedbackButton.applyShadow(cornerRadius: 5)
+        shareFeedbackButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
         shareFeedbackButton.layer.cornerRadius = 5
         
         versionNumberLabel.text = Bundle.main.releaseVersionNumber
@@ -75,13 +75,13 @@ class InfoViewController: UIViewController {
     }
 }
 
-extension InfoViewController: MFMailComposeViewControllerDelegate {
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }
 }
 
-extension InfoViewController: UITextFieldDelegate {
+extension SettingsViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }

@@ -45,8 +45,8 @@ class HomeViewController: UIViewController {
     
     // MARK: Methods
     @objc private func infoButtonTapped() {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: InfoViewController.storyboardIdentifier) as? InfoViewController else {
-            fatalError("Unable to instantiate a InfoViewController from the storyboard")
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: SettingsViewController.storyboardIdentifier) as? SettingsViewController else {
+            fatalError("Unable to instantiate a SettingsViewController from the storyboard")
         }
         
         controller.navigationItem.title = "Settings"

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class VoteInfoViewController: UIViewController {
     static let storyboardIdentifier = "VoteInfoViewController"
@@ -14,9 +15,20 @@ class VoteInfoViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeButton: UIButton!
     
+    // MARK: Google Ad
+    var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        closeButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
+        
+        let googleAdsManager = GoogleAdsManager(controller:  self)
+        bannerView = googleAdsManager.createBannerAd()
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {

@@ -37,7 +37,7 @@ struct GoogleAdsManager {
     func createBannerAd() -> GADBannerView {
         var bannerView = GADBannerView()
         bannerView = GADBannerView(adSize: adaptiveSize)
-        bannerView.adUnitID = self.banner
+        bannerView.adUnitID = self.testBanner
         return bannerView
     }
 }

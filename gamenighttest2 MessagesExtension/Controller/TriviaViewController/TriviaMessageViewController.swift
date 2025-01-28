@@ -34,7 +34,6 @@ class TriviaMessageViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     
     // MARK: Google Ad
-//    var googleAdsManager = GoogleAdsManager()
     var bannerView: GADBannerView!
     
     // MARK: Image Constants
@@ -69,11 +68,12 @@ class TriviaMessageViewController: UIViewController {
             showUserAnswer(for: message)
             showCorrectAnswer()
             seeResultsButton.isEnabled = true
+            seeResultsButton.applyShadow(cornerRadius: 5)
         } else {
             seeResultsButton.isEnabled = false
         }
         
-        var googleAdsManager = GoogleAdsManager(controller:  self)
+        let googleAdsManager = GoogleAdsManager(controller:  self)
         bannerView = googleAdsManager.createBannerAd()
         self.addBannerViewToView(bannerView)
         bannerView.rootViewController = self
@@ -129,6 +129,7 @@ class TriviaMessageViewController: UIViewController {
         }
         
         feedbackLabel.isHidden = false
+        seeResultsButton.applyShadow(cornerRadius: 5)
     }
     
     private func updateTableWithAnswer(at row: Int, decision: TriviaMessage.PersonSubmission.Decision) {

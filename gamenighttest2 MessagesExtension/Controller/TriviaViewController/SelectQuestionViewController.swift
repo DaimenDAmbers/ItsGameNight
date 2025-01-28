@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SelectQuestionViewController: UIViewController {
     
@@ -19,12 +20,23 @@ class SelectQuestionViewController: UIViewController {
     
     // MARK: IB Outlet Variables
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    // MARK: Google Ad
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         triviaManager.delegate = self
         tableView.register(SelectQuestionTableViewCell.nib(), forCellReuseIdentifier: SelectQuestionTableViewCell.identifier)
         refreshView()
+        refreshButton.applyShadow(cornerRadius: 5, interfaceStyle: traitCollection.userInterfaceStyle)
+        
+        let googleAdsManager = GoogleAdsManager(controller:  self)
+        bannerView = googleAdsManager.createBannerAd()
+        self.addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     // MARK: Private functions
