@@ -8,6 +8,7 @@
 import UIKit
 import Messages
 import EventKit
+import GoogleMobileAds
 
 class MessagesViewController: MSMessagesAppViewController {
     static let storyboardIdentifier = "MessagesViewController"
@@ -15,12 +16,12 @@ class MessagesViewController: MSMessagesAppViewController {
     var appState = AppState.home
     
     // MARK: - Conversation Handling
-    
     override func willBecomeActive(with conversation: MSConversation) {
         // Called when the extension is about to move from the inactive to active state.
         // This will happen when the extension is about to present UI.
         
         // Use this method to configure the extension and restore previously stored state.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         presentViewController(for: conversation, with: presentationStyle)
         print("will become active")
     }
