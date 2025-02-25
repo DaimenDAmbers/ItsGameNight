@@ -938,7 +938,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.2;
+				MARKETING_VERSION = 5.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -966,7 +966,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.2;
+				MARKETING_VERSION = 5.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night.MessagesExtension";
 				PRODUCT_NAME = "It's Game Night";
 				SKIP_INSTALL = YES;
@@ -994,7 +994,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 5.2.2;
+				MARKETING_VERSION = 5.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1021,7 +1021,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 5.2.2;
+				MARKETING_VERSION = 5.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daimen.It-s-Game-Night";
 				PRODUCT_NAME = "It's Game Night";
 				SWIFT_EMIT_LOC_STRINGS = YES;
