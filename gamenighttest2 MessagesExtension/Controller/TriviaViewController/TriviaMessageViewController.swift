@@ -122,8 +122,12 @@ class TriviaMessageViewController: UIViewController {
         switch state {
         case .correct:
             feedbackLabel.text = "Good job!"
+//            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
+//            print("Points granted to user: \(String(describing: points))")
         case .incorrect:
             feedbackLabel.text = "Better luck next time!"
+//            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
+//            print("Points granted to user: \(String(describing: points))")
         case .didNotSelect:
             break
         }
@@ -225,6 +229,11 @@ extension TriviaMessageViewController: UITableViewDelegate {
         if message.checkIfAnswerIsCorrect(selectedCell) {
             updateTableWithAnswer(at: indexPath.row, decision: .correct)
             updateFeedbackLabel(for: .correct)
+            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
+            if let points {
+                print("Points granted to user: \(String(describing: points))")
+                PlayerProfile.shared.receivePoints(points) //TODO: Update to upload to a Core Database.
+            }
         } else {
             updateTableWithAnswer(at: indexPath.row, decision: .incorrect)
             updateFeedbackLabel(for: .incorrect)

@@ -33,10 +33,6 @@ struct CalendarInvite: MessageTemplateProtocol {
         return "Game Night Invite"
     }
     
-//    var subCaption: String {
-//        return "Open to see the next scheduled Game Night"
-//    }
-    
     var subCaption: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM, D, YYYY"
