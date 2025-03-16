@@ -33,8 +33,20 @@ struct CalendarInvite: MessageTemplateProtocol {
         return "Game Night Invite"
     }
     
+//    var subCaption: String {
+//        return "Open to see the next scheduled Game Night"
+//    }
+    
     var subCaption: String {
-        return "Open to see the next scheduled Game Night"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM, D, YYYY"
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .none
+        
+        let startDate = dateFormatter.string(from: event.startDate)
+        let caption = "The next game night is scheduled for \(startDate)."
+        
+        return caption
     }
     
     var trailingCaption: String?
