@@ -14,6 +14,7 @@ struct Constants {
     static let developerEmail = "daimenambers@yahoo.com"
     static let hapticFeedback = "Haptic Feedback"
     static let noUserName = "No name"
+    static let score = "score"
     
     
     /// Tiles on the home screen
@@ -30,7 +31,7 @@ struct Constants {
     struct CoreInfoLongDescription {
         static let trivia =
                     """
-                    This feature allows you to send a question for a specific category and difficulty. There are 10 categories and 3 difficulites to choose from. You also have the option to select "Any" for the category or difficuly if it does not matter. After the message is sent, you will be able to see the question and select your answer. The results of each submission are shown after you have selected your choice.
+                    This feature allows you to send a question for a specific category and difficulty. There are 10 categories and 3 difficulites to choose from. The point values for the three difficulties are 1 point for Easy, 2 points for Medium and 3 points for Hard. You also have the option to select "Any" for the category or difficuly for the question. After the message is sent, you will be able to see the question and select your answer. The results of each submission are shown after you have selected your choice.
                     """
         static let scheduler =
                     """

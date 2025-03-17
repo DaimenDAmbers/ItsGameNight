@@ -24,7 +24,7 @@
                             <constraint firstAttribute="height" constant="200" id="QwZ-9E-i3I"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv6-ns-Guy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv6-ns-Guy" userLabel="Title">
                         <rect key="frame" x="56" y="205.33333333333334" width="160" height="21.666666666666657"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="160" id="BQk-yA-9gR"/>
@@ -38,15 +38,23 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points: 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-QL-gam" userLabel="PointLabel">
+                        <rect key="frame" x="55.999999999999993" y="36" width="74.333333333333314" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="RP9-QL-gam" firstAttribute="top" secondItem="76D-lM-eGx" secondAttribute="top" constant="20" id="01v-nK-MY9"/>
                 <constraint firstItem="76D-lM-eGx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9oB-fo-ucb"/>
                 <constraint firstItem="muM-1v-hXp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MPe-n2-gdj"/>
                 <constraint firstItem="76D-lM-eGx" firstAttribute="centerX" secondItem="Lv6-ns-Guy" secondAttribute="centerX" id="MfX-JP-vXs"/>
                 <constraint firstAttribute="bottom" secondItem="Lv6-ns-Guy" secondAttribute="bottom" constant="5" id="SbH-qQ-H7q"/>
                 <constraint firstAttribute="trailing" secondItem="muM-1v-hXp" secondAttribute="trailing" id="XOL-0V-zV8"/>
+                <constraint firstItem="RP9-QL-gam" firstAttribute="leading" secondItem="76D-lM-eGx" secondAttribute="leading" constant="20" id="jqx-HW-rCY"/>
                 <constraint firstItem="76D-lM-eGx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zEb-fg-die"/>
             </constraints>
             <size key="customSize" width="1299" height="1156"/>
@@ -54,11 +62,12 @@
                 <outlet property="image" destination="76D-lM-eGx" id="oYh-hx-RiE"/>
                 <outlet property="infoButton" destination="muM-1v-hXp" id="dbK-ey-Qav"/>
                 <outlet property="label" destination="Lv6-ns-Guy" id="xfC-Up-1XL"/>
+                <outlet property="pointLabel" destination="RP9-QL-gam" id="Agr-ik-lho"/>
             </connections>
             <point key="canvasLocation" x="341.98473282442745" y="49.295774647887328"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="info.circle" catalog="system" width="32" height="32"/>
     </resources>
 </document>

@@ -12,6 +12,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var pointLabel: UILabel!
     
     static func nib() -> UINib {
         return UINib(nibName: HomeCollectionViewCell.idendifier, bundle: nil)

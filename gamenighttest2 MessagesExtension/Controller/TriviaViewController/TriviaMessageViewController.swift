@@ -233,6 +233,7 @@ extension TriviaMessageViewController: UITableViewDelegate {
             if let points {
                 print("Points granted to user: \(String(describing: points))")
                 PlayerProfile.shared.receivePoints(points) //TODO: Update to upload to a Core Database.
+                defaults.updateScore(points)
             }
         } else {
             updateTableWithAnswer(at: indexPath.row, decision: .incorrect)

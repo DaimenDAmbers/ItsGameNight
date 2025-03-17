@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.idendifier)
         
-        let triviaMenuItem = MenuItem(label: "Trivia", image: UIImage(named: Constants.ImageTiles.trivia))
+        let triviaMenuItem = MenuItem(label: "Trivia", image: UIImage(named: Constants.ImageTiles.trivia), score: defaults.getScore())
         let calendarMenuItem = MenuItem(label: "Scheduler", image: UIImage(named: Constants.ImageTiles.calendar))
         let randomizerMenuItem = MenuItem(label: "Randomizer", image: UIImage(named: Constants.ImageTiles.pieWheel))
         let pollMenuItem = MenuItem(label: "Rate a Topic", image: UIImage(named: Constants.ImageTiles.rateATopic))
@@ -236,6 +236,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let menuItem = menuItems[indexPath.row]
         cell.label.text = menuItem.label
         cell.image.image = menuItem.image
+        cell.pointLabel.text = menuItem.pointLabel
         cell.infoButton.tag = indexPath.row
         cell.infoButton.addTarget(self, action: #selector(openInfo), for: UIControl.Event.touchUpInside)
         cell.tag = indexPath.item
