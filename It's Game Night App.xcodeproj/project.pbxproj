@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		D30B792C2B0ADEE6007606C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B792B2B0ADEE6007606C8 /* Person.swift */; };
 		D30DC8522D2731B0001F8395 /* CoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DC8512D2731B0001F8395 /* CoreInfoViewController.swift */; };
 		D321AA352B680502001B17EA /* PollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321AA342B680502001B17EA /* PollHelper.swift */; };
+		D3238FF72D88D108009F5BBD /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3238FF62D88D108009F5BBD /* MyProfileViewController.swift */; };
 		D32C5EA72B13C32700E102D2 /* 3rdPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC6D2B0BF39C00A8B6A1 /* 3rdPlace.png */; };
 		D32C5EA82B13C32700E102D2 /* 2ndPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC772B0BF39C00A8B6A1 /* 2ndPlace.png */; };
 		D32C5EA92B13C32700E102D2 /* Did you tell them?.png in Resources */ = {isa = PBXBuildFile; fileRef = D367DC712B0BF39C00A8B6A1 /* Did you tell them?.png */; };
@@ -148,6 +149,7 @@
 		D30DC8512D2731B0001F8395 /* CoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfoViewController.swift; sourceTree = "<group>"; };
 		D30EEDD52B2CF60200710146 /* It-s-Game-Night-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "It-s-Game-Night-App-Info.plist"; sourceTree = "<group>"; };
 		D321AA342B680502001B17EA /* PollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollHelper.swift; sourceTree = "<group>"; };
+		D3238FF62D88D108009F5BBD /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		D32C5ECF2B13CD6500E102D2 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		D32C9C132AF30FF9000D25CD /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		D32D7C9D2D13589C0078E788 /* TriviaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriviaTableViewCell.swift; path = "gamenighttest2 MessagesExtension/View/TriviaTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
@@ -222,10 +224,6 @@
 		D3F622252D14C6890002EDE1 /* TriviaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaModel.swift; sourceTree = "<group>"; };
 		EF5E5F5B41511D7C8166BD88 /* Pods_It_s_Game_Night_App_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_s_Game_Night_App_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3DE325B2D8742270008346D /* UserModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UserModel; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4352D405EE18DCE3E2519C90 /* Frameworks */ = {
@@ -315,7 +313,6 @@
 		D312A62F2AE8269100A3C54D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3DE325B2D8742270008346D /* UserModel */,
 				D30B792F2B0AF272007606C8 /* Supporting Files */,
 				D30B792E2B0AF256007606C8 /* Calendar Model */,
 				D30B792D2B0ADF5E007606C8 /* Randomizer Model */,
@@ -337,6 +334,7 @@
 				D33D0D1A2AD988D300A5099A /* StickerViewController.swift */,
 				D3A11A202BAC775600F45EBE /* SettingsViewController.swift */,
 				D30DC8512D2731B0001F8395 /* CoreInfoViewController.swift */,
+				D3238FF62D88D108009F5BBD /* MyProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -554,9 +552,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				D3DE325B2D8742270008346D /* UserModel */,
-			);
 			name = "It's Game Night App MessagesExtension";
 			productName = "gamenighttest2 MessagesExtension";
 			productReference = D33D0D012AD9888500A5099A /* It's Game Night.appex */;
@@ -748,6 +743,7 @@
 				D36F0EB42B4EF0D200528DE2 /* RatingViewController.swift in Sources */,
 				D3E971C52AEF11A200FD158F /* CalendarInvite.swift in Sources */,
 				D304E09C2D15E19500CB85FA /* SelectQuestionTableViewCell.swift in Sources */,
+				D3238FF72D88D108009F5BBD /* MyProfileViewController.swift in Sources */,
 				D33D0D1B2AD988D300A5099A /* StickerViewController.swift in Sources */,
 				D3A11A232BACF9A000F45EBE /* Constants.swift in Sources */,
 				D378F25D2AE823A7000A5654 /* AppState.swift in Sources */,

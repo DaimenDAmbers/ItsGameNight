@@ -24,6 +24,7 @@ class TriviaMessageViewController: UIViewController {
     var userResults: TriviaMessage.PersonSubmission.Decision = .didNotSelect
     var userAnswer = String()
     var userAnswerIndex = Int()
+    var questionPoints = Int()
     
     // MARK: IBOutlet Variables
     @IBOutlet weak var questionLabel: UILabel!
@@ -32,6 +33,7 @@ class TriviaMessageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var seeResultsButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var pointValueLabel: UILabel!
     
     // MARK: Google Ad
     var bannerView: GADBannerView!
@@ -57,6 +59,8 @@ class TriviaMessageViewController: UIViewController {
         questionLabel.text = triviaModel.question
         categoryLabel.text = triviaModel.category
         difficultyLabel.text = triviaModel.difficulty
+        pointValueLabel.text = String(message.questionPoints)
+        questionPoints = message.questionPoints
 
         allShuffledAnswers = message.shuffledAnswers
         correctAnswerIndex = message.correctAnswerIndex
@@ -121,13 +125,9 @@ class TriviaMessageViewController: UIViewController {
     private func updateFeedbackLabel(for state: TriviaMessage.PersonSubmission.Decision) {
         switch state {
         case .correct:
-            feedbackLabel.text = "Good job!"
-//            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
-//            print("Points granted to user: \(String(describing: points))")
+            feedbackLabel.text = "Good job! You earned \(questionPoints) point(s)."
         case .incorrect:
             feedbackLabel.text = "Better luck next time!"
-//            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
-//            print("Points granted to user: \(String(describing: points))")
         case .didNotSelect:
             break
         }
@@ -229,12 +229,7 @@ extension TriviaMessageViewController: UITableViewDelegate {
         if message.checkIfAnswerIsCorrect(selectedCell) {
             updateTableWithAnswer(at: indexPath.row, decision: .correct)
             updateFeedbackLabel(for: .correct)
-            let points = trivia?.triviaModel.givePoints(difficulty: (trivia?.triviaModel.difficulty)!)
-            if let points {
-                print("Points granted to user: \(String(describing: points))")
-                PlayerProfile.shared.receivePoints(points) //TODO: Update to upload to a Core Database.
-                defaults.updateScore(points)
-            }
+            defaults.updateScore(questionPoints)
         } else {
             updateTableWithAnswer(at: indexPath.row, decision: .incorrect)
             updateFeedbackLabel(for: .incorrect)

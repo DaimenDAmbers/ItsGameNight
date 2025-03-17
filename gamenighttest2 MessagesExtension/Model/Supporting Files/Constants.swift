@@ -15,6 +15,7 @@ struct Constants {
     static let hapticFeedback = "Haptic Feedback"
     static let noUserName = "No name"
     static let score = "score"
+    static let privacyPolicy = "https://daimenambers.com/its-game-night-privacy-policy"
     
     
     /// Tiles on the home screen

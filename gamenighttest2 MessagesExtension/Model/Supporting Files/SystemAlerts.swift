@@ -32,4 +32,18 @@ class SystemAlerts: UIAlertController {
         
         return alert
     }
+    
+    func showResetPointsAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Are you sure you want to reset your Trivia points?", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let reset = UIAlertAction(title: "Reset", style: .destructive) { _ in
+            let userDefaults = Defaults()
+            userDefaults.resetScore()
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(reset)
+        
+        return alert
+    }
 }

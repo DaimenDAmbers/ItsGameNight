@@ -40,6 +40,22 @@ struct TriviaMessage: MessageTemplateProtocol {
         return 0
     }
     
+    var questionPoints: Int {
+        var points = Int()
+        
+        if triviaModel.difficulty == "Easy" {
+            points = 1
+        } else if triviaModel.difficulty == "Medium" {
+            points = 2
+        } else if triviaModel.difficulty == "Hard" {
+            points = 3
+        } else {
+            points = 0
+        }
+        
+        return points
+    }
+    
     var shuffledAnswers: [String]
     
     // MARK: Message Protocol Variables

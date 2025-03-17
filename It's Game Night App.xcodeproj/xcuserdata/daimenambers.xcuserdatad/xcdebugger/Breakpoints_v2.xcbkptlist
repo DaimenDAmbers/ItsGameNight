@@ -30,8 +30,8 @@
             filePath = "gamenighttest2 MessagesExtension/Controller/TriviaViewController/TriviaMessageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "gamenighttest2 MessagesExtension/Controller/TriviaViewController/TriviaMessageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "sendResults(for:)"
             landmarkType = "7">
          </BreakpointContent>
