@@ -90,7 +90,7 @@ class GameNightInviteViewController: UIViewController {
             eventHelper.requestAuthorization(with: self.eventStore)
             
         default:
-            self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
+            SystemAlerts.showCalendarPermissionAlert(on: self)
         }
     }
 }
