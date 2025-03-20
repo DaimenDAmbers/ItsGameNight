@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
     var invite: CalendarInvite?
     let eventStore: EKEventStore = EKEventStore()
     let eventHelper = EventHelper()
-    let systemAlerts = SystemAlerts()
     var authorizationStatus: EKAuthorizationStatus = .notDetermined
     var menuItems: [MenuItem] = []
     let defaults = Defaults()
@@ -69,7 +68,7 @@ class HomeViewController: UIViewController {
             eventHelper.requestAuthorization(with: self.eventStore)
             
         default:
-            self.present(systemAlerts.showCalendarPermissionAlert(), animated: true, completion: nil)
+            SystemAlerts.showCalendarPermissionAlert(on: self)
         }
     }
     

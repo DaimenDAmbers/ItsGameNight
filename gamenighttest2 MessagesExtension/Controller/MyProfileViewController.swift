@@ -10,7 +10,6 @@ import UIKit
 class MyProfileViewController: UIViewController {
     static let storyboardIdentifier = "MyProfileViewController"
     let userDefaults = Defaults()
-    let systemAlerts = SystemAlerts()
 
     // MARK: IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
@@ -31,9 +30,15 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
-        self.present(systemAlerts.showResetPointsAlert(), animated: true, completion: nil)
-        
-        //TODO: Refresh the UI after reseting the score.
+        SystemAlerts.showResetPointsAlert(on: self, completion: { didReset in
+            if didReset {
+                print("Selected reset")
+                self.userDefaults.resetScore()
+                self.triviaPointsLabel.text = String(self.userDefaults.getScore())
+            } else {
+                print("Selected cancel")
+            }
+        })
     }
 }
 

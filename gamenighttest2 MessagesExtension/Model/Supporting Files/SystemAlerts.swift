@@ -8,42 +8,60 @@
 import UIKit
 
 class SystemAlerts: UIAlertController {
+
+    /// Parent alert for alerts with an array of actions.
+    /// - Parameters:
+    ///   - vc: Takes in the View Controller
+    ///   - title: Title of the alert
+    ///   - message: Message for the alert
+    ///   - actions: An array of actions for the alert
+    private static func showAlert(on vc: UIViewController, with title: String, with message: String, with actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        actions.forEach { action in
+            alert.addAction(action)
+        }
+        
+        DispatchQueue.main.async {
+            vc.present(alert, animated: true, completion: nil)
+        }
+    }
     
-    // MARK: Methods
+    
+}
+
+// MARK: - Alerts
+extension SystemAlerts {
     
     /// Used in the CalendarViewController and the GameNightInviteViewController. Shows if there is a permission issue.
-    /// - Returns: `UIAlertController`
-    func showCalendarPermissionAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Calendar Permission Required.", message: "Please allow \"It's Game Night\" access to your Calendar app to enable this feature.\n Settings -> Privacy & Security -> Calendars.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"Calendar Permission\" alert occured.")
-        }))
+    static func showCalendarPermissionAlert(on vc: UIViewController) {
+        let title = "Calendar Permission Required"
+        let message = "Please allow \"It's Game Night\" access to your Calendar app to enable this feature.\n Settings -> Privacy & Security -> Calendars."
+        let action = UIAlertAction(title: "OK", style: .default)
         
-        return alert
+        self.showAlert(on: vc, with: title, with: message, with: [action])
     }
     
     /// Used in the SelectPeopleViewController. Shows if there are less than two people in the Randomizer.
-    /// - Returns: `UIAlertController`
-    func showLessThanTwoEntriesAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Please enter at least two entries", message: "", preferredStyle: .alert)
+    static func showLessThanTwoEntriesAlert(on vc: UIViewController) {
+        let title = "Not enough selected"
+        let message = "Please enter at least two entries."
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
-        alert.addAction(cancel)
-        
-        return alert
+        self.showAlert(on: vc, with: title, with: message, with: [cancel])
     }
     
-    func showResetPointsAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Are you sure you want to reset your Trivia points?", message: "", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        let reset = UIAlertAction(title: "Reset", style: .destructive) { _ in
-            let userDefaults = Defaults()
-            userDefaults.resetScore()
+    /// Shows and alert to reset the Trivia Points for the user. This is used in the `MyProfileViewController`.
+    static func showResetPointsAlert(on vc: UIViewController, completion: @escaping (Bool) -> Void) {
+        let title = "Reset Trivia Points?"
+        let message = "Are you sure you want to reset your Trivia points?"
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            completion(false)
         }
         
-        alert.addAction(cancel)
-        alert.addAction(reset)
+        let reset = UIAlertAction(title: "Reset", style: .destructive) { _ in
+            completion(true)
+        }
         
-        return alert
+        self.showAlert(on: vc, with: title, with: message, with: [cancel, reset])
     }
 }

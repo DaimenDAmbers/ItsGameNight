@@ -8,7 +8,6 @@
 import UIKit
 
 class SelectPeopleViewController: UITableViewController {
-    let systemAlerts = SystemAlerts()
     
     // MARK: Variables
     static let storyboardIdentifier = "SelectPeopleViewController"
@@ -60,7 +59,6 @@ class SelectPeopleViewController: UITableViewController {
         saveList()
         
         tableView.reloadData()
-        
     }
     
     // Override to support conditional editing of the table view.
@@ -117,17 +115,13 @@ class SelectPeopleViewController: UITableViewController {
     /// This is the `Send` button on the Randomizer Modal Popup
     @objc func sendButtonPressed() {
         let randomizer = Randomizer(people: self.people)
-        guard let peopleCount = randomizer?.people.count else {
-            return
-        }
-        
         guard let people = randomizer?.people else { return }
         
         if checkIfRandomiserIsValid(people: people) {
             randomizer?.chooseRandomPerson()
             delegate?.sendMessage(using: randomizer, isNewMessage: true, sendImmediately: false)
         } else {
-            self.present(systemAlerts.showLessThanTwoEntriesAlert(), animated: true, completion: nil)
+            SystemAlerts.showLessThanTwoEntriesAlert(on: self)
         }
         
         print("Done Button Pressed")

@@ -65,13 +65,6 @@ class MessagesViewController: MSMessagesAppViewController {
                 }
             }
         }
-        
-        if appState == .trivia {
-            if let triviaMessage = TriviaMessage(message: message) {
-                print("Trivia message canceled")
-                print("\(triviaMessage.queryItems)")
-            }
-        }
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
