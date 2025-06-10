@@ -13,9 +13,10 @@ struct GoogleAdsManager {
     let testInterstitial = "ca-app-pub-3940256099942544/4411468910"
     
     // Productions Google Ads
-    let appID = "ca-app-pub-4470468584642059~3129194432"
-    let banner = "ca-app-pub-4470468584642059/8245288738"
-    let interstitial = "ca-app-pub-4470468584642059/8221238002"
+    // Add your Google Ad IDs
+//    let appID = "<appID>"
+//    let banner = "<banner>"
+//    let interstitial = "<interstitial>"
     
     var controller: UIViewController
     private var view: UIView {
@@ -37,7 +38,7 @@ struct GoogleAdsManager {
     func createBannerAd() -> GADBannerView {
         var bannerView = GADBannerView()
         bannerView = GADBannerView(adSize: adaptiveSize)
-        bannerView.adUnitID = self.banner
+        bannerView.adUnitID = self.testBanner
         return bannerView
     }
 }
